@@ -23,7 +23,7 @@ case class MockFile(uri: URI, elem: Elem)(fs: FileSystem) {
 
     def delete(): Unit = Files.delete(path)
 
-    override def toString = uri.toString
+    override def toString = path.toString
 }
 
 object MockFile {
