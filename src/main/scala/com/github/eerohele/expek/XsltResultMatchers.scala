@@ -105,7 +105,7 @@ trait XsltResultMatchers {
       *
       * {{{
       * class MySpecification extends mutable.Specification with XsltSpecification {
-      *     val stylesheet = new File("my-stylesheet.xsl")
+      *     val stylesheet = XSLT.file("my-stylesheet.xsl")
       *
       *     "Convert a into b" in {
       *         // Apply the templates for the <a> element in the XSLT stylesheet and check the result.

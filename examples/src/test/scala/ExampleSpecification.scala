@@ -1,6 +1,5 @@
 package com.github.eerohele.expek
 
-import java.io.File
 import java.net.URI
 import javax.xml.transform.Source
 
@@ -14,7 +13,7 @@ import org.w3c.dom.Attr
   */
 class ExampleSpecification extends mutable.Specification with XsltSpecification {
     /** The stylesheet you're testing. */
-    val stylesheet = new File(System.getProperty("specs2.stylesheet.test"))
+    val stylesheet = XSLT.file(System.getProperty("specs2.stylesheet.test"))
 
     /** The global stylesheet parameters. You define template-specific parameters on a per-test basis. */
     override val parameters = asMap(

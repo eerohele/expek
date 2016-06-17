@@ -1,6 +1,7 @@
 package com.github.eerohele.expek
 
-import java.io.File
+import java.io.{File, StringReader}
+import java.net.URI
 import java.nio.file.FileSystem
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.transform.Source
@@ -59,8 +60,19 @@ private[expek] sealed class FunctionCall(transformer: Xslt30Transformer, name: Q
 trait XsltSpecification extends XsltResultMatchers {
     import utils.Tap
 
-    /** The XSLT stylesheet to use for this specification. */
-    val stylesheet: File
+    /** The stylesheet you want to test. */
+    val stylesheet: Source
+
+    /** Functions for converting an XSLT stylesheet into a [[Source]]. */
+    object XSLT {
+        import NodeConversions.nodeToString
+
+        /** Read a stylesheet from a file. */
+        def file(xslt: String): Source = new StreamSource(new File(xslt))
+
+        /** Read a stylesheet from an [[Elem]]. */
+        def elem(elem: Elem): Source = new StreamSource(new StringReader(elem))
+    }
 
     /** The default matcher for comparing two XML element or document nodes. */
     val defaultMatcher: Source => CompareMatcher = s => isSimilarTo(s).normalizeWhitespace
@@ -187,7 +199,7 @@ trait XsltSpecification extends XsltResultMatchers {
           *
           * Once compiled, every test in the stylesheet reuses the compiled stylesheet.
           */
-        lazy val executable: XsltExecutable = compiler.compile(new StreamSource(stylesheet))
+        lazy val executable: XsltExecutable = compiler.compile(stylesheet)
     }
 
     /** Get a new [[Xslt30Transformer]] instance for the compiled stylesheet.
