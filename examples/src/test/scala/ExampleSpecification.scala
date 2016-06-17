@@ -1,4 +1,5 @@
 package com.github.eerohele.expek
+package examples
 
 import java.net.URI
 import javax.xml.transform.Source
