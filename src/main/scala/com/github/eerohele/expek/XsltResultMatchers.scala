@@ -98,7 +98,6 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
   * a sequence of expected values.
   */
 trait XsltResultMatchers {
-    // scalastyle:off method.name
     /** Create a matcher that compares the supplied arguments against the result of an XML transformation.
       *
       * Example use:
@@ -114,9 +113,17 @@ trait XsltResultMatchers {
       * }
       * }}}
       */
-    def <->(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
+    def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
         new XsltResultMatcher(any.toVector.map(convert))(matcher)
     }
+
+    // scalastyle:off method.name
+
+    /** Alias of [[produce]]. */
+    def <->(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
+        produce(any:_*)(matcher)
+    }
+
     // scalastyle:on method.name
 
     protected def convert(value: Any) = {

@@ -32,7 +32,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * output is a <p> element with the same content.
       */
     "Simple transformation" in {
-        applying(<paragraph>foo</paragraph>) must <->(<p>foo</p>)
+        applying(<paragraph>foo</paragraph>) must produce(<p>foo</p>)
     }
 
     /* Apply a template with the given mode and parameters and check the result.
@@ -49,7 +49,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     "Set mode and parameters" in {
         applying(<paragraph>foo</paragraph>)
             .withMode("main")
-            .withParameters(tunnel = false, "foo" -> "bar", "baz" -> "quux") must <->(<p>bar, quux</p>)
+            .withParameters(tunnel = false, "foo" -> "bar", "baz" -> "quux") must produce(<p>bar, quux</p>)
     }
 
     /** Apply a template that returns an atomic value instead of an element and check the result.
@@ -57,6 +57,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * You must define the `@as` attribute on your `<xsl:template>` element for this to work.
       */
     "Apply a template that returns an atomic value" in {
+        // <-> is an alias for "produce".
         applying(<anyElement/>).withMode("returns-atomic-value") must <->(6)
     }
 
@@ -64,7 +65,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         applying(
             <ancestor copied="value"><descendant/></ancestor>,
             XPath.select("ancestor/descendant")
-        ) must <-> (
+        ) must produce (
             <descendant copied="value"/>
         )
     }
@@ -72,47 +73,47 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     /** Call a function and check the result. */
     "Call a function that returns an atomic value" in {
         // You can either pass the namespace URI of the function explicitly...
-        callingFunction("local", "increment")(1) must <->(2)
+        callingFunction("local", "increment")(1) must produce(2)
     }
 
     "Call a function that takes an element and returns a document node" in {
         // ...or you can define an implicit namespace in your specification so that you don't have to.
-        callingFunction("wrap-into-foo")(element(<bar/>)) must <->(<foo><bar/></foo>)
+        callingFunction("wrap-into-foo")(element(<bar/>)) must produce(<foo><bar/></foo>)
     }
 
     /** If your function takes or returns a node type that cannot be represented by Scala's XML literals, you can use
       * the supplied constructors to give and match those node types.
       */
     "Call a function that takes and returns an attribute" in {
-        callingFunction("rename-to-baz")(attribute("foo" -> "bar")) must <->(attribute("baz" -> "quux"))
+        callingFunction("rename-to-baz")(attribute("foo" -> "bar")) must produce(attribute("baz" -> "quux"))
     }
 
     "Call a function that takes and returns a text node" in {
-        callingFunction("take-and-return-text")(text("foo")) must <->(text("bar"))
+        callingFunction("take-and-return-text")(text("foo")) must produce(text("bar"))
     }
 
     /** Check templates and functions that take or return a sequence with mixed types. */
     "Call a function that takes mixed parameters" in {
-        callingFunction("mix")(1, element(<foo/>), "bar") must <->("bar", element(<foo/>), 1)
+        callingFunction("mix")(1, element(<foo/>), "bar") must produce("bar", element(<foo/>), 1)
     }
 
     "Call a named template that accesses global parameters" in {
-        callingTemplate("return-global-params") must <->(1, "parameter", new URI("http://www.dita-ot.org").toString)
+        callingTemplate("return-global-params") must produce(1, "parameter", new URI("http://www.dita-ot.org").toString)
     }
 
     "Call a named template that returns an atomic value" in {
-        callingTemplate("sum").withParameters(tunnel = false, "a" -> 1, "b" -> 2) must <->(3)
+        callingTemplate("sum").withParameters(tunnel = false, "a" -> 1, "b" -> 2) must produce(3)
     }
 
     "Call a named template and set a context node" in {
-        callingTemplate("a-to-b", contextNode = <a x="y"/>) must <->(<b x="y"/>)
+        callingTemplate("a-to-b", contextNode = <a x="y"/>) must produce(<b x="y"/>)
     }
 
     /** If your XSLT code calls the `doc()` or `document()` XPath functions, you can create temporary mock XML files
       * that only exist for the duration of the test. They are stored in memory, not on your actual file system.
       */
     "Apply a template that calls doc()" in withFiles(MockFile("b.xml", <foo/>)) {
-        applying(<include href="b.xml"/>) must <->(<foo/>)
+        applying(<include href="b.xml"/>) must produce(<foo/>)
     }
 
     /** If your XML content has randomly generated content or bits you don't care about, you can configure the test to
@@ -121,7 +122,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         // Define a filter that ignores the `@id` attribute.
         val af = filter[Attr](a => a.getName != "id")
         val m = (s: Source) => defaultMatcher(s).withAttributeFilter(af)
-        applying(<x/>) must <->(<y/>)(m)
+        applying(<x/>) must produce(<y/>)(m)
     }
 
     "<xsl:result-document> creates a file in the transient file system" in {

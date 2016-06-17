@@ -106,7 +106,7 @@ trait XsltSpecification extends XsltResultMatchers {
       *     )
       *
       *     // Pass in the custom matcher.
-      *     applying(<x/>) must <->(<y/>)(m)
+      *     applying(<x/>) must produce(<y/>)(m)
       * }
       * }}}
       */
@@ -171,7 +171,7 @@ trait XsltSpecification extends XsltResultMatchers {
           *         <ancestor copied="value"><descendant/></ancestor>,
           *         // Use XPath to select the element that you want to apply the templates for.
           *         XPath.select("ancestor/descendant")
-          *     ) must <-> (<descendant copied="value"/>)
+          *     ) must produce (<descendant copied="value"/>)
           * }
           * }}}
           */
@@ -310,7 +310,7 @@ trait XsltSpecification extends XsltResultMatchers {
       * val m = (s: Source) => defaultMatcher(s).withAttributeFilter(f)
       *
       * // Apply templates for <x/>, use the @id-ignoring matcher when comparing the expected and actual results.
-      * applying(<x/>) must <->(<y/>)(m)
+      * applying(<x/>) must produce(<y/>)(m)
       * }}}
       */
     def filter[T <: Node](f: T => Boolean): Predicate[T] = {
