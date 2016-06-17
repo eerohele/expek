@@ -61,6 +61,10 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         applying(<anyElement/>).withMode("returns-atomic-value") must <->(6)
     }
 
+    /** If your template accesses a node that is an ancestor or a sibling of the current node, pass in the parent node
+      * of your target node. It will be set as the context item for the transformation. You can then supply an XPath
+      * query that selects the node you want to apply the templates for.
+      */
     "Apply a template that accesses an ancestor node" in {
         applying(
             <ancestor copied="value"><descendant/></ancestor>,
@@ -97,6 +101,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         callingFunction("mix")(1, element(<foo/>), "bar") must produce("bar", element(<foo/>), 1)
     }
 
+    /** Any parametes you set by overriding the "parameters" val are available for all tests in this specification. */
     "Call a named template that accesses global parameters" in {
         callingTemplate("return-global-params") must produce(1, "parameter", new URI("http://www.dita-ot.org").toString)
     }
@@ -122,9 +127,11 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         // Define a filter that ignores the `@id` attribute.
         val af = filter[Attr](a => a.getName != "id")
         val m = (s: Source) => defaultMatcher(s).withAttributeFilter(af)
+        // Pass the filter you created as the second argument to `produce()`.
         applying(<x/>) must produce(<y/>)(m)
     }
 
+    /** Documents created with `<xsl:result-document>` are also stored in the in-memory file system. */
     "<xsl:result-document> creates a file in the transient file system" in {
         applying(<paragraph>foo</paragraph>).withMode("result-document")
             .result must beEmpty and (TransientFileSystem.hasFile(fileSystem, "foo.xml") must beTrue)
