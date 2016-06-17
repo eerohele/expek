@@ -39,6 +39,8 @@ apiMappings += (
     scalaInstance.value.libraryJar -> url(s"http://www.scala-lang.org/api/${scalaVersion.value}/")
 )
 
+enablePlugins(SiteScaladocPlugin)
+
 lazy val examples = project
     .dependsOn(root % "compile->test")
     .settings(settings: _*)
