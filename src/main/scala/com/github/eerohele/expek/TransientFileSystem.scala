@@ -17,6 +17,9 @@ object TransientFileSystem {
     /** The [[Path]] of the root of this file system. */
     def getRoot(fs: FileSystem): Path = pathFromURI(fs, new URI(Jimfs.URI_SCHEME, "/", None.orNull))
 
+    /** Resolve a URI against the root of the file system. */
+    def resolveAgainstRoot(fs: FileSystem, uri: URI): URI = getRoot(fs).toUri.resolve(uri)
+
     /** Given a [[URI]], get the [[Path]] of a file in the virtual file system. */
     def pathFromURI(fs: FileSystem, uri: URI): Path = fs.getPath(uri.getPath)
 

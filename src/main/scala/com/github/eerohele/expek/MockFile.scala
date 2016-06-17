@@ -10,12 +10,10 @@ import scala.xml.Elem
   * @param uri The [[URI]] of the mock file.
   * @param elem The XML ([[Elem]]) content of the file.
   */
-case class MockFile(uri: URI, elem: Elem)(fileSystem: FileSystem) {
+case class MockFile(uri: URI, elem: Elem)(fs: FileSystem) {
     import NodeConversions._
 
-    val path: Path = TransientFileSystem.pathFromURI(fileSystem, resolveAgainstRoot(uri))
-
-    private def resolveAgainstRoot(uri: URI): URI = TransientFileSystem.getRoot(fileSystem).toUri.resolve(uri)
+    val path: Path = TransientFileSystem.pathFromURI(fs, TransientFileSystem.resolveAgainstRoot(fs, uri))
 
     def create(): Unit = {
         Files.createDirectories(path.getParent)
