@@ -95,6 +95,10 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         callingFunction("mix")(1, element(<foo/>), "bar") must <->("bar", element(<foo/>), 1)
     }
 
+    "Call a named template that accesses global parameters" in {
+        callingTemplate("return-global-params") must <->(1, "parameter", new URI("http://www.dita-ot.org").toString)
+    }
+
     "Call a named template that returns an atomic value" in {
         callingTemplate("sum").withParameters(tunnel = false, "a" -> 1, "b" -> 2) must <->(3)
     }

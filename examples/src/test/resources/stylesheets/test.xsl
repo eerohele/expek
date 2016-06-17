@@ -8,6 +8,10 @@
 
   <xsl:output method="xml" indent="yes"/>
 
+  <xsl:param name="int" as="xs:integer"/>
+  <xsl:param name="string" as="xs:string"/>
+  <xsl:param name="uri" as="xs:anyURI"/>
+
   <xsl:function name="local:increment" as="xs:integer">
     <xsl:param name="integer" as="xs:integer"/>
     <xsl:sequence select="$integer + 1"/>
@@ -104,6 +108,10 @@
     <xsl:copy>
       <xsl:sequence select="ancestor::ancestor[1]/@copied"/>
     </xsl:copy>
+  </xsl:template>
+
+  <xsl:template name="return-global-params" as="item()+">
+    <xsl:sequence select="($int, $string, $uri)"/>
   </xsl:template>
 
   <xsl:template match="@* | node()">
