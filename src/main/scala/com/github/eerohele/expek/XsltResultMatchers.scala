@@ -108,7 +108,7 @@ trait XsltResultMatchers {
       *
       *     "Convert a into b" in {
       *         // Apply the templates for the <a> element in the XSLT stylesheet and check the result.
-      *         applying(<a>foo</a>) must <->(<b>foo</b>)
+      *         applying(<a>foo</a>) must produce(<b>foo</b>)
       *     }
       * }
       * }}}
