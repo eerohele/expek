@@ -10,6 +10,8 @@ import com.google.common.jimfs.Jimfs
 // scalastyle:off multiple.string.literals
 
 class TransientFileSystemSpec extends Specification {
+    isolated
+
     lazy val fs = Jimfs.newFileSystem
 
     "Getting the root path of the file system" >> {
