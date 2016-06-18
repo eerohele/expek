@@ -48,3 +48,7 @@ lazy val examples = project
         System.setProperty("xml.catalog.files", "/opt/dita-ot/catalog-dita.xml")
         System.setProperty("specs2.stylesheet.test", "examples/src/test/resources/stylesheets/example.xsl")
       }))
+
+ghpages.settings
+
+git.remoteRepo := "git@github.com:eerohele/expek.git"
