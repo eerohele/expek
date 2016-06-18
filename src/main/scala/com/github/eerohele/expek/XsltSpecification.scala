@@ -1,7 +1,6 @@
 package com.github.eerohele.expek
 
 import java.io.{File, StringReader}
-import java.net.URI
 import java.nio.file.FileSystem
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.transform.Source
