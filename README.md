@@ -1,7 +1,7 @@
 Expek
 =====
 
-A Scala library for unit testing XSLT.
+Write unit tests for XSLT in Scala. Why not?
 
 ![Using Expek with IntelliJ IDEA](screenshot.png?raw=true "Using Expek with IntelliJ IDEA")
 
