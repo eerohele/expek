@@ -73,10 +73,6 @@ Run `gradle test`.
 - Compare expected and actual XML with [XMLUnit 2][xmlunit].
 - Run tests with [specs2][specs2].
 
-## Caveats
-
-This 
-
 [api]: https://eerohele.github.io/expek/latest/api
 [example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala/ExampleSpecification.scala
 [example-stylesheet]: http://github.com/eerohele/expek/tree/master/examples/src/test/resources/stylesheets/example.xsl
