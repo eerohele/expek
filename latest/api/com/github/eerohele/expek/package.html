@@ -1,0 +1,304 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>expek - com.github.eerohele.expek</title>
+          <meta name="description" content="expek - com.github.eerohele.expek" />
+          <meta name="keywords" content="expek com.github.eerohele.expek" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.github.eerohele.expek.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.github">github</a>.<a href="../package.html" class="extype" name="com.github.eerohele">eerohele</a></p>
+        <h1>expek</h1><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expek</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.github.eerohele.expek.MockFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MockFileextendsProductwithSerializable"></a>
+      <a id="MockFile:MockFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MockFile.html"><span class="name">MockFile</span></a><span class="params">(<span name="uri">uri: <span class="extype" name="java.net.URI">URI</span></span>, <span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="params">(<span name="fs">fs: <span class="extype" name="java.nio.file.FileSystem">FileSystem</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@MockFileextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.</p><div class="fullcomment"><div class="comment cmt"><p>A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.
+</p></div><dl class="paramcmts block"><dt class="param">uri</dt><dd class="cmt"><p>The <span class="extype" name="URI">URI</span> of the mock file.</p></dd><dt class="param">elem</dt><dd class="cmt"><p>The XML (<span class="extype" name="Elem">Elem</span>) content of the file.</p></dd></dl></div>
+    </li><li name="com.github.eerohele.expek.Transformation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TransformationextendsAnyRef"></a>
+      <a id="Transformation:Transformation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Transformation.html"><span class="name">Transformation</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@TransformationextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait that represents an XML transformation.</p><div class="fullcomment"><div class="comment cmt"><p>A trait that represents an XML transformation. Any class that wants to be matched by a <a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a> must
+extends this trait.
+</p></div></div>
+    </li><li name="com.github.eerohele.expek.TransientOutputURIResolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TransientOutputURIResolverextendsStandardOutputResolver"></a>
+      <a id="TransientOutputURIResolver:TransientOutputURIResolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TransientOutputURIResolver.html"><span class="name">TransientOutputURIResolver</span></a><span class="result"> extends <span class="extype" name="net.sf.saxon.lib.StandardOutputResolver">StandardOutputResolver</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@TransientOutputURIResolverextendsStandardOutputResolver" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <span class="extype" name="StandardOutputResolver">StandardOutputResolver</span> that resolves all URIs to point to a new file on the supplied <span class="extype" name="Jimfs">Jimfs</span> file system.</p><div class="fullcomment"><div class="comment cmt"><p>A <span class="extype" name="StandardOutputResolver">StandardOutputResolver</span> that resolves all URIs to point to a new file on the supplied <span class="extype" name="Jimfs">Jimfs</span> file system.</p><p>If you configure Saxon to use this URI resolver, any document created via <code>&lt;xsl:result-document&gt;</code> will be saved on
+the given transient file system.
+</p></div></div>
+    </li><li name="com.github.eerohele.expek.TransientURIResolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TransientURIResolverextendsCatalogResolver"></a>
+      <a id="TransientURIResolver:TransientURIResolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TransientURIResolver.html"><span class="name">TransientURIResolver</span></a><span class="result"> extends <span class="extype" name="org.apache.xml.resolver.tools.CatalogResolver">CatalogResolver</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@TransientURIResolverextendsCatalogResolver" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <span class="extype" name="CatalogResolver">CatalogResolver</span> that resolves any <span class="extype" name="URI">URI</span> that uses the <span class="extype" name="Jimfs.URI_SCHEME">Jimfs.URI_SCHEME</span> scheme against a
+<span class="extype" name="Jimfs">Jimfs</span> filesystem.</p><div class="fullcomment"><div class="comment cmt"><p>A <span class="extype" name="CatalogResolver">CatalogResolver</span> that resolves any <span class="extype" name="URI">URI</span> that uses the <span class="extype" name="Jimfs.URI_SCHEME">Jimfs.URI_SCHEME</span> scheme against a
+<span class="extype" name="Jimfs">Jimfs</span> filesystem.</p><p>For any other type of <span class="extype" name="URI">URI</span>, it delegates to <span class="extype" name="CatalogResolver">CatalogResolver</span>.
+</p></div></div>
+    </li><li name="com.github.eerohele.expek.XsltResultMatcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="XsltResultMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators"></a>
+      <a id="XsltResultMatcher[T&lt;:Transformation]:XsltResultMatcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="XsltResultMatcher.html"><span class="name">XsltResultMatcher</span></a><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltResultMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A specs2 matcher that matches against the result of an XSLT transformation.</p><div class="fullcomment"><div class="comment cmt"><p>A specs2 matcher that matches against the result of an XSLT transformation.</p><p>The result of an XSLT transformation can either be a node, which can be one of:</p><ul><li>Element</li><li>Document</li><li>Processing instruction</li><li>Text</li><li>Attribute</li><li>Comment</li></ul><p>Or it can be an atomic value, which, when converted into a native Java type, can be one of:</p><ul><li><span class="extype" name="String">String</span></li><li><span class="extype" name="BigInteger">BigInteger</span></li><li><span class="extype" name="BigDecimal">BigDecimal</span></li><li><span class="extype" name="Double">Double</span></li><li><span class="extype" name="Float">Float</span></li><li><span class="extype" name="Boolean">Boolean</span></li><li><span class="extype" name="QName">QName</span></li><li><span class="extype" name="URI">URI</span></li></ul><p>Element and document nodes are converted into <span class="extype" name="Source">Source</span> so that we can compare them with XMLUnit.</p><p><span class="extype" name="Node">Node</span> instances in the <code>expected</code> <span class="extype" name="Vector">Vector</span> are also converted into a <span class="extype" name="Source">Source</span> so that we can compare
+those to XSLT transformation results.</p><p>Other node types are kept as is and we compare their string representations.</p><p>Atomic values that are the result of an XSLT transformation are converted to native Java types with Saxon's
+<code>XdmAtomicValue.getValue()</code> method and compared to the expected values.</p></div></div>
+    </li><li name="com.github.eerohele.expek.XsltResultMatchers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="XsltResultMatchersextendsAnyRef"></a>
+      <a id="XsltResultMatchers:XsltResultMatchers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="XsltResultMatchers.html"><span class="name">XsltResultMatchers</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltResultMatchersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait you can mix in to your specs2 specification to compare the results of <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a> instances to
+a sequence of expected values.</p>
+    </li><li name="com.github.eerohele.expek.XsltSpecification" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="XsltSpecificationextendsXsltResultMatchers"></a>
+      <a id="XsltSpecification:XsltSpecification"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="XsltSpecification.html"><span class="name">XsltSpecification</span></a><span class="result"> extends <a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltSpecificationextendsXsltResultMatchers" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A specification for testing an <a href="https://www.w3.org/TR/xslt-30/" target="_blank">XSLT</a> stylesheet.</p><div class="fullcomment"><div class="comment cmt"><p>A specification for testing an <a href="https://www.w3.org/TR/xslt-30/" target="_blank">XSLT</a> stylesheet.</p><p>Classes that mix in this trait must define <a href="XsltSpecification.html#stylesheet:javax.xml.transform.Source" class="extmbr" name="com.github.eerohele.expek.XsltSpecification#stylesheet">stylesheet</a>, which is a <span class="extype" name="File">File</span> instance that points to the
+stylesheet that you want to test.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.github.eerohele.expek.Any2Xdm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Any2Xdm"></a>
+      <a id="Any2Xdm:Any2Xdm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Any2Xdm$.html"><span class="name">Any2Xdm</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@Any2Xdm" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Methods for converting Java values into XML data model (XDM) values.</p>
+    </li><li name="com.github.eerohele.expek.MockFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MockFile"></a>
+      <a id="MockFile:MockFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MockFile$.html"><span class="name">MockFile</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@MockFile" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.github.eerohele.expek.NodeConversions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NodeConversions"></a>
+      <a id="NodeConversions:NodeConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NodeConversions$.html"><span class="name">NodeConversions</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@NodeConversions" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversions for <span class="extype" name="Node">Node</span>.</p>
+    </li><li name="com.github.eerohele.expek.TransientFileSystem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TransientFileSystem"></a>
+      <a id="TransientFileSystem:TransientFileSystem"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TransientFileSystem$.html"><span class="name">TransientFileSystem</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@TransientFileSystem" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for operating on files in a <span class="extype" name="Jimfs">Jimfs</span> file system.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
