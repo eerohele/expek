@@ -46,5 +46,5 @@ lazy val examples = project
     .settings(settings: _*)
     .settings(testOptions in Test += Tests.Setup(() => {
         System.setProperty("xml.catalog.files", "/opt/dita-ot/catalog-dita.xml")
-        System.setProperty("specs2.stylesheet.test", "examples/src/test/resources/stylesheets/test.xsl")
+        System.setProperty("specs2.stylesheet.test", "examples/src/test/resources/stylesheets/example.xsl")
       }))
