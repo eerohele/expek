@@ -47,7 +47,8 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
     extends Matcher[T] with MatchResultCombinators {
 
     def apply[S <: T](expectable: Expectable[S]): MatchResult[S] = {
-        expected.zip(expectable.value.result).map((intoResult[S](expectable) _).tupled).reduceLeft(_ and _)
+        val actual: Vector[Any] = expectable.value.result
+        expected.zip(actual).map((intoResult[S](expectable) _).tupled).reduceLeft(_ and _)
     }
 
     private def intoResult[S <: T](expectable: Expectable[S])(expected: Any, actual: Any): MatchResult[S] = {
