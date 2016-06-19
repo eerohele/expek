@@ -110,7 +110,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         callingTemplate("sum").withParameters(tunnel = false, "a" -> 1, "b" -> 2) must produce(3)
     }
 
-    "Call a named template and with a context node" >> {
+    "Call a named template with a context node" >> {
         callingTemplate("a-to-b", contextNode = <a x="y"/>) must produce(<b x="y"/>)
     }
 
