@@ -5,7 +5,7 @@ import javax.xml.transform.Source
 
 import net.sf.saxon.s9api.{XdmNode, XdmNodeKind, XdmValue}
 import org.hamcrest.StringDescription
-import org.specs2.matcher.{Expectable, MatchResult, MatchResultCombinators, Matcher}
+import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
 import org.xmlunit.matchers.CompareMatcher
 
 import scala.xml.Node
@@ -48,7 +48,14 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 
     def apply[S <: T](expectable: Expectable[S]): MatchResult[S] = {
         val actual: Vector[Any] = expectable.value.result
-        expected.zip(actual).map((intoResult[S](expectable) _).tupled).reduceLeft(_ and _)
+
+        val result = expected.zip(actual).map((intoResult[S](expectable) _).tupled)
+
+        if (result.nonEmpty) {
+            result.reduceLeft(_ and _)
+        } else {
+            MatchFailure("ok", "The transformation produces an empty value.", expectable)
+        }
     }
 
     private def intoResult[S <: T](expectable: Expectable[S])(expected: Any, actual: Any): MatchResult[S] = {

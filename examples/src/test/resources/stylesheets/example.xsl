@@ -114,6 +114,8 @@
     <xsl:sequence select="($int, $string, $uri)"/>
   </xsl:template>
 
+  <xsl:template match="empty"/>
+
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>

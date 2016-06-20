@@ -131,6 +131,12 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         applying(<x/>) must produce(<y/>)(m)
     }
 
+    "Apply a template that produces an empty value" >> {
+        // If you want to use default specs2 matchers, you can match on the result vector by calling `.result`. That
+        // will return the transformation result as a [[Vector]].
+        applying(<empty/>).result must beEmpty
+    }
+
     /** Documents created with `<xsl:result-document>` are also stored in the in-memory file system. */
     "<xsl:result-document> creates a file in the transient file system" >> {
         applying(<paragraph>foo</paragraph>).withMode("result-document")
