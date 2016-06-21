@@ -135,7 +135,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         val m = (s: Source) => defaultMatcher(s).withNodeFilter(
             // You can also define filters that exclude nodes from the comparison based on whether they
             // match an XPath expression.
-            exclude[Node](el => XPath.matches("table/*", el))
+            exclude[Node](XPath.matches("table/*", _))
         )
 
         applying(
