@@ -327,4 +327,6 @@ trait XsltSpecification extends XsltResultMatchers {
             def test(x: T): Boolean = f(x)
         }
     }
+
+    def exclude[T <: Node](f: T => Boolean): Predicate[T] = filter(!f(_))
 }

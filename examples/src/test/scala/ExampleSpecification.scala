@@ -125,7 +125,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * ignore certain attributes or elements. */
     "Ignore an attribute" >> {
         // Define a filter that ignores the `@id` attribute.
-        val af = filter[Attr](a => a.getName != "id")
+        val af = exclude[Attr](a => a.getName == "id")
         val m = (s: Source) => defaultMatcher(s).withAttributeFilter(af)
         // Pass the filter you created as the second argument to `produce()`.
         applying(<x/>) must produce(<y/>)(m)
@@ -135,7 +135,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         val m = (s: Source) => defaultMatcher(s).withNodeFilter(
             // You can also define filters that exclude nodes from the comparison based on whether they
             // match an XPath expression.
-            filter[Node](el => !XPath.matches("table/*", el))
+            exclude[Node](el => XPath.matches("table/*", el))
         )
 
         applying(
