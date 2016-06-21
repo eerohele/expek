@@ -126,8 +126,9 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     "Ignore an attribute" >> {
         // Define a filter that ignores the `@id` attribute.
         val af = exclude[Attr](a => a.getName == "id")
+        // Create a matcher that uses the filter you created.
         val m = (s: Source) => defaultMatcher(s).withAttributeFilter(af)
-        // Pass the filter you created as the second argument to `produce()`.
+        // Pass the matcher you created as the second argument to produce()`.
         applying(<x/>) must produce(<y/>)(m)
     }
 
