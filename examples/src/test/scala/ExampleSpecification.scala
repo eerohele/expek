@@ -5,7 +5,7 @@ import java.net.URI
 import javax.xml.transform.Source
 
 import org.specs2._
-import org.w3c.dom.{Attr, Node}
+import org.w3c.dom.Attr
 
 // scalastyle:off multiple.string.literals magic.number
 

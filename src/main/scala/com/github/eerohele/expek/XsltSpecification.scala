@@ -261,11 +261,13 @@ trait XsltSpecification extends XsltResultMatchers {
     /** Call a named XSLT template */
     def callingTemplate(name: String): TemplateCall = new TemplateCall(transformer, new QName(name))
 
-    /** Call a named XSLT template and supply a context node for the transformation. */
-    def callingTemplate(name: String, contextNode: Elem): TemplateCall = {
-        transformer.setInitialContextItem(documentNode(contextNode))
-        callingTemplate(name)
+    /** Call a named XSLT template and supply a context node (as [[XdmNode]]) for the transformation. */
+    def callingTemplate(name: String, contextNode: XdmNode): TemplateCall = {
+        new TemplateCall(transformer tap (_.setInitialContextItem(contextNode)), new QName(name))
     }
+
+    /** Call a named XSLT template and supply a context node (as [[Elem]]) for the transformation. */
+    def callingTemplate(name: String, contextNode: Elem): TemplateCall = callingTemplate(name, element(contextNode))
 
     private lazy val factory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance
     private lazy val document = factory.newDocumentBuilder.newDocument

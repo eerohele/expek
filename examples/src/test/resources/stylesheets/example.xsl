@@ -93,7 +93,9 @@
   </xsl:template>
 
   <xsl:template name="a-to-b">
-    <b x="y"/>
+    <b>
+      <xsl:sequence select="@x"/>
+    </b>
   </xsl:template>
 
   <xsl:template match="include">
