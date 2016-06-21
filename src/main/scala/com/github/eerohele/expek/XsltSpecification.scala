@@ -74,7 +74,7 @@ trait XsltSpecification extends XsltResultMatchers {
     }
 
     /** The default matcher for comparing two XML element or document nodes. */
-    val defaultMatcher: Source => CompareMatcher = s => isSimilarTo(s).normalizeWhitespace
+    val defaultMatcher: Source => CompareMatcher = isSimilarTo(_).normalizeWhitespace
 
     /** A function that takes a [[Source]] and returns a [[CompareMatcher]] that compares the given
       * [[Source]] to an XML fragment.

@@ -68,7 +68,7 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 
                 result(
                     compareMatcher.matches(a),
-                    s"$a is equal to $e",
+                    "ok",
                     createKoMessage(compareMatcher, a).toString,
                     expectable
                 )
@@ -84,13 +84,17 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
               */
             case (e: XdmNode, a: XdmNode) => {
                 result(
-                    e.toString == a.toString, s"$a is equal to $e", s"$a is not equal to $e", expectable
+                    e.toString == a.toString, "ok", s"$a is not equal to $e", expectable
                 )
             }
 
             /** In any other case, [[expected]] and [[actual]] are native Java types and we can compare them directly.
               */
-            case (a: Any, e: Any) => result(a == e, s"$a is equal to $e", s"$a is not equal to $e", expectable)
+            case (e: Any, a: Any) => result(
+                e == a,
+                "ok", s"$a (${a.getClass.getName}) is not equal to $e (${e.getClass.getName})",
+                expectable
+            )
         }
     }
 
