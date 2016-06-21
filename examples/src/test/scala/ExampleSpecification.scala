@@ -5,7 +5,7 @@ import java.net.URI
 import javax.xml.transform.Source
 
 import org.specs2._
-import org.w3c.dom.Attr
+import org.w3c.dom.{Attr, Node}
 
 // scalastyle:off multiple.string.literals magic.number
 
@@ -129,6 +129,26 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         val m = (s: Source) => defaultMatcher(s).withAttributeFilter(af)
         // Pass the filter you created as the second argument to `produce()`.
         applying(<x/>) must produce(<y/>)(m)
+    }
+
+    "Ignore a node that matches an XPath expression" >> {
+        val m = (s: Source) => defaultMatcher(s).withNodeFilter(
+            // You can also define filters that exclude nodes from the comparison based on whether they
+            // match an XPath expression.
+            filter[Node](el => !XPath.matches("table/*", el))
+        )
+
+        applying(
+            <simpletable id="foo">
+                <strow>
+                    <stentry>bar</stentry>
+                </strow>
+            </simpletable>
+        ) must produce(
+            // If you only want to test the transformation only for the <table> element and don't care about its
+            // children in this test, for instance.
+            <table class="simpletable" id="foo"/>
+        )(m)
     }
 
     "Apply a template that produces an empty value" >> {

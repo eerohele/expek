@@ -177,6 +177,16 @@ trait XsltSpecification extends XsltResultMatchers {
         def select(query: String)(contextItem: XdmItem): XdmNode = {
             compiler.compile(query).load.tap((_.setContextItem(contextItem))).evaluate.asInstanceOf[XdmNode]
         }
+
+        def matches(query: String, contextItem: XdmItem): Boolean = {
+            val selector = compiler.compilePattern(query).load
+            selector.setContextItem(contextItem)
+            selector.effectiveBooleanValue
+        }
+
+        def matches(query: String, contextItem: Node): Boolean = {
+            matches(query, Saxon.builder.wrap(contextItem))
+        }
     }
 
     /** An object for holding instances of Saxon objects. */

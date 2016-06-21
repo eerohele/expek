@@ -116,6 +116,17 @@
 
   <xsl:template match="empty"/>
 
+  <xsl:template match="simpletable">
+    <table>
+      <xsl:apply-templates select="@*"/>
+      <xsl:apply-templates select="." mode="class"/>
+    </table>
+  </xsl:template>
+
+  <xsl:template match="*" mode="class">
+    <xsl:attribute name="class" select="local-name()"/>
+  </xsl:template>
+
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
