@@ -133,12 +133,6 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     }
 
     "Ignore a node that matches an XPath expression" >> {
-        val m = (s: Source) => defaultMatcher(s).withNodeFilter(
-            // You can also define filters that exclude nodes from the comparison based on whether they
-            // match an XPath expression.
-            exclude[Node](XPath.matches("table/*", _))
-        )
-
         applying(
             <simpletable id="foo">
                 <strow>
@@ -149,7 +143,11 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
             // If you only want to test the transformation only for the <table> element and don't care about its
             // children in this test, for instance.
             <table class="simpletable" id="foo"/>
-        )(m)
+        )(defaultMatcher(_).withNodeFilter(
+            // You can also define filters that exclude nodes from the comparison based on whether they
+            // match an XPath expression.
+            exclude(XPath.matches("table/*", _))
+        ))
     }
 
     "Apply a template that produces an empty value" >> {
