@@ -2,6 +2,7 @@ package com.github.eerohele.expek
 package examples
 
 import java.net.URI
+import javax.xml.transform.Source
 
 import org.specs2._
 import org.w3c.dom.Attr
@@ -126,7 +127,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         // Define a filter that ignores the `@id` attribute.
         val af = exclude[Attr](a => a.getName == "id")
         // Create a matcher that uses the filter you created.
-        val m = defaultMatcher(_).withAttributeFilter(af)
+        val m = defaultMatcher(_: Source).withAttributeFilter(af)
         // Pass the matcher you created as the second argument to produce()`.
         applying(<x/>) must produce(<y/>)(m)
     }
