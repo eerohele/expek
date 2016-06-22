@@ -2,7 +2,6 @@ package com.github.eerohele.expek
 package examples
 
 import java.net.URI
-import javax.xml.transform.Source
 
 import org.specs2._
 import org.w3c.dom.Attr
