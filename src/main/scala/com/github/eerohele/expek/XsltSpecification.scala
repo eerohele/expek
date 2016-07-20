@@ -243,9 +243,9 @@ trait XsltSpecification extends XsltResultMatchers {
         application(transformer, node)(node)
     }
 
-    def applying(input: Elem, query: XdmNode => XdmNode): TemplateApplication = {
+    def applying(query: String)(input: Elem): TemplateApplication = {
         val node: XdmNode = documentNode(input)
-        application(transformer, node)(query(node))
+        application(transformer, node)(XPath.select(query)(node))
     }
 
     /** Call an XSLT function with the given parameters. */
