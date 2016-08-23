@@ -132,9 +132,10 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
             // If you only want to test the transformation only for the <table> element and don't care about its
             // children in this test, for instance.
             <table class="simpletable" id="foo"/>
-        )(filterNode(!XPath.matches("table/*", _))
+        )(
             // You can also define filters that exclude nodes from the comparison based on whether they
             // match an XPath expression.
+            filterNode(!XPath.matches("table/*", _))
         )
     }
 
