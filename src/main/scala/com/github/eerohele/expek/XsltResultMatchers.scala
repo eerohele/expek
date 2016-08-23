@@ -6,7 +6,9 @@ import javax.xml.transform.Source
 import net.sf.saxon.s9api.{XdmNode, XdmNodeKind, XdmValue}
 import org.hamcrest.StringDescription
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
+import org.w3c.dom.{Attr, Node => DomNode}
 import org.xmlunit.matchers.CompareMatcher
+import org.xmlunit.util.Predicate
 
 import scala.xml.Node
 
@@ -127,13 +129,6 @@ trait XsltResultMatchers {
       */
     def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
         new XsltResultMatcher(any.toVector.map(convert))(matcher)
-    }
-
-    // scalastyle:off method.name
-
-    /** Alias of [[produce]]. */
-    def <->(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
-        produce(any:_*)(matcher)
     }
 
     // scalastyle:on method.name

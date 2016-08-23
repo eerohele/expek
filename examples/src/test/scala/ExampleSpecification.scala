@@ -2,10 +2,8 @@ package com.github.eerohele.expek
 package examples
 
 import java.net.URI
-import javax.xml.transform.Source
 
 import org.specs2._
-import org.w3c.dom.Attr
 
 // scalastyle:off multiple.string.literals magic.number
 
@@ -57,8 +55,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * You must define the `@as` attribute on your `<xsl:template>` element for this to work.
       */
     "Apply a template that returns an atomic value" >> {
-        // <-> is an alias for "produce".
-        applying(<anyElement/>).withMode("returns-atomic-value") must <->(6)
+        applying(<anyElement/>).withMode("returns-atomic-value") must produce(6)
     }
 
     /** If your template accesses a node that is an ancestor or a sibling of the current node, pass in the parent node
@@ -121,12 +118,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     /** If your XML content has randomly generated content or bits you don't care about, you can configure the test to
       * ignore certain attributes or elements. */
     "Ignore an attribute" >> {
-        // Define a filter that ignores the `@id` attribute.
-        val af = exclude[Attr](a => a.getName == "id")
-        // Create a matcher that uses the filter you created.
-        val m = defaultMatcher(_: Source).withAttributeFilter(af)
-        // Pass the matcher you created as the second argument to produce()`.
-        applying(<x/>) must produce(<y/>)(m)
+        applying(<x/>) must produce(<y/>)(filterAttr(!XPath.matches("@id", _)))
     }
 
     "Ignore a node that matches an XPath expression" >> {
@@ -140,11 +132,10 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
             // If you only want to test the transformation only for the <table> element and don't care about its
             // children in this test, for instance.
             <table class="simpletable" id="foo"/>
-        )(defaultMatcher(_).withNodeFilter(
+        )(filterNode(!XPath.matches("table/*", _))
             // You can also define filters that exclude nodes from the comparison based on whether they
             // match an XPath expression.
-            exclude(XPath.matches("table/*", _))
-        ))
+        )
     }
 
     "Apply a template that produces an empty value" >> {

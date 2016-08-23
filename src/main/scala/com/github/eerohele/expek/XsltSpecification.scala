@@ -11,7 +11,7 @@ import net.sf.saxon.Configuration
 import net.sf.saxon.s9api._
 import org.apache.xml.resolver.tools.ResolvingXMLReader
 import org.specs2.mutable.BeforeAfter
-import org.w3c.dom.Node
+import org.w3c.dom.{Attr, Node}
 import org.xmlunit.matchers.CompareMatcher
 import org.xmlunit.matchers.CompareMatcher.isSimilarTo
 import org.xmlunit.util.Predicate
@@ -324,11 +324,15 @@ trait XsltSpecification extends XsltResultMatchers {
       * applying(<x/>) must produce(<y/>)(m)
       * }}}
       */
-    def filter[T <: Node](f: T => Boolean): Predicate[T] = {
-        new Predicate[T] {
-            def test(x: T): Boolean = f(x)
-        }
+    def filterNode(f: Node => Boolean): Source => CompareMatcher = {
+        defaultMatcher(_).withNodeFilter(new Predicate[Node] {
+            def test(x: Node): Boolean = f(x)
+        })
     }
 
-    def exclude[T <: Node](f: T => Boolean): Predicate[T] = filter(!f(_))
+    def filterAttr(f: Attr => Boolean): Source => CompareMatcher = {
+        defaultMatcher(_).withAttributeFilter(new Predicate[Attr] {
+            def test(x: Attr): Boolean = f(x)
+        })
+    }
 }
