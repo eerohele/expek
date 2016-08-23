@@ -306,22 +306,15 @@ trait XsltSpecification extends XsltResultMatchers {
       */
     def text(data: String): XdmNode = Saxon.builder.wrap(document.createTextNode(data))
 
-    /** Create an XMLUnit node filter predicate.
+    /** Create a function that takes a [[Source]] and returns a [[CompareMatcher]] that filters nodes according to the given predicate.
       *
-      * Java doesn't have HOFs, so the default XMLUnit syntax for defining predicates is somewhat awkward. This is an
-      * attempt to make it more idiomatic Scala.
+      * For filtering attributes, use [[filterAttr]].
       *
       * Example:
       *
       * {{{
-      * // Create a filter that ignores @id attributes.
-      * val f = filter[Attr](a => a.getName != "id")
-      *
-      * // Use it.
-      * val m = (s: Source) => defaultMatcher(s).withAttributeFilter(f)
-      *
-      * // Apply templates for <x/>, use the @id-ignoring matcher when comparing the expected and actual results.
-      * applying(<x/>) must produce(<y/>)(m)
+      * // Apply templates for a, ignore differences in the d children of c.
+      * applying(<a><b/></a>) must produce(<c/>)(filterNode(!XPath.matches("c/d", _))
       * }}}
       */
     def filterNode(f: Node => Boolean): Source => CompareMatcher = {
@@ -330,6 +323,17 @@ trait XsltSpecification extends XsltResultMatchers {
         })
     }
 
+    /** Create a function that takes a [[Source]] and returns a [[CompareMatcher]] that filters attributes according to the given predicate.
+      *
+      * For filtering elements and other node types, use [[filterNode]].
+      *
+      * Example:
+      *
+      * {{{
+      * // Apply templates for x, ignore differences in the @id attribute.
+      * applying(<x/>) must produce(<y/>)(filterAttr(!XPath.matches("@id", _))
+      * }}}
+      */
     def filterAttr(f: Attr => Boolean): Source => CompareMatcher = {
         defaultMatcher(_).withAttributeFilter(new Predicate[Attr] {
             def test(x: Attr): Boolean = f(x)
