@@ -8,8 +8,8 @@ lazy val settings = Seq(
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.5",
       "org.specs2" % "specs2-core_2.11" % "3.8.3",
-      "org.xmlunit" % "xmlunit-core" % "2.1.1",
-      "org.xmlunit" % "xmlunit-matchers" % "2.1.1",
+      "org.xmlunit" % "xmlunit-core" % "2.2.1",
+      "org.xmlunit" % "xmlunit-matchers" % "2.2.1",
       "net.sf.saxon" % "Saxon-HE" % "9.7.0-5",
       "xml-resolver" % "xml-resolver" % "1.2",
       "com.google.jimfs" % "jimfs" % "1.1",
