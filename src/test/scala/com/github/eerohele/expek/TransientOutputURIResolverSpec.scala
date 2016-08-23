@@ -1,9 +1,7 @@
 package com.github.eerohele.expek
 
-import java.io.{ByteArrayOutputStream, StringReader, StringWriter}
-import java.net.URI
 import java.nio.file.Files
-import javax.xml.transform.{Transformer, TransformerFactory}
+import javax.xml.transform.TransformerFactory
 
 import com.google.common.jimfs.Jimfs
 import org.specs2.mutable.Specification

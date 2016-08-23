@@ -1,11 +1,11 @@
 package com.github.eerohele.expek
 
-import java.net.URI
 import java.io.File
+import java.net.URI
 
-import org.specs2.mutable.Specification
 import com.github.eerohele.expek.{TransientFileSystem => TFS}
 import com.google.common.jimfs.Jimfs
+import org.specs2.mutable.Specification
 
 // scalastyle:off multiple.string.literals
 

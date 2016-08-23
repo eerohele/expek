@@ -1,6 +1,5 @@
 package com.github.eerohele.expek
 
-import java.net.URI
 import java.nio.file.FileSystem
 
 import com.google.common.jimfs.Jimfs

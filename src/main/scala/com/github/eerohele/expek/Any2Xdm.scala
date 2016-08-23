@@ -5,7 +5,7 @@ import java.math.BigDecimal
 import java.net.URI
 import javax.xml.transform.stream.StreamSource
 
-import net.sf.saxon.s9api.{Processor, QName, XdmAtomicValue, XdmItem, XdmNode}
+import net.sf.saxon.s9api._
 
 import scala.xml.Elem
 

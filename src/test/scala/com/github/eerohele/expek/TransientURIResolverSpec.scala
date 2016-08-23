@@ -2,7 +2,6 @@ package com.github.eerohele.expek
 
 import java.net.URI
 import java.nio.file.Files
-import javax.xml.transform.Source
 
 import com.google.common.jimfs.Jimfs
 import org.specs2.mutable.Specification
