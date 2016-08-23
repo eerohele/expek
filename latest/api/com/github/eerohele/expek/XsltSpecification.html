@@ -581,7 +581,7 @@ system, use the specs2
 argument.</p><p>Note, however, that if you enable isolation, the stylesheet will currently also be compiled per-test rather than
 per-specification, because the file system needs to be instantiated before the stylesheet is compiled.
 </p></div></div>
-    </li><li name="com.github.eerohele.expek.XsltSpecification#filterAttr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.github.eerohele.expek.XsltSpecification#filterAttr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="filterAttr(f:org.w3c.dom.Attr=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher"></a>
       <a id="filterAttr((Attr)⇒Boolean):(Source)⇒CompareMatcher"></a>
       <h4 class="signature">
@@ -597,7 +597,8 @@ per-specification, because the file system needs to be instantiated before the s
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Create a function that takes a <span class="extype" name="Source">Source</span> and returns a <span class="extype" name="CompareMatcher">CompareMatcher</span> that filters attributes according to the given predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Create a function that takes a <span class="extype" name="Source">Source</span> and returns a <span class="extype" name="CompareMatcher">CompareMatcher</span> that filters attributes according to the given predicate.</p><p>For filtering elements and other node types, use <a href="#filterNode(f:org.w3c.dom.Node=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher" class="extmbr" name="com.github.eerohele.expek.XsltSpecification#filterNode">filterNode</a>.</p><p>Example:</p><pre><span class="cmt">// Apply templates for x, ignore differences in the @id attribute.</span>
+applying(&lt;x/&gt;) must produce(&lt;y/&gt;)(filterAttr(!XPath.matches(<span class="lit">"@id"</span>, _))</pre></div></div>
     </li><li name="com.github.eerohele.expek.XsltSpecification#filterNode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="filterNode(f:org.w3c.dom.Node=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher"></a>
       <a id="filterNode((Node)⇒Boolean):(Source)⇒CompareMatcher"></a>
@@ -614,15 +615,8 @@ per-specification, because the file system needs to be instantiated before the s
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Create an XMLUnit node filter predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Create an XMLUnit node filter predicate.</p><p>Java doesn't have HOFs, so the default XMLUnit syntax for defining predicates is somewhat awkward. This is an
-attempt to make it more idiomatic Scala.</p><p>Example:</p><pre><span class="cmt">// Create a filter that ignores @id attributes.</span>
-<span class="kw">val</span> f = filter[Attr](a <span class="kw">=&gt;</span> a.getName != <span class="lit">"id"</span>)
-
-<span class="cmt">// Use it.</span>
-<span class="kw">val</span> m = (s: Source) <span class="kw">=&gt;</span> defaultMatcher(s).withAttributeFilter(f)
-
-<span class="cmt">// Apply templates for <x/>, use the @id-ignoring matcher when comparing the expected and actual results.</span>
-applying(&lt;x/&gt;) must produce(&lt;y/&gt;)(m)</pre></div></div>
+      <p class="shortcomment cmt">Create a function that takes a <span class="extype" name="Source">Source</span> and returns a <span class="extype" name="CompareMatcher">CompareMatcher</span> that filters nodes according to the given predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Create a function that takes a <span class="extype" name="Source">Source</span> and returns a <span class="extype" name="CompareMatcher">CompareMatcher</span> that filters nodes according to the given predicate.</p><p>For filtering attributes, use <a href="#filterAttr(f:org.w3c.dom.Attr=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher" class="extmbr" name="com.github.eerohele.expek.XsltSpecification#filterAttr">filterAttr</a>.</p><p>Example:</p><pre><span class="cmt">// Apply templates for a, ignore differences in the d children of c.</span>
+applying(&lt;a&gt;&lt;b/&gt;&lt;/a&gt;) must produce(&lt;c/&gt;)(filterNode(!XPath.matches(<span class="lit">"c/d"</span>, _))</pre></div></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
