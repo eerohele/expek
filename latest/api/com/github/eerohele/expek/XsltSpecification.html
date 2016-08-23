@@ -174,23 +174,6 @@ given file system and delete them after running the specification.</p><p>The moc
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.github.eerohele.expek.XsltResultMatchers#&lt;-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;-&gt;(any:Any*)(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]"></a>
-      <a id="&lt;-&gt;(Any*)((Source)⇒CompareMatcher):XsltResultMatcher[Transformation]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $less$minus$greater" class="name">&lt;-&gt;</span><span class="params">(<span name="any">any: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a>*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="matcher">matcher: (<span class="extype" name="javax.xml.transform.Source">Source</span>) ⇒ <span class="extype" name="org.xmlunit.matchers.CompareMatcher">CompareMatcher</span></span>)</span><span class="result">: <a href="XsltResultMatcher.html" class="extype" name="com.github.eerohele.expek.XsltResultMatcher">XsltResultMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@&lt;-&gt;(any:Any*)(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Alias of <a href="XsltResultMatchers.html#produce(any:Any*)(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]" class="extmbr" name="com.github.eerohele.expek.XsltResultMatchers#produce">produce</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Alias of <a href="XsltResultMatchers.html#produce(any:Any*)(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]" class="extmbr" name="com.github.eerohele.expek.XsltResultMatchers#produce">produce</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
@@ -260,18 +243,18 @@ given file system and delete them after running the specification.</p><p>The moc
     </span>
       <p class="shortcomment cmt">Functions for converting an XSLT stylesheet into a <span class="extype" name="Source">Source</span>.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="applying(input:scala.xml.Elem,query:net.sf.saxon.s9api.XdmNode=&gt;net.sf.saxon.s9api.XdmNode):com.github.eerohele.expek.TemplateApplication"></a>
-      <a id="applying(Elem,(XdmNode)⇒XdmNode):TemplateApplication"></a>
+      <a id="applying(query:String)(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication"></a>
+      <a id="applying(String)(Elem):TemplateApplication"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">applying</span><span class="params">(<span name="input">input: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>, <span name="query">query: (<span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span>) ⇒ <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
+        <span class="name">applying</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span name="input">input: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(input:scala.xml.Elem,query:net.sf.saxon.s9api.XdmNode=&gt;net.sf.saxon.s9api.XdmNode):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(query:String)(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -396,7 +379,24 @@ given file system and delete them after running the specification.</p><p>The moc
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Call a named XSLT template and supply a context node for the transformation.</p>
+      <p class="shortcomment cmt">Call a named XSLT template and supply a context node (as <span class="extype" name="Elem">Elem</span>) for the transformation.</p>
+    </li><li name="com.github.eerohele.expek.XsltSpecification#callingTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="callingTemplate(name:String,contextNode:net.sf.saxon.s9api.XdmNode):com.github.eerohele.expek.TemplateCall"></a>
+      <a id="callingTemplate(String,XdmNode):TemplateCall"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">callingTemplate</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="contextNode">contextNode: <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateCall">TemplateCall</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@callingTemplate(name:String,contextNode:net.sf.saxon.s9api.XdmNode):com.github.eerohele.expek.TemplateCall" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Call a named XSLT template and supply a context node (as <span class="extype" name="XdmNode">XdmNode</span>) for the transformation.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#callingTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="callingTemplate(name:String):com.github.eerohele.expek.TemplateCall"></a>
       <a id="callingTemplate(String):TemplateCall"></a>
@@ -581,19 +581,36 @@ system, use the specs2
 argument.</p><p>Note, however, that if you enable isolation, the stylesheet will currently also be compiled per-test rather than
 per-specification, because the file system needs to be instantiated before the stylesheet is compiled.
 </p></div></div>
-    </li><li name="com.github.eerohele.expek.XsltSpecification#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="filter[T&lt;:org.w3c.dom.Node](f:T=&gt;Boolean):org.xmlunit.util.Predicate[T]"></a>
-      <a id="filter[T&lt;:Node]((T)⇒Boolean):Predicate[T]"></a>
+    </li><li name="com.github.eerohele.expek.XsltSpecification#filterAttr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="filterAttr(f:org.w3c.dom.Attr=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher"></a>
+      <a id="filterAttr((Attr)⇒Boolean):(Source)⇒CompareMatcher"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">filter</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.w3c.dom.Node">Node</span></span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.github.eerohele.expek.XsltSpecification.filter.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.xmlunit.util.Predicate">Predicate</span>[<span class="extype" name="com.github.eerohele.expek.XsltSpecification.filter.T">T</span>]</span>
+        <span class="name">filterAttr</span><span class="params">(<span name="f">f: (<span class="extype" name="org.w3c.dom.Attr">Attr</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: (<span class="extype" name="javax.xml.transform.Source">Source</span>) ⇒ <span class="extype" name="org.xmlunit.matchers.CompareMatcher">CompareMatcher</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@filter[T&lt;:org.w3c.dom.Node](f:T=&gt;Boolean):org.xmlunit.util.Predicate[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@filterAttr(f:org.w3c.dom.Attr=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.github.eerohele.expek.XsltSpecification#filterNode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filterNode(f:org.w3c.dom.Node=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher"></a>
+      <a id="filterNode((Node)⇒Boolean):(Source)⇒CompareMatcher"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filterNode</span><span class="params">(<span name="f">f: (<span class="extype" name="org.w3c.dom.Node">Node</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: (<span class="extype" name="javax.xml.transform.Source">Source</span>) ⇒ <span class="extype" name="org.xmlunit.matchers.CompareMatcher">CompareMatcher</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@filterNode(f:org.w3c.dom.Node=&gt;Boolean):javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
