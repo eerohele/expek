@@ -51,3 +51,5 @@ lazy val examples = project
 ghpages.settings
 
 git.remoteRepo := "git@github.com:eerohele/expek.git"
+
+isSnapshot := true
