@@ -11,13 +11,13 @@ import net.sf.saxon.Configuration
 import net.sf.saxon.s9api._
 import org.apache.xml.resolver.tools.ResolvingXMLReader
 import org.specs2.mutable.BeforeAfter
-import org.w3c.dom.{Attr, Node}
+import org.w3c.dom.{Attr, Node => DomNode}
 import org.xmlunit.matchers.CompareMatcher
 import org.xmlunit.matchers.CompareMatcher.isSimilarTo
 import org.xmlunit.util.Predicate
 
 import scala.collection.JavaConversions.{asScalaIterator, mapAsJavaMap}
-import scala.xml.{Elem, ProcInstr}
+import scala.xml.{Elem, Node, ProcInstr, XML}
 
 private[expek] sealed abstract class Parametrized(transformer: Xslt30Transformer) {
     def withParameters(tunnel: Boolean, parameters: (String, Any)*): this.type = {
@@ -58,19 +58,24 @@ private[expek] sealed class FunctionCall(transformer: Xslt30Transformer, name: Q
 
 trait XsltSpecification extends XsltResultMatchers {
     import utils.Tap
+    import NodeConversions._
 
     /** The stylesheet you want to test. */
     val stylesheet: Source
 
     /** Functions for converting an XSLT stylesheet into a [[Source]]. */
     object XSLT {
-        import NodeConversions.nodeToString
-
         /** Read a stylesheet from a file. */
         def file(xslt: String): Source = new StreamSource(new File(xslt))
 
         /** Read a stylesheet from an [[Elem]]. */
         def elem(elem: Elem): Source = new StreamSource(new StringReader(elem))
+
+        /** Transform an [[Elem]] with the given stylesheet. */
+        def transform[T <: XdmValue](stylesheet: Source, elem: Elem): T = {
+            val t: Xslt30Transformer = Saxon.processor.newXsltCompiler.compile(stylesheet).load30
+            t.applyTemplates(elem).asInstanceOf[T]
+        }
     }
 
     /** The default matcher for comparing two XML element or document nodes. */
@@ -184,7 +189,7 @@ trait XsltSpecification extends XsltResultMatchers {
             selector.effectiveBooleanValue
         }
 
-        def matches(query: String, contextItem: Node): Boolean = {
+        def matches(query: String, contextItem: DomNode): Boolean = {
             matches(query, Saxon.builder.wrap(contextItem))
         }
     }
@@ -238,12 +243,12 @@ trait XsltSpecification extends XsltResultMatchers {
       *
       * Equivalent to `<xsl:apply-templates/>`.
       */
-    def applying(input: Elem): TemplateApplication = {
+    def applying(input: Node): TemplateApplication = {
         val node: XdmNode = documentNode(input)
         application(transformer, node)(node)
     }
 
-    def applying(query: String)(input: Elem): TemplateApplication = {
+    def applying(query: String)(input: Node): TemplateApplication = {
         val node: XdmNode = documentNode(input)
         application(transformer, node)(XPath.select(query)(node))
     }
@@ -266,8 +271,8 @@ trait XsltSpecification extends XsltResultMatchers {
         new TemplateCall(transformer tap (_.setInitialContextItem(contextNode)), new QName(name))
     }
 
-    /** Call a named XSLT template and supply a context node (as [[Elem]]) for the transformation. */
-    def callingTemplate(name: String, contextNode: Elem): TemplateCall = callingTemplate(name, element(contextNode))
+    /** Call a named XSLT template and supply a context node (as [[Node]]) for the transformation. */
+    def callingTemplate(name: String, contextNode: Node): TemplateCall = callingTemplate(name, element(contextNode))
 
     private lazy val factory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance
     private lazy val document = factory.newDocumentBuilder.newDocument
@@ -281,8 +286,8 @@ trait XsltSpecification extends XsltResultMatchers {
     }
 
     /** Convert an [[Elem]] into an [[XdmNode]] `document-node()` node. */
-    def documentNode(elem: Elem): XdmNode = {
-        Saxon.builder.build(TransientFileSystem.source(fileSystem, elem))
+    def documentNode(node: Node): XdmNode = {
+        Saxon.builder.build(TransientFileSystem.source(fileSystem, node))
     }
 
     /** Convert an [[Elem]] into an [[XdmNode]] `element()` node.
@@ -290,8 +295,8 @@ trait XsltSpecification extends XsltResultMatchers {
       * By default, any [[Elem]] instance you create and give as a parameter is a document node. If your template or
       * function expects an element, use this function.
       */
-    def element(elem: Elem): XdmNode = {
-        documentNode(elem).axisIterator(Axis.CHILD).toList.reverse.head.asInstanceOf[XdmNode]
+    def element(node: Node): XdmNode = {
+        documentNode(node).axisIterator(Axis.CHILD).toList.reverse.head.asInstanceOf[XdmNode]
     }
 
     /** Convert a [[ProcInstr]] into an [[XdmNode]] `processing-instruction()` node. */
@@ -317,9 +322,9 @@ trait XsltSpecification extends XsltResultMatchers {
       * applying(<a><b/></a>) must produce(<c/>)(filterNode(!XPath.matches("c/d", _))
       * }}}
       */
-    def filterNode(f: Node => Boolean): Source => CompareMatcher = {
-        defaultMatcher(_).withNodeFilter(new Predicate[Node] {
-            def test(x: Node): Boolean = f(x)
+    def filterNode(f: DomNode => Boolean): Source => CompareMatcher = {
+        defaultMatcher(_).withNodeFilter(new Predicate[DomNode] {
+            def test(x: DomNode): Boolean = f(x)
         })
     }
 
