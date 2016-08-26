@@ -73,7 +73,7 @@ trait XsltSpecification extends XsltResultMatchers {
 
         /** Transform an [[Elem]] with the given stylesheet. */
         def transform[T <: XdmValue](stylesheet: Source, elem: Elem): T = {
-            val t: Xslt30Transformer = Saxon.processor.newXsltCompiler.compile(stylesheet).load30
+            val t: Xslt30Transformer = Saxon.compiler.compile(stylesheet).load30
             t.applyTemplates(elem).asInstanceOf[T]
         }
     }
@@ -207,7 +207,7 @@ trait XsltSpecification extends XsltResultMatchers {
           */
         val builder: DocumentBuilder = processor.newDocumentBuilder
 
-        private val compiler: XsltCompiler = processor.newXsltCompiler
+        val compiler: XsltCompiler = processor.newXsltCompiler
 
         /** The compiled XSLT stylesheet.
           *
