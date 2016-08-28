@@ -6,9 +6,8 @@ import javax.xml.transform.Source
 import net.sf.saxon.s9api.{XdmNode, XdmNodeKind, XdmValue}
 import org.hamcrest.StringDescription
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
-import org.w3c.dom.{Attr, Node => DomNode}
+import org.xmlunit.builder.Input
 import org.xmlunit.matchers.CompareMatcher
-import org.xmlunit.util.Predicate
 
 import scala.xml.Node
 
@@ -130,6 +129,12 @@ trait XsltResultMatchers {
     def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
         new XsltResultMatcher(any.toVector.map(convert))(matcher)
     }
+
+    def beValidAgainst(schema: Input.Builder): SchemaValidationMatcher[Transformation] = {
+        new SchemaValidationMatcher(schema)
+    }
+
+    def beValid(implicit schema: Input.Builder): SchemaValidationMatcher[Transformation] = beValidAgainst(schema)
 
     // scalastyle:on method.name
 

@@ -4,6 +4,7 @@ package examples
 import java.net.URI
 
 import org.specs2._
+import org.xmlunit.builder.Input
 
 // scalastyle:off multiple.string.literals magic.number
 
@@ -150,4 +151,15 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         applying(<paragraph>foo</paragraph>).withMode("result-document")
             .result must beEmpty and (TransientFileSystem.hasFile(fileSystem, "foo.xml") must beTrue)
     }.pendingUntilFixed("<https://saxonica.plan.io/issues/2771>")
+
+    "Validating the result of the transformation against a schema" >> {
+        implicit val schema = Input.fromString(
+            <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <xs:element name="foo" type="xs:string"/>
+                <xs:element name="bar" type="xs:string"/>
+            </xs:schema>.toString
+        )
+
+        applying(<foo>x</foo>) must produce(<bar>x</bar>) and beValid
+    }
 }

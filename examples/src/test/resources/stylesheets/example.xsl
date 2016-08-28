@@ -129,6 +129,12 @@
     <xsl:attribute name="class" select="local-name()"/>
   </xsl:template>
 
+  <xsl:template match="foo">
+    <bar>
+      <xsl:apply-templates select="@* | node()"/>
+    </bar>
+  </xsl:template>
+
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
