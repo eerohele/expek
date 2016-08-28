@@ -18,13 +18,7 @@ trait Transformation {
             if (x.isAtomicValue) {
                 x.cast[XdmAtomicValue].map(_.getValue)
             } else {
-                x.cast[XdmNode].map { node =>
-                    if (node.getNodeKind == XdmNodeKind.ELEMENT || node.getNodeKind == XdmNodeKind.DOCUMENT) {
-                        node.asSource
-                    } else {
-                        node
-                    }
-                }
+                x.cast[XdmNode].map(identity)
             }
         }
     }

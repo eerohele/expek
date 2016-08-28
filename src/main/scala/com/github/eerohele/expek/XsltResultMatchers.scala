@@ -61,16 +61,16 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 
     private def intoResult[S <: T](expectable: Expectable[S])(expected: Any, actual: Any): MatchResult[S] = {
         (expected, actual) match {
-            /** If [[expected]] and [[actual]] are instances of [[Source]], they are either XML element or document
+            /** If [[expected]] is a [[Source]] and [[actual]] is an [[XdmNode]], they are either XML element or document
               * nodes. In that case, compare them with XMLUnit.
               */
-            case (e: Source, a: Source) => {
+            case (e: Source, a: XdmNode) => {
                 val compareMatcher = matcher(e)
 
                 result(
-                    compareMatcher.matches(a),
+                    compareMatcher.matches(a.asSource),
                     "ok",
-                    createKoMessage(compareMatcher, a).toString,
+                    createKoMessage(compareMatcher, a.asSource).toString,
                     expectable
                 )
             }

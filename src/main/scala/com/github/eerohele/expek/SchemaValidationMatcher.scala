@@ -24,9 +24,7 @@ sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
          * need to convert it to an XdmNode and why I need to give it to the ValidationMatcher as a String instead of
          * a Source. */
 
-        val matchResult: Vector[MatchResult[S]] = actual.map(_.cast[TinyElementImpl].map { a =>
-            val node: XdmNode = builder.wrap(NodeOverNodeInfo.wrap(a))
-
+        val matchResult: Vector[MatchResult[S]] = actual.map(_.cast[XdmNode].map { node =>
             result(
                 validationMatcher.matches(node.toString),
                 "ok",
