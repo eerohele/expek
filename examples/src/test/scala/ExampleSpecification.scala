@@ -64,9 +64,9 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * query that selects the node you want to apply the templates for.
       */
     "Apply a template that accesses an ancestor node" >> {
-        applying(query = "ancestor/descendant")(<ancestor copied="value"><descendant/></ancestor>) must produce(
-            <descendant copied="value"/>
-        )
+        applying(query = "ancestor/descendant") {
+            <ancestor copied="value"><descendant/></ancestor>
+        } must produce(<descendant copied="value"/>)
     }
 
     /** Call a function and check the result. */

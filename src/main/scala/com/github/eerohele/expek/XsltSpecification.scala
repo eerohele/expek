@@ -243,12 +243,12 @@ trait XsltSpecification extends XsltResultMatchers {
       *
       * Equivalent to `<xsl:apply-templates/>`.
       */
-    def applying(input: Node): TemplateApplication = {
+    def applying(input: => Node): TemplateApplication = {
         val node: XdmNode = documentNode(input)
         application(transformer, node)(node)
     }
 
-    def applying(query: String)(input: Node): TemplateApplication = {
+    def applying(query: String)(input: => Node): TemplateApplication = {
         val node: XdmNode = documentNode(input)
         application(transformer, node)(XPath.select(query)(node))
     }
