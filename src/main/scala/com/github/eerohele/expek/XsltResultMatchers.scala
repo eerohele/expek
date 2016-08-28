@@ -130,10 +130,12 @@ trait XsltResultMatchers {
         new XsltResultMatcher(any.toVector.map(convert))(matcher)
     }
 
+    /** Validate the transformation result against the given XML Schema. */
     def beValidAgainst(schema: Input.Builder): SchemaValidationMatcher[Transformation] = {
         new SchemaValidationMatcher(schema)
     }
 
+    /** Validate the transformation result against the XML Schema in the implicit scope. */
     def beValid(implicit schema: Input.Builder): SchemaValidationMatcher[Transformation] = beValidAgainst(schema)
 
     // scalastyle:on method.name
