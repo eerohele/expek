@@ -136,7 +136,7 @@ trait XsltResultMatchers {
     protected def convert(value: Any) = {
         value match {
             /** An xs:integer is a [[BigInteger]], so we'll convert any [[Int]] that the user expects into a
-              * [[BigInteger]] so tha they can be successfully compared without the user having to write
+              * [[BigInteger]] so that they can be successfully compared without the user having to write
               * `BigInteger.valueOf(n)` all over the place.
               */
             case x: Int      => BigInteger.valueOf(x)
