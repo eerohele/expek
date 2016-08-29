@@ -9,12 +9,12 @@ import scala.xml.factory.XMLLoader
 import scala.xml.parsing.NoBindingFactoryAdapter
 import scala.xml.{Elem, Node}
 
-/* Functions for converting an XML file into a [[Node]] with catalog resolving enabled.
- *
- * You must set the `xml.catalog.files` system property for this to work at all.
- *
- * Code 100% stolen from http://horstmann.com/unblog/2011-12-12/catalog.html.
- */
+/** Functions for converting an XML file into a [[Node]] with catalog resolving enabled.
+  *
+  * You must set the `xml.catalog.files` system property for this to work at all.
+  *
+  * Code 100% stolen from http://horstmann.com/unblog/2011-12-12/catalog.html.
+  */
 object ResolvingXMLLoader {
     private lazy val resolver = new CatalogResolver
 

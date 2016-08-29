@@ -1,6 +1,6 @@
 package com.github.eerohele.expek
 
-import net.sf.saxon.s9api.{XdmAtomicValue, XdmNode, XdmNodeKind, XdmValue}
+import net.sf.saxon.s9api.{XdmAtomicValue, XdmNode, XdmValue}
 import shapeless.syntax.typeable.typeableOps
 
 import scala.collection.JavaConversions.asScalaIterator

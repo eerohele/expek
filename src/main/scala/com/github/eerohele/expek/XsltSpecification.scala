@@ -17,7 +17,7 @@ import org.xmlunit.matchers.CompareMatcher.isSimilarTo
 import org.xmlunit.util.Predicate
 
 import scala.collection.JavaConversions.{asScalaIterator, mapAsJavaMap}
-import scala.xml.{Elem, Node, ProcInstr, XML}
+import scala.xml.{Elem, Node, ProcInstr}
 
 private[expek] sealed abstract class Parametrized(transformer: Xslt30Transformer) {
     def withParameters(tunnel: Boolean, parameters: (String, Any)*): this.type = {
@@ -57,8 +57,8 @@ private[expek] sealed class FunctionCall(transformer: Xslt30Transformer, name: Q
   */
 
 trait XsltSpecification extends XsltResultMatchers {
-    import utils.Tap
     import NodeConversions._
+    import utils.Tap
 
     /** The stylesheet you want to test. */
     val stylesheet: Source

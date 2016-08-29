@@ -2,19 +2,21 @@ package com.github.eerohele.expek
 
 import javax.xml.transform.Source
 
-import net.sf.saxon.dom.NodeOverNodeInfo
 import net.sf.saxon.s9api.{Processor, XdmNode}
-import net.sf.saxon.tree.tiny.TinyElementImpl
 import org.hamcrest.StringDescription
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
 import org.xmlunit.builder.Input
 import org.xmlunit.matchers.ValidationMatcher
 import shapeless.syntax.typeable.typeableOps
 
+/** A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.
+  *
+  * To validate an element against an XML Schema, that element must have a top-level definition in the schema.
+  */
 sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
     extends Matcher[T] with MatchResultCombinators {
 
-    lazy val builder = new Processor(false).newDocumentBuilder
+    private lazy val builder = new Processor(false).newDocumentBuilder
 
     def apply[S <: T](expectable: Expectable[S]): MatchResult[S] = {
         val actual = expectable.value.result
