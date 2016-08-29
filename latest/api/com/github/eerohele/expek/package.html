@@ -84,6 +84,24 @@
     </span>
       <p class="shortcomment cmt">A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.</p><div class="fullcomment"><div class="comment cmt"><p>A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.
 </p></div><dl class="paramcmts block"><dt class="param">uri</dt><dd class="cmt"><p>The <span class="extype" name="URI">URI</span> of the mock file.</p></dd><dt class="param">elem</dt><dd class="cmt"><p>The XML (<span class="extype" name="Elem">Elem</span>) content of the file.</p></dd></dl></div>
+    </li><li name="com.github.eerohele.expek.SchemaValidationMatcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SchemaValidationMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators"></a>
+      <a id="SchemaValidationMatcher[T&lt;:Transformation]:SchemaValidationMatcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SchemaValidationMatcher.html"><span class="name">SchemaValidationMatcher</span></a><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@SchemaValidationMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.</p><div class="fullcomment"><div class="comment cmt"><p>A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.</p><p>To validate an element against an XML Schema, that element must have a top-level definition in the schema.
+</p></div></div>
     </li><li name="com.github.eerohele.expek.Transformation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="TransformationextendsAnyRef"></a>
       <a id="Transformation:Transformation"></a>
@@ -256,6 +274,24 @@ stylesheet that you want to test.
       </a>
     </span>
       <p class="shortcomment cmt">Implicit conversions for <span class="extype" name="Node">Node</span>.</p>
+    </li><li name="com.github.eerohele.expek.ResolvingXMLLoader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResolvingXMLLoader"></a>
+      <a id="ResolvingXMLLoader:ResolvingXMLLoader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ResolvingXMLLoader$.html"><span class="name">ResolvingXMLLoader</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@ResolvingXMLLoader" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for converting an XML file into a <span class="extype" name="Node">Node</span> with catalog resolving enabled.</p><div class="fullcomment"><div class="comment cmt"><p>Functions for converting an XML file into a <span class="extype" name="Node">Node</span> with catalog resolving enabled.</p><p>You must set the <code>xml.catalog.files</code> system property for this to work at all.</p><p>Code 100% stolen from http://horstmann.com/unblog/2011-12-12/catalog.html.
+</p></div></div>
     </li><li name="com.github.eerohele.expek.TransientFileSystem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TransientFileSystem"></a>
       <a id="TransientFileSystem:TransientFileSystem"></a>

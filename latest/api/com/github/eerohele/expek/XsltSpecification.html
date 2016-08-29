@@ -243,35 +243,35 @@ given file system and delete them after running the specification.</p><p>The moc
     </span>
       <p class="shortcomment cmt">Functions for converting an XSLT stylesheet into a <span class="extype" name="Source">Source</span>.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="applying(query:String)(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication"></a>
-      <a id="applying(String)(Elem):TemplateApplication"></a>
+      <a id="applying(query:String)(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication"></a>
+      <a id="applying(String)(⇒Node):TemplateApplication"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">applying</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span name="input">input: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
+        <span class="name">applying</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span name="input">input: ⇒ <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(query:String)(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(query:String)(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="applying(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication"></a>
-      <a id="applying(Elem):TemplateApplication"></a>
+      <a id="applying(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication"></a>
+      <a id="applying(⇒Node):TemplateApplication"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">applying</span><span class="params">(<span name="input">input: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
+        <span class="name">applying</span><span class="params">(<span name="input">input: ⇒ <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateApplication">TemplateApplication</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(input:scala.xml.Elem):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@applying(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -329,6 +329,40 @@ given file system and delete them after running the specification.</p><p>The moc
     </span>
       <p class="shortcomment cmt">Create an <span class="extype" name="XdmNode">XdmNode</span> <code>attribute()</code> node.</p><div class="fullcomment"><div class="comment cmt"><p>Create an <span class="extype" name="XdmNode">XdmNode</span> <code>attribute()</code> node.</p><p>If your template or function expects an attribute, use this function.
 </p></div></div>
+    </li><li name="com.github.eerohele.expek.XsltResultMatchers#beValid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="beValid(implicitschema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]"></a>
+      <a id="beValid(Builder):SchemaValidationMatcher[Transformation]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">beValid</span><span class="params">(<span class="implicit">implicit </span><span name="schema">schema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span><span class="result">: <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@beValid(implicitschema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Validate the transformation result against the XML Schema in the implicit scope.</p><div class="fullcomment"><div class="comment cmt"><p>Validate the transformation result against the XML Schema in the implicit scope.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></dd></dl></div>
+    </li><li name="com.github.eerohele.expek.XsltResultMatchers#beValidAgainst" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="beValidAgainst(schema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]"></a>
+      <a id="beValidAgainst(Builder):SchemaValidationMatcher[Transformation]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">beValidAgainst</span><span class="params">(<span name="schema">schema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span><span class="result">: <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@beValidAgainst(schema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Validate the transformation result against the given XML Schema.</p><div class="fullcomment"><div class="comment cmt"><p>Validate the transformation result against the given XML Schema.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></dd></dl></div>
     </li><li name="com.github.eerohele.expek.XsltSpecification#callingFunction" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="callingFunction(lexical:String)(parameters:Any*)(implicitnamespace:String):com.github.eerohele.expek.FunctionCall"></a>
       <a id="callingFunction(String)(Any*)(String):FunctionCall"></a>
@@ -364,22 +398,22 @@ given file system and delete them after running the specification.</p><p>The moc
     </span>
       <p class="shortcomment cmt">Call an XSLT function with the given parameters.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#callingTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="callingTemplate(name:String,contextNode:scala.xml.Elem):com.github.eerohele.expek.TemplateCall"></a>
-      <a id="callingTemplate(String,Elem):TemplateCall"></a>
+      <a id="callingTemplate(name:String,contextNode:scala.xml.Node):com.github.eerohele.expek.TemplateCall"></a>
+      <a id="callingTemplate(String,Node):TemplateCall"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">callingTemplate</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="contextNode">contextNode: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateCall">TemplateCall</span></span>
+        <span class="name">callingTemplate</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="contextNode">contextNode: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.TemplateCall">TemplateCall</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@callingTemplate(name:String,contextNode:scala.xml.Elem):com.github.eerohele.expek.TemplateCall" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@callingTemplate(name:String,contextNode:scala.xml.Node):com.github.eerohele.expek.TemplateCall" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Call a named XSLT template and supply a context node (as <span class="extype" name="Elem">Elem</span>) for the transformation.</p>
+      <p class="shortcomment cmt">Call a named XSLT template and supply a context node (as <span class="extype" name="Node">Node</span>) for the transformation.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#callingTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="callingTemplate(name:String,contextNode:net.sf.saxon.s9api.XdmNode):com.github.eerohele.expek.TemplateCall"></a>
       <a id="callingTemplate(String,XdmNode):TemplateCall"></a>
@@ -490,35 +524,35 @@ to an in-memory <span class="extype" name="Jimfs">Jimfs</span> file system.</p><
     </span>
       <p class="shortcomment cmt">The default matcher for comparing two XML element or document nodes.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#documentNode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="documentNode(elem:scala.xml.Elem):net.sf.saxon.s9api.XdmNode"></a>
-      <a id="documentNode(Elem):XdmNode"></a>
+      <a id="documentNode(node:scala.xml.Node):net.sf.saxon.s9api.XdmNode"></a>
+      <a id="documentNode(Node):XdmNode"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">documentNode</span><span class="params">(<span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>
+        <span class="name">documentNode</span><span class="params">(<span name="node">node: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@documentNode(elem:scala.xml.Elem):net.sf.saxon.s9api.XdmNode" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@documentNode(node:scala.xml.Node):net.sf.saxon.s9api.XdmNode" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Convert an <span class="extype" name="Elem">Elem</span> into an <span class="extype" name="XdmNode">XdmNode</span> <code>document-node()</code> node.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification#element" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="element(elem:scala.xml.Elem):net.sf.saxon.s9api.XdmNode"></a>
-      <a id="element(Elem):XdmNode"></a>
+      <a id="element(node:scala.xml.Node):net.sf.saxon.s9api.XdmNode"></a>
+      <a id="element(Node):XdmNode"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">element</span><span class="params">(<span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>
+        <span class="name">element</span><span class="params">(<span name="node">node: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@element(elem:scala.xml.Elem):net.sf.saxon.s9api.XdmNode" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@element(node:scala.xml.Node):net.sf.saxon.s9api.XdmNode" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

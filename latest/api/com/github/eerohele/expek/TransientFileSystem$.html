@@ -328,23 +328,23 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.github.eerohele.expek.TransientFileSystem#makeTransientPath" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="makeTransientPath(fs:java.nio.file.FileSystem,elem:scala.xml.Elem):String"></a>
-      <a id="makeTransientPath(FileSystem,Elem):String"></a>
+      <a id="makeTransientPath(fs:java.nio.file.FileSystem,node:scala.xml.Node):String"></a>
+      <a id="makeTransientPath(FileSystem,Node):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">makeTransientPath</span><span class="params">(<span name="fs">fs: <span class="extype" name="java.nio.file.FileSystem">FileSystem</span></span>, <span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">makeTransientPath</span><span class="params">(<span name="fs">fs: <span class="extype" name="java.nio.file.FileSystem">FileSystem</span></span>, <span name="node">node: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.TransientFileSystem$@makeTransientPath(fs:java.nio.file.FileSystem,elem:scala.xml.Elem):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.TransientFileSystem$@makeTransientPath(fs:java.nio.file.FileSystem,node:scala.xml.Node):String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Generate a transient path for an <span class="extype" name="Elem">Elem</span> on the given file system.</p><div class="fullcomment"><div class="comment cmt"><p>Generate a transient path for an <span class="extype" name="Elem">Elem</span> on the given file system.</p><p>The path consists of these components:</p><p>- The root of the transient file system
-- The hashcode of the <span class="extype" name="Elem">Elem</span>
+      <p class="shortcomment cmt">Generate a transient path for an <span class="extype" name="Node">Node</span> on the given file system.</p><div class="fullcomment"><div class="comment cmt"><p>Generate a transient path for an <span class="extype" name="Node">Node</span> on the given file system.</p><p>The path consists of these components:</p><p>- The root of the transient file system
+- The hashcode of the <span class="extype" name="Node">Node</span>
 - The .xml extension.
 </p></div></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -450,22 +450,22 @@
     </span>
       <p class="shortcomment cmt">Turn a <span class="extype" name="URI">URI</span> that points to a file in this file system into a <span class="extype" name="Source">Source</span>.</p>
     </li><li name="com.github.eerohele.expek.TransientFileSystem#source" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="source(fs:java.nio.file.FileSystem,elem:scala.xml.Elem):javax.xml.transform.Source"></a>
-      <a id="source(FileSystem,Elem):Source"></a>
+      <a id="source(fs:java.nio.file.FileSystem,node:scala.xml.Node):javax.xml.transform.Source"></a>
+      <a id="source(FileSystem,Node):Source"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">source</span><span class="params">(<span name="fs">fs: <span class="extype" name="java.nio.file.FileSystem">FileSystem</span></span>, <span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="javax.xml.transform.Source">Source</span></span>
+        <span class="name">source</span><span class="params">(<span name="fs">fs: <span class="extype" name="java.nio.file.FileSystem">FileSystem</span></span>, <span name="node">node: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>)</span><span class="result">: <span class="extype" name="javax.xml.transform.Source">Source</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.TransientFileSystem$@source(fs:java.nio.file.FileSystem,elem:scala.xml.Elem):javax.xml.transform.Source" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.TransientFileSystem$@source(fs:java.nio.file.FileSystem,node:scala.xml.Node):javax.xml.transform.Source" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Turn <span class="extype" name="Elem">Elem</span> into a <span class="extype" name="Source">Source</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Turn <span class="extype" name="Elem">Elem</span> into a <span class="extype" name="Source">Source</span>. Set the base URI to a URI on the transient file system.</p></div></div>
+      <p class="shortcomment cmt">Turn <span class="extype" name="Node">Node</span> into a <span class="extype" name="Source">Source</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Turn <span class="extype" name="Node">Node</span> into a <span class="extype" name="Source">Source</span>. Set the base URI to a URI on the transient file system.</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>

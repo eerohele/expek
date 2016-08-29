@@ -1,0 +1,1495 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>SchemaValidationMatcher - com.github.eerohele.expek.SchemaValidationMatcher</title>
+          <meta name="description" content="SchemaValidationMatcher - com.github.eerohele.expek.SchemaValidationMatcher" />
+          <meta name="keywords" content="SchemaValidationMatcher com.github.eerohele.expek.SchemaValidationMatcher" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.github.eerohele.expek.SchemaValidationMatcher';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.github">github</a>.<a href="../package.html" class="extype" name="com.github.eerohele">eerohele</a>.<a href="package.html" class="extype" name="com.github.eerohele.expek">expek</a></p>
+        <h1>SchemaValidationMatcher</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.github.eerohele.expek">package expek</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SchemaValidationMatcher</span><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.</p><p>To validate an element against an XML Schema, that element must have a top-level definition in the schema.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span>, <span class="extype" name="org.specs2.execute.ResultLogicalCombinators">ResultLogicalCombinators</span>, <span class="extype" name="org.specs2.execute.Results">Results</span>, <span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators">MatchResultLogicalCombinators</span>, <span class="extype" name="org.specs2.matcher.Expectations">Expectations</span>, <span class="extype" name="org.specs2.matcher.ExpectationsDescription">ExpectationsDescription</span>, <span class="extype" name="org.specs2.matcher.TypedEqual">TypedEqual</span>, <span class="extype" name="org.specs2.matcher.ExpectationsCreation">ExpectationsCreation</span>, <span class="extype" name="org.specs2.matcher.MatchResultStackTrace">MatchResultStackTrace</span>, <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>], <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.github.eerohele.expek.SchemaValidationMatcher"><span>SchemaValidationMatcher</span></li><li class="in" name="org.specs2.matcher.MatchResultCombinators"><span>MatchResultCombinators</span></li><li class="in" name="org.specs2.execute.ResultLogicalCombinators"><span>ResultLogicalCombinators</span></li><li class="in" name="org.specs2.execute.Results"><span>Results</span></li><li class="in" name="org.specs2.matcher.MatchResultLogicalCombinators"><span>MatchResultLogicalCombinators</span></li><li class="in" name="org.specs2.matcher.Expectations"><span>Expectations</span></li><li class="in" name="org.specs2.matcher.ExpectationsDescription"><span>ExpectationsDescription</span></li><li class="in" name="org.specs2.matcher.TypedEqual"><span>TypedEqual</span></li><li class="in" name="org.specs2.matcher.ExpectationsCreation"><span>ExpectationsCreation</span></li><li class="in" name="org.specs2.matcher.MatchResultStackTrace"><span>MatchResultStackTrace</span></li><li class="in" name="org.specs2.matcher.Matcher"><span>Matcher</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.github.eerohele.expek.SchemaValidationMatcher#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(schema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[T]"></a>
+      <a id="&lt;init&gt;:SchemaValidationMatcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SchemaValidationMatcher</span><span class="params">(<span name="schema">schema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@&lt;init&gt;(schema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.specs2.matcher.ExpectationsDescription.Descriptible" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Descriptible[T]extendsAnyRef"></a>
+      <a id="Descriptible[T]:Descriptible[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Descriptible</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@Descriptible[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsDescription</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsDescription.ExpectationDescription" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ExpectationDescriptionextendsAnyRef"></a>
+      <a id="ExpectationDescription:ExpectationDescription"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ExpectationDescription</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@ExpectationDescriptionextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsDescription</dd></dl></div>
+    </li><li name="org.specs2.matcher.MatchResultLogicalCombinators.MatchResultCombinator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MatchResultCombinator[T]extendsAnyRef"></a>
+      <a id="MatchResultCombinator[T]:MatchResultCombinator[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MatchResultCombinator</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@MatchResultCombinator[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MatchResultLogicalCombinators</dd></dl></div>
+    </li><li name="org.specs2.execute.ResultLogicalCombinators.ResultLogicalCombinator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResultLogicalCombinatorextendsAnyRef"></a>
+      <a id="ResultLogicalCombinator:ResultLogicalCombinator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ResultLogicalCombinator</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@ResultLogicalCombinatorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ResultLogicalCombinators</dd></dl></div>
+    </li><li name="org.specs2.matcher.TypedEqual.TypedEqualExpectation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TypedEqualExpectation[T]extendsAnyRef"></a>
+      <a id="TypedEqualExpectation[T]:(TypedEqual.this)#TypedEqualExpectation[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TypedEqualExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@TypedEqualExpectation[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TypedEqual</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#^^" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="^^[S](f:S=&gt;org.specs2.matcher.Expectable[T],dummy:Int):org.specs2.matcher.Matcher[S]"></a>
+      <a id="^^[S]((S)⇒Expectable[T],Int):Matcher[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>, <span name="dummy">dummy: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@^^[S](f:S=&gt;org.specs2.matcher.Expectable[T],dummy:Int):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#^^" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="^^[S](f:S=&gt;T):org.specs2.matcher.Matcher[S]"></a>
+      <a id="^^[S]((S)⇒T):Matcher[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@^^[S](f:S=&gt;T):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#and" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="and[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]"></a>
+      <a id="and[S&lt;:T](⇒Matcher[S]):Matcher[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">and</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@and[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="com.github.eerohele.expek.SchemaValidationMatcher#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply[S&lt;:T](expectable:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="apply[S&lt;:T](Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="expectable">expectable: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.apply.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.apply.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@apply[S&lt;:T](expectable:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a> → Matcher</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.specs2.execute.Results#booleanToSimpleResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="booleanToSimpleResult(b:Boolean):org.specs2.execute.Result"></a>
+      <a id="booleanToSimpleResult(Boolean):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">booleanToSimpleResult</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@booleanToSimpleResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#checkFailure" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]"></a>
+      <a id="checkFailure[T](MatchResult[T]):MatchResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkFailure</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkFailure.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkFailure.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@checkFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#checkMatchResultFailure" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkMatchResultFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]"></a>
+      <a id="checkMatchResultFailure[T](MatchResult[T]):MatchResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkMatchResultFailure</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkMatchResultFailure.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkMatchResultFailure.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@checkMatchResultFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#checkResultFailure" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkResultFailure(r:=&gt;org.specs2.execute.Result):org.specs2.execute.Result"></a>
+      <a id="checkResultFailure(⇒Result):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkResultFailure</span><span class="params">(<span name="r">r: ⇒ <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@checkResultFailure(r:=&gt;org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.specs2.execute.ResultLogicalCombinators#combineBoolean" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combineBoolean(b:=&gt;Boolean):ResultLogicalCombinators.this.ResultLogicalCombinator"></a>
+      <a id="combineBoolean(⇒Boolean):ResultLogicalCombinator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combineBoolean</span><span class="params">(<span name="b">b: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@combineBoolean(b:=&gt;Boolean):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ResultLogicalCombinators</dd></dl></div>
+    </li><li name="org.specs2.matcher.MatchResultLogicalCombinators#combineMatchResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combineMatchResult[T](m:=&gt;org.specs2.matcher.MatchResult[T]):MatchResultLogicalCombinators.this.MatchResultCombinator[T]"></a>
+      <a id="combineMatchResult[T](⇒MatchResult[T]):MatchResultCombinator[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combineMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>)</span><span class="result">: <a href="#MatchResultCombinator[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.MatchResultCombinator">MatchResultCombinator</a>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@combineMatchResult[T](m:=&gt;org.specs2.matcher.MatchResult[T]):MatchResultLogicalCombinators.this.MatchResultCombinator[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MatchResultLogicalCombinators</dd></dl></div>
+    </li><li name="org.specs2.execute.ResultLogicalCombinators#combineResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combineResult(r:=&gt;org.specs2.execute.Result):ResultLogicalCombinators.this.ResultLogicalCombinator"></a>
+      <a id="combineResult(⇒Result):ResultLogicalCombinator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combineResult</span><span class="params">(<span name="r">r: ⇒ <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@combineResult(r:=&gt;org.specs2.execute.Result):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ResultLogicalCombinators</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#createExpectable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createExpectable[T](t:=&gt;T,alias:Option[String=&gt;String]):org.specs2.matcher.Expectable[T]"></a>
+      <a id="createExpectable[T](⇒T,Option[(String)⇒String]):Expectable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[(<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@createExpectable[T](t:=&gt;T,alias:Option[String=&gt;String]):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#createExpectable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createExpectable[T](t:=&gt;T,alias:String=&gt;String):org.specs2.matcher.Expectable[T]"></a>
+      <a id="createExpectable[T](⇒T,(String)⇒String):Expectable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@createExpectable[T](t:=&gt;T,alias:String=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#createExpectable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createExpectable[T](t:=&gt;T,alias:=&gt;String):org.specs2.matcher.Expectable[T]"></a>
+      <a id="createExpectable[T](⇒T,⇒String):Expectable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@createExpectable[T](t:=&gt;T,alias:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#createExpectable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createExpectable[T](t:=&gt;T):org.specs2.matcher.Expectable[T]"></a>
+      <a id="createExpectable[T](⇒T):Expectable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@createExpectable[T](t:=&gt;T):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#createExpectableWithShowAs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createExpectableWithShowAs[T](t:=&gt;T,showAs:=&gt;String):org.specs2.matcher.Expectable[T]"></a>
+      <a id="createExpectableWithShowAs[T](⇒T,⇒String):Expectable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createExpectableWithShowAs</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectableWithShowAs.T">T</span></span>, <span name="showAs">showAs: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectableWithShowAs.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@createExpectableWithShowAs[T](t:=&gt;T,showAs:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsDescription#describe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="describe[T](t:=&gt;T):ExpectationsDescription.this.Descriptible[T]"></a>
+      <a id="describe[T](⇒T):Descriptible[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">describe</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span></span>)</span><span class="result">: <a href="#Descriptible[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.Descriptible">Descriptible</a>[<span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@describe[T](t:=&gt;T):ExpectationsDescription.this.Descriptible[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsDescription</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsDescription#describeExpectation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="describeExpectation(description:String):ExpectationsDescription.this.ExpectationDescription"></a>
+      <a id="describeExpectation(String):ExpectationDescription"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">describeExpectation</span><span class="params">(<span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#ExpectationDescriptionextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.ExpectationDescription">ExpectationDescription</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@describeExpectation(description:String):ExpectationsDescription.this.ExpectationDescription" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsDescription</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#eventually" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eventually(retries:Int,sleep:scala.concurrent.duration.Duration):org.specs2.matcher.Matcher[T]"></a>
+      <a id="eventually(Int,Duration):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eventually</span><span class="params">(<span name="retries">retries: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="sleep">sleep: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.duration.Duration" class="extype" target="_top">Duration</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@eventually(retries:Int,sleep:scala.concurrent.duration.Duration):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#eventually" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eventually:org.specs2.matcher.Matcher[T]"></a>
+      <a id="eventually:Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eventually</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@eventually:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#failure" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="failure[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="failure[S&lt;:T](⇒String,Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">failure</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@failure[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#iff" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iff(b:Boolean):org.specs2.matcher.Matcher[T]"></a>
+      <a id="iff(Boolean):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iff</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@iff(b:Boolean):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#lazily" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lazily:org.specs2.matcher.Matcher[()=&gt;T]"></a>
+      <a id="lazily:Matcher[()⇒T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lazily</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[() ⇒ <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@lazily:org.specs2.matcher.Matcher[()=&gt;T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#mapMatchResult" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapMatchResult[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]"></a>
+      <a id="mapMatchResult[T](MatchResult[T]):MatchResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.mapMatchResult.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.mapMatchResult.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@mapMatchResult[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#mute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mute:org.specs2.matcher.Matcher[T]"></a>
+      <a id="mute:Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mute</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@mute:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.specs2.execute.Results#negate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="negate(r:org.specs2.execute.Result):org.specs2.execute.Result"></a>
+      <a id="negate(Result):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">negate</span><span class="params">(<span name="r">r: <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@negate(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
+    </li><li name="org.specs2.execute.Results#negateWhen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="negateWhen(condition:Boolean)(r:org.specs2.execute.Result):org.specs2.execute.Result"></a>
+      <a id="negateWhen(Boolean)(Result):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">negateWhen</span><span class="params">(<span name="condition">condition: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="params">(<span name="r">r: <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@negateWhen(condition:Boolean)(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#not" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not:org.specs2.matcher.Matcher[T]"></a>
+      <a id="not:Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@not:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#or" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="or[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]"></a>
+      <a id="or[S&lt;:T](⇒Matcher[S]):Matcher[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">or</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@or[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orPending" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orPending(message:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orPending((String)⇒String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orPending</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orPending(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orPending" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orPending(m:String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orPending(String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orPending</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orPending(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orPending" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orPending:org.specs2.matcher.Matcher[T]"></a>
+      <a id="orPending:Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orPending</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orPending:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orSkip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orSkip(message:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orSkip((String)⇒String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orSkip</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orSkip(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orSkip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orSkip(m:String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orSkip(String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orSkip</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orSkip(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#orSkip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orSkip:org.specs2.matcher.Matcher[T]"></a>
+      <a id="orSkip:Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orSkip</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@orSkip:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](other:org.specs2.matcher.MatchResultMessages.MatchResultMessage,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](org.specs2.matcher.MatchResultMessages.MatchResultMessage,Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResultMessages.MatchResultMessage">org.specs2.matcher.MatchResultMessages.MatchResultMessage</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResultMessages.MatchResultMessage,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](other:org.specs2.execute.Result,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](Result,Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.execute.Result">Result</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](other:org.specs2.execute.Result,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](other:org.specs2.matcher.MatchResult[_],value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](MatchResult[_],Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[_]</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResult[_],value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],details:org.specs2.execute.Details):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](⇒Boolean,⇒String,⇒String,Expectable[S],Details):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="details">details: <span class="extype" name="org.specs2.execute.Details">Details</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],details:org.specs2.execute.Details):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],expected:String,actual:String):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](⇒Boolean,⇒String,⇒String,Expectable[S],String,String):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="expected">expected: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="actual">actual: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],expected:String,actual:String):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](triplet:=&gt;(Boolean,String,String),value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](⇒(Boolean,String,String),Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="triplet">triplet: ⇒ (<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>, <span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>)</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](triplet:=&gt;(Boolean,String,String),value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#result" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="result[S&lt;:T](⇒Boolean,⇒String,⇒String,Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.ExpectationsCreation#sandboxMatchResult" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sandboxMatchResult[T](mr:=&gt;org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]"></a>
+      <a id="sandboxMatchResult[T](⇒MatchResult[T]):MatchResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sandboxMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="mr">mr: ⇒ <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.sandboxMatchResult.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.sandboxMatchResult.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@sandboxMatchResult[T](mr:=&gt;org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#setMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setMessage(message:String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="setMessage(String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setMessage</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@setMessage(message:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.MatchResultStackTrace#setStacktrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setStacktrace[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]"></a>
+      <a id="setStacktrace[T](MatchResult[T]):MatchResult[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setStacktrace</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultStackTrace.setStacktrace.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultStackTrace.setStacktrace.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@setStacktrace[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>MatchResultStackTrace</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#success" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="success[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="success[S&lt;:T](⇒String,Expectable[S]):MatchResult[S]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">success</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@success[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#test" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="test:T=&gt;Boolean"></a>
+      <a id="test:(T)⇒Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">test</span><span class="result">: (<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@test:T=&gt;Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.execute.Results#toResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toResult(b:Boolean):org.specs2.execute.Result"></a>
+      <a id="toResult(Boolean):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toResult</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@toResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.specs2.matcher.TypedEqual#typedEqualExpectation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="typedEqualExpectation[T](t:=&gt;T):TypedEqual.this.TypedEqualExpectation[T]"></a>
+      <a id="typedEqualExpectation[T](⇒T):TypedEqualExpectation[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">typedEqualExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span></span>)</span><span class="result">: <a href="#TypedEqualExpectation[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.SchemaValidationMatcher.TypedEqualExpectation">TypedEqualExpectation</a>[<span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@typedEqualExpectation[T](t:=&gt;T):TypedEqual.this.TypedEqualExpectation[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TypedEqual</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#unless" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unless(b:Boolean,m:String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="unless(Boolean,String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unless</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@unless(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#updateMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="updateMessage(f:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="updateMessage((String)⇒String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateMessage</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@updateMessage(f:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.specs2.matcher.Matcher#when" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="when(b:Boolean,m:String):org.specs2.matcher.Matcher[T]"></a>
+      <a id="when(Boolean,String):Matcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">when</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaValidationMatcher@when(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="org.specs2.matcher.MatchResultCombinators">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></h3>
+            </div><div class="parent" name="org.specs2.execute.ResultLogicalCombinators">
+              <h3>Inherited from <span class="extype" name="org.specs2.execute.ResultLogicalCombinators">ResultLogicalCombinators</span></h3>
+            </div><div class="parent" name="org.specs2.execute.Results">
+              <h3>Inherited from <span class="extype" name="org.specs2.execute.Results">Results</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.MatchResultLogicalCombinators">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators">MatchResultLogicalCombinators</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.Expectations">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.Expectations">Expectations</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.ExpectationsDescription">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.ExpectationsDescription">ExpectationsDescription</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.TypedEqual">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.TypedEqual">TypedEqual</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.ExpectationsCreation">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.ExpectationsCreation">ExpectationsCreation</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.MatchResultStackTrace">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.MatchResultStackTrace">MatchResultStackTrace</span></h3>
+            </div><div class="parent" name="org.specs2.matcher.Matcher">
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher.T">T</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
