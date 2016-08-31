@@ -28,6 +28,15 @@ private[expek] sealed abstract class Parametrized(transformer: Xslt30Transformer
         transformer.setInitialTemplateParameters(parameters, tunnel)
         this
     }
+
+    def withStylesheetParameters(parameters: (String, Any)*): this.type = {
+        withStylesheetParameters(Any2Xdm.asMap(parameters:_*))
+    }
+
+    def withStylesheetParameters(parameters: Map[QName, XdmValue]): this.type = {
+        transformer.setStylesheetParameters(parameters)
+        this
+    }
 }
 
 private[expek] sealed class TemplateApplication(transformer: Xslt30Transformer, input: XdmNode)
