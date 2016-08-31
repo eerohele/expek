@@ -75,7 +75,10 @@ trait XsltSpecification extends XsltResultMatchers {
     /** Functions for converting an XSLT stylesheet into a [[Source]]. */
     object XSLT {
         /** Read a stylesheet from a file. */
-        def file(xslt: String): Source = new StreamSource(new File(xslt))
+        def file(xslt: String): Source = file(new File(xslt))
+
+        /** Read a stylesheet from a file. */
+        def file(xslt: File): Source = new StreamSource(xslt)
 
         /** Read a stylesheet from an [[Elem]]. */
         def elem(elem: Elem): Source = new StreamSource(new StringReader(elem))
