@@ -38,6 +38,17 @@ sealed class SchemaAwareFactoryAdapter(schema: Schema) extends NoBindingFactoryA
     }
 }
 
+/** An XML loader that takes a [[Node]] and an XML Schema and returns the same node after validating it and loading any
+  * possible default attributes that the schema defines for the input node.
+  *
+  * Example:
+  *
+  * {{{
+  * SchemaAwareXMLLoader(<p> ... </p>, Input.fromFile("/path/to/dita/topic.xsd"))
+  * // The <p> element with the default DITA @class attribute value loaded from the given schema.
+  * => <p class="- topic/p "> ... </p>
+  * }}}
+  */
 object SchemaAwareXMLLoader {
     def apply(input: Node, schema: Input.Builder): Node = {
         val sf: SchemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)

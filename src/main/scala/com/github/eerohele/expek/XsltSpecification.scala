@@ -91,6 +91,16 @@ trait XsltSpecification extends XsltResultMatchers {
         }
     }
 
+    /** The XML Schema to use for validating the input XML and loading default attributes
+      *
+      * Example:
+      *
+      * {{{
+      * import org.xmlunit.builder.Input
+      *
+      * override val inputSchema = Some(Input.fromFile("schema.xsd"))
+      * }}}
+      */
     val inputSchema: Option[Input.Builder] = None
 
     /** The default matcher for comparing two XML element or document nodes. */
@@ -185,19 +195,31 @@ trait XsltSpecification extends XsltResultMatchers {
           *
           * {{{
           * "Apply a template that accesses an ancestor node" in {
-          *     applying(
+          *     applying {
           *         // The ancestor element is set as the context node for the transformation.
           *         <ancestor copied="value"><descendant/></ancestor>,
           *         // Use XPath to select the element that you want to apply the templates for.
           *         XPath.select("ancestor/descendant")
-          *     ) must produce (<descendant copied="value"/>)
+          *     } must produce (<descendant copied="value"/>)
           * }
           * }}}
           */
         def select(query: String)(contextItem: XdmItem): XdmNode = {
-            compiler.compile(query).load.tap((_.setContextItem(contextItem))).evaluate.asInstanceOf[XdmNode]
+            compiler.compile(query).load.tap(_.setContextItem(contextItem)).evaluate.asInstanceOf[XdmNode]
         }
 
+        /** Check whether an item matches an XPath expression.
+          *
+          * Use to filter nodes when comparing XML trees.
+          *
+          * Example:
+          *
+          * {{{
+          * "Ignore an attribute" >> {
+          *     applying(<x/>) must produce(<y/>)(filterAttr(!XPath.matches("@id", _)))
+          * }
+          * }}}
+          */
         def matches(query: String, contextItem: XdmItem): Boolean = {
             val selector = compiler.compilePattern(query).load
             selector.setContextItem(contextItem)
@@ -254,17 +276,28 @@ trait XsltSpecification extends XsltResultMatchers {
         new TemplateApplication(t tap (_.setInitialContextItem(node)), _)
     }
 
-    /** Apply the XSLT template for the given [[Elem]] in the stylesheet defined in this specification.
+    private def loadNode(node: Node): XdmNode = {
+        // If [[inputSchema] is defined, use that schema to load the default attributes for the given node.
+        val input: Node = inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(node)
+        documentNode(input)
+    }
+
+    /** Apply the XSLT template for the given [[Node]] in the stylesheet defined in this specification.
       *
       * Equivalent to `<xsl:apply-templates/>`.
       */
     def applying(input: => Node): TemplateApplication = {
-        val node: XdmNode = documentNode(input)
+        val node: XdmNode = loadNode(input)
         application(transformer, node)(node)
     }
 
+    /** Apply the XSLT template for the node selected by the given XPath query, using the input [[Node]] as the context
+      * node.
+      *
+      * Equivalent to `<xsl:apply-templates/>`.
+      */
     def applying(query: String)(input: => Node): TemplateApplication = {
-        val node: XdmNode = documentNode(input)
+        val node: XdmNode = loadNode(input)
         application(transformer, node)(XPath.select(query)(node))
     }
 
@@ -302,8 +335,7 @@ trait XsltSpecification extends XsltResultMatchers {
 
     /** Convert an [[Elem]] into an [[XdmNode]] `document-node()` node. */
     def documentNode(node: Node): XdmNode = {
-        val input: Node = inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(node)
-        Saxon.builder.build(TransientFileSystem.source(fileSystem, input))
+        Saxon.builder.build(TransientFileSystem.source(fileSystem, node))
     }
 
     /** Convert an [[Elem]] into an [[XdmNode]] `element()` node.
