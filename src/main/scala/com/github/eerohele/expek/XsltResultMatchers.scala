@@ -136,7 +136,7 @@ trait XsltResultMatchers {
     }
 
     /** Validate the transformation result against the XML Schema in the implicit scope. */
-    def beValid(implicit schema: Input.Builder): SchemaValidationMatcher[Transformation] = beValidAgainst(schema)
+    def beValid(implicit outputSchema: Input.Builder): SchemaValidationMatcher[Transformation] = beValidAgainst(outputSchema)
 
     // scalastyle:on method.name
 

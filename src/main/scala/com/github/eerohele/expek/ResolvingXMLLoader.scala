@@ -39,3 +39,5 @@ object ResolvingXMLLoader {
       */
     def load(file: File): Node = load(file.toURI.toURL)
 }
+
+

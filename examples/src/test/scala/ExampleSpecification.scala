@@ -153,7 +153,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     }.pendingUntilFixed("<https://saxonica.plan.io/issues/2771>")
 
     "Validating the result of the transformation against a schema" >> {
-        implicit val schema = Input.fromString(
+        implicit val outputSchema = Input.fromString(
             <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="foo" type="xs:string"/>
                 <xs:element name="bar" type="xs:string"/>

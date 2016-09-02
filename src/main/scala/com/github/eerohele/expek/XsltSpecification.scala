@@ -12,6 +12,7 @@ import net.sf.saxon.s9api._
 import org.apache.xml.resolver.tools.ResolvingXMLReader
 import org.specs2.mutable.BeforeAfter
 import org.w3c.dom.{Attr, Node => DomNode}
+import org.xmlunit.builder.Input
 import org.xmlunit.matchers.CompareMatcher
 import org.xmlunit.matchers.CompareMatcher.isSimilarTo
 import org.xmlunit.util.Predicate
@@ -89,6 +90,8 @@ trait XsltSpecification extends XsltResultMatchers {
             t.applyTemplates(elem).asInstanceOf[T]
         }
     }
+
+    val inputSchema: Option[Input.Builder] = None
 
     /** The default matcher for comparing two XML element or document nodes. */
     val defaultMatcher: Source => CompareMatcher = isSimilarTo(_).normalizeWhitespace
@@ -299,7 +302,8 @@ trait XsltSpecification extends XsltResultMatchers {
 
     /** Convert an [[Elem]] into an [[XdmNode]] `document-node()` node. */
     def documentNode(node: Node): XdmNode = {
-        Saxon.builder.build(TransientFileSystem.source(fileSystem, node))
+        val input: Node = inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(node)
+        Saxon.builder.build(TransientFileSystem.source(fileSystem, input))
     }
 
     /** Convert an [[Elem]] into an [[XdmNode]] `element()` node.
