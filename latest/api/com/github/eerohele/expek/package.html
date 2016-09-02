@@ -84,6 +84,23 @@
     </span>
       <p class="shortcomment cmt">A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.</p><div class="fullcomment"><div class="comment cmt"><p>A mock file that lives in a <span class="extype" name="Jimfs">Jimfs</span> file system.
 </p></div><dl class="paramcmts block"><dt class="param">uri</dt><dd class="cmt"><p>The <span class="extype" name="URI">URI</span> of the mock file.</p></dd><dt class="param">elem</dt><dd class="cmt"><p>The XML (<span class="extype" name="Elem">Elem</span>) content of the file.</p></dd></dl></div>
+    </li><li name="com.github.eerohele.expek.SchemaAwareFactoryAdapter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SchemaAwareFactoryAdapterextendsNoBindingFactoryAdapter"></a>
+      <a id="SchemaAwareFactoryAdapter:SchemaAwareFactoryAdapter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SchemaAwareFactoryAdapter.html"><span class="name">SchemaAwareFactoryAdapter</span></a><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.parsing.NoBindingFactoryAdapter" class="extype" target="_top">NoBindingFactoryAdapter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@SchemaAwareFactoryAdapterextendsNoBindingFactoryAdapter" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="com.github.eerohele.expek.SchemaValidationMatcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SchemaValidationMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators"></a>
       <a id="SchemaValidationMatcher[T&lt;:Transformation]:SchemaValidationMatcher[T]"></a>
@@ -292,6 +309,33 @@ stylesheet that you want to test.
     </span>
       <p class="shortcomment cmt">Functions for converting an XML file into a <span class="extype" name="Node">Node</span> with catalog resolving enabled.</p><div class="fullcomment"><div class="comment cmt"><p>Functions for converting an XML file into a <span class="extype" name="Node">Node</span> with catalog resolving enabled.</p><p>You must set the <code>xml.catalog.files</code> system property for this to work at all.</p><p>Code 100% stolen from http://horstmann.com/unblog/2011-12-12/catalog.html.
 </p></div></div>
+    </li><li name="com.github.eerohele.expek.SchemaAwareXMLLoader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SchemaAwareXMLLoader"></a>
+      <a id="SchemaAwareXMLLoader:SchemaAwareXMLLoader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SchemaAwareXMLLoader$.html"><span class="name">SchemaAwareXMLLoader</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@SchemaAwareXMLLoader" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
+possible default attributes that the schema defines for the input node.</p><div class="fullcomment"><div class="comment cmt"><p>An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
+possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(
+
+ ... , Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
+<span class="cmt">// The</span>
+
+ element <span class="kw">with</span> the default DITA @<span class="kw">class</span> attribute value loaded from the given schema.
+<span class="kw">=&gt;</span>
+
+ ...</pre></div></div>
     </li><li name="com.github.eerohele.expek.TransientFileSystem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TransientFileSystem"></a>
       <a id="TransientFileSystem:TransientFileSystem"></a>

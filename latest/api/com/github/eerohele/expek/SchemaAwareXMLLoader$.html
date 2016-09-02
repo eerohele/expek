@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>XSLT - com.github.eerohele.expek.XsltSpecification.XSLT</title>
-          <meta name="description" content="XSLT - com.github.eerohele.expek.XsltSpecification.XSLT" />
-          <meta name="keywords" content="XSLT com.github.eerohele.expek.XsltSpecification.XSLT" />
+          <title>SchemaAwareXMLLoader - com.github.eerohele.expek.SchemaAwareXMLLoader</title>
+          <meta name="description" content="SchemaAwareXMLLoader - com.github.eerohele.expek.SchemaAwareXMLLoader" />
+          <meta name="keywords" content="SchemaAwareXMLLoader com.github.eerohele.expek.SchemaAwareXMLLoader" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.github.eerohele.expek.XsltSpecification$XSLT$';
+            var hash = 'com.github.eerohele.expek.SchemaAwareXMLLoader$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,11 +29,11 @@
         <body class="value">
       <div id="definition">
         <img alt="Object" src="../../../../lib/object_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.github">github</a>.<a href="../package.html" class="extype" name="com.github.eerohele">eerohele</a>.<a href="package.html" class="extype" name="com.github.eerohele.expek">expek</a>.<a href="XsltSpecification.html" class="extype" name="com.github.eerohele.expek.XsltSpecification">XsltSpecification</a></p>
-        <h1>XSLT</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="XsltSpecification.html" class="extype" name="com.github.eerohele.expek.XsltSpecification">package XsltSpecification</a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.github">github</a>.<a href="../package.html" class="extype" name="com.github.eerohele">eerohele</a>.<a href="package.html" class="extype" name="com.github.eerohele.expek">expek</a></p>
+        <h1>SchemaAwareXMLLoader</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.github.eerohele.expek">package expek</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -45,11 +45,20 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">XSLT</span>
+        <span class="name">SchemaAwareXMLLoader</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Functions for converting an XSLT stylesheet into a <span class="extype" name="Source">Source</span>.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
+possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(
+
+ ... , Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
+<span class="cmt">// The</span>
+
+ element <span class="kw">with</span> the default DITA @<span class="kw">class</span> attribute value loaded from the given schema.
+<span class="kw">=&gt;</span>
+
+ ...</pre></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
@@ -69,7 +78,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.github.eerohele.expek.XsltSpecification.XSLT"><span>XSLT</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.github.eerohele.expek.SchemaAwareXMLLoader"><span>SchemaAwareXMLLoader</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -106,7 +115,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -123,7 +132,7 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -140,11 +149,28 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.github.eerohele.expek.SchemaAwareXMLLoader#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(input:scala.xml.Node,schema:org.xmlunit.builder.Input.Builder):scala.xml.Node"></a>
+      <a id="apply(Node,Builder):Node"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="input">input: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>, <span name="schema">schema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span><span class="result">: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Node" class="extype" target="_top">Node</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@apply(input:scala.xml.Node,schema:org.xmlunit.builder.Input.Builder):scala.xml.Node" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -157,7 +183,7 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -174,7 +200,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@clone():Object" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@clone():Object" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -185,23 +211,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.eerohele.expek.XsltSpecification.XSLT#elem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="elem(elem:scala.xml.Elem):javax.xml.transform.Source"></a>
-      <a id="elem(Elem):Source"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">elem</span><span class="params">(<span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="javax.xml.transform.Source">Source</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@elem(elem:scala.xml.Elem):javax.xml.transform.Source" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Read a stylesheet from an <span class="extype" name="Elem">Elem</span>.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -214,7 +223,7 @@
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -231,45 +240,11 @@
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.github.eerohele.expek.XsltSpecification.XSLT#file" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="file(xslt:java.io.File):javax.xml.transform.Source"></a>
-      <a id="file(File):Source"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">file</span><span class="params">(<span name="xslt">xslt: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <span class="extype" name="javax.xml.transform.Source">Source</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@file(xslt:java.io.File):javax.xml.transform.Source" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Read a stylesheet from a file.</p>
-    </li><li name="com.github.eerohele.expek.XsltSpecification.XSLT#file" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="file(xslt:String):javax.xml.transform.Source"></a>
-      <a id="file(String):Source"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">file</span><span class="params">(<span name="xslt">xslt: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="javax.xml.transform.Source">Source</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@file(xslt:String):javax.xml.transform.Source" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Read a stylesheet from a file.</p>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -282,7 +257,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -305,7 +280,7 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -322,7 +297,7 @@
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -339,7 +314,7 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -356,7 +331,7 @@
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -373,7 +348,7 @@
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@notify():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -390,7 +365,7 @@
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -407,7 +382,7 @@
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -424,28 +399,11 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.github.eerohele.expek.XsltSpecification.XSLT#transform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="transform[T&lt;:net.sf.saxon.s9api.XdmValue](stylesheet:javax.xml.transform.Source,elem:scala.xml.Elem):T"></a>
-      <a id="transform[T&lt;:XdmValue](Source,Elem):T"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">transform</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="net.sf.saxon.s9api.XdmValue">XdmValue</span></span>]</span><span class="params">(<span name="stylesheet">stylesheet: <span class="extype" name="javax.xml.transform.Source">Source</span></span>, <span name="elem">elem: <a href="http://scala-lang.org/files/archive/api/2.11.8/scala-xml_2.11-1.0.5/index.html#scala.xml.Elem" class="extype" target="_top">Elem</a></span>)</span><span class="result">: <span class="extype" name="com.github.eerohele.expek.XsltSpecification.XSLT.transform.T">T</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@transform[T&lt;:net.sf.saxon.s9api.XdmValue](stylesheet:javax.xml.transform.Source,elem:scala.xml.Elem):T" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Transform an <span class="extype" name="Elem">Elem</span> with the given stylesheet.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -458,7 +416,7 @@
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@wait():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -481,7 +439,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -504,7 +462,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification$XSLT$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.SchemaAwareXMLLoader$@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

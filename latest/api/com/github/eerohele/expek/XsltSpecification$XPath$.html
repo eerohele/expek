@@ -310,7 +310,7 @@
       </a>
     </span>
       
-    </li><li name="com.github.eerohele.expek.XsltSpecification.XPath#matches" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.github.eerohele.expek.XsltSpecification.XPath#matches" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="matches(query:String,contextItem:net.sf.saxon.s9api.XdmItem):Boolean"></a>
       <a id="matches(String,XdmItem):Boolean"></a>
       <h4 class="signature">
@@ -326,7 +326,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Check whether an item matches an XPath expression.</p><div class="fullcomment"><div class="comment cmt"><p>Check whether an item matches an XPath expression.</p><p>Use to filter nodes when comparing XML trees.</p><p>Example:</p><pre><span class="lit">"Ignore an attribute"</span> &gt;&gt; {
+    applying(&lt;x/&gt;) must produce(&lt;y/&gt;)(filterAttr(!XPath.matches(<span class="lit">"@id"</span>, _)))
+}</pre></div></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -396,12 +398,12 @@
     </span>
       <p class="shortcomment cmt">Evaluate the given XPath query on the given context item.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate the given XPath query on the given context item.</p><p>Note: this method isn't suitable for dealing with atomic values, since it's set to always return a node.</p><p>The primary use case is to test XSLT templates that access nodes outside the current node. This is subject
 to change.</p><p>Example:</p><pre><span class="lit">"Apply a template that accesses an ancestor node"</span> in {
-    applying(
+    applying {
         <span class="cmt">// The ancestor element is set as the context node for the transformation.</span>
         &lt;ancestor copied=<span class="lit">"value"</span>&gt;&lt;descendant/&gt;&lt;/ancestor&gt;,
         <span class="cmt">// Use XPath to select the element that you want to apply the templates for.</span>
         XPath.select(<span class="lit">"ancestor/descendant"</span>)
-    ) must produce (&lt;descendant copied=<span class="lit">"value"</span>/&gt;)
+    } must produce (&lt;descendant copied=<span class="lit">"value"</span>/&gt;)
 }</pre></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>

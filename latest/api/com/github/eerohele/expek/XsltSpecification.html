@@ -242,7 +242,7 @@ given file system and delete them after running the specification.</p><p>The moc
       </a>
     </span>
       <p class="shortcomment cmt">Functions for converting an XSLT stylesheet into a <span class="extype" name="Source">Source</span>.</p>
-    </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="applying(query:String)(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication"></a>
       <a id="applying(String)(⇒Node):TemplateApplication"></a>
       <h4 class="signature">
@@ -258,7 +258,10 @@ given file system and delete them after running the specification.</p><p>The moc
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Apply the XSLT template for the node selected by the given XPath query, using the input <span class="extype" name="Node">Node</span> as the context
+node.</p><div class="fullcomment"><div class="comment cmt"><p>Apply the XSLT template for the node selected by the given XPath query, using the input <span class="extype" name="Node">Node</span> as the context
+node.</p><p>Equivalent to <code>&lt;xsl:apply-templates/&gt;</code>.
+</p></div></div>
     </li><li name="com.github.eerohele.expek.XsltSpecification#applying" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="applying(input:=&gt;scala.xml.Node):com.github.eerohele.expek.TemplateApplication"></a>
       <a id="applying(⇒Node):TemplateApplication"></a>
@@ -275,7 +278,7 @@ given file system and delete them after running the specification.</p><p>The moc
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Apply the XSLT template for the given <span class="extype" name="Elem">Elem</span> in the stylesheet defined in this specification.</p><div class="fullcomment"><div class="comment cmt"><p>Apply the XSLT template for the given <span class="extype" name="Elem">Elem</span> in the stylesheet defined in this specification.</p><p>Equivalent to <code>&lt;xsl:apply-templates/&gt;</code>.
+      <p class="shortcomment cmt">Apply the XSLT template for the given <span class="extype" name="Node">Node</span> in the stylesheet defined in this specification.</p><div class="fullcomment"><div class="comment cmt"><p>Apply the XSLT template for the given <span class="extype" name="Node">Node</span> in the stylesheet defined in this specification.</p><p>Equivalent to <code>&lt;xsl:apply-templates/&gt;</code>.
 </p></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
@@ -330,7 +333,7 @@ given file system and delete them after running the specification.</p><p>The moc
       <p class="shortcomment cmt">Create an <span class="extype" name="XdmNode">XdmNode</span> <code>attribute()</code> node.</p><div class="fullcomment"><div class="comment cmt"><p>Create an <span class="extype" name="XdmNode">XdmNode</span> <code>attribute()</code> node.</p><p>If your template or function expects an attribute, use this function.
 </p></div></div>
     </li><li name="com.github.eerohele.expek.XsltResultMatchers#beValid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="beValid(implicitschema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]"></a>
+      <a id="beValid(implicitoutputSchema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]"></a>
       <a id="beValid(Builder):SchemaValidationMatcher[Transformation]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -338,10 +341,10 @@ given file system and delete them after running the specification.</p><p>The moc
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">beValid</span><span class="params">(<span class="implicit">implicit </span><span name="schema">schema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span><span class="result">: <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
+        <span class="name">beValid</span><span class="params">(<span class="implicit">implicit </span><span name="outputSchema">outputSchema: <span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span></span>)</span><span class="result">: <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@beValid(implicitschema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@beValid(implicitoutputSchema:org.xmlunit.builder.Input.Builder):com.github.eerohele.expek.SchemaValidationMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -708,6 +711,25 @@ applying(&lt;a&gt;&lt;b/&gt;&lt;/a&gt;) must produce(&lt;c/&gt;)(filterNod
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.github.eerohele.expek.XsltSpecification#inputSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputSchema:Option[org.xmlunit.builder.Input.Builder]"></a>
+      <a id="inputSchema:Option[Builder]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inputSchema</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.xmlunit.builder.Input.Builder">Builder</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@inputSchema:Option[org.xmlunit.builder.Input.Builder]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The XML Schema to use for validating the input XML and loading default attributes</p><div class="fullcomment"><div class="comment cmt"><p>The XML Schema to use for validating the input XML and loading default attributes</p><p>Example:</p><pre><span class="kw">import</span> org.xmlunit.builder.Input
+
+<span class="kw">override</span> <span class="kw">val</span> inputSchema = <span class="std">Some</span>(Input.fromFile(<span class="lit">"schema.xsd"</span>))</pre></div></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
