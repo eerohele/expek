@@ -44,9 +44,9 @@ sealed class SchemaAwareFactoryAdapter(schema: Schema) extends NoBindingFactoryA
   * Example:
   *
   * {{{
-  * SchemaAwareXMLLoader(<p> ... </p>, Input.fromFile("/path/to/dita/topic.xsd"))
-  * // The <p> element with the default DITA @class attribute value loaded from the given schema.
-  * => <p class="- topic/p "> ... </p>
+  * SchemaAwareXMLLoader(<ph> ... </ph>, Input.fromFile("/path/to/dita/topic.xsd"))
+  * // The <ph> element with the default DITA @class attribute value loaded from the given schema.
+  * => <ph class="- topic/ph "> ... </ph>
   * }}}
   */
 object SchemaAwareXMLLoader {
