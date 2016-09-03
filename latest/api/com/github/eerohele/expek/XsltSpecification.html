@@ -886,12 +886,29 @@ res2: <span class="std">Map</span>[QName, XdmItem] = <span class="std">Map</span
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></dd></dl></div>
+    </li><li name="com.github.eerohele.expek.XsltResultMatchers#produce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="produce(result:=&gt;Vector[Any])(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]"></a>
+      <a id="produce(⇒Vector[Any])((Source)⇒CompareMatcher):XsltResultMatcher[Transformation]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">produce</span><span class="params">(<span name="result">result: ⇒ <span class="extype" name="scala.Vector">Vector</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="matcher">matcher: (<span class="extype" name="javax.xml.transform.Source">Source</span>) ⇒ <span class="extype" name="org.xmlunit.matchers.CompareMatcher">CompareMatcher</span></span>)</span><span class="result">: <a href="XsltResultMatcher.html" class="extype" name="com.github.eerohele.expek.XsltResultMatcher">XsltResultMatcher</a>[<a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.XsltSpecification@produce(result:=&gt;Vector[Any])(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[com.github.eerohele.expek.Transformation]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Create a matcher that compares the supplied arguments against the result of an XML transformation.</p><div class="fullcomment"><div class="comment cmt"><p>Create a matcher that compares the supplied arguments against the result of an XML transformation.</p><p>Example use:</p><pre><span class="kw">class</span> MySpecification <span class="kw">extends</span> mutable.Specification <span class="kw">with</span> XsltSpecification {
     <span class="kw">val</span> stylesheet = XSLT.file(<span class="lit">"my-stylesheet.xsl"</span>)
 
     <span class="lit">"Convert a into b"</span> in {
         <span class="cmt">// Apply the templates for the <a> element in the XSLT stylesheet and check the result.</span>
-        applying(&lt;a&gt;foo&lt;/a&gt;) must produce(&lt;b&gt;foo&lt;/b&gt;)
+        applying { &lt;a&gt;foo&lt;/a&gt; } must produce { &lt;b&gt;foo&lt;/b&gt; }
     }
 }</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">

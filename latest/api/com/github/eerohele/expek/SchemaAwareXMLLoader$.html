@@ -50,15 +50,9 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
-possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(
-
- ... , Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
-<span class="cmt">// The</span>
-
- element <span class="kw">with</span> the default DITA @<span class="kw">class</span> attribute value loaded from the given schema.
-<span class="kw">=&gt;</span>
-
- ...</pre></div><div class="toggleContainer block">
+possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(&lt;ph&gt; ... &lt;/ph&gt;, Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
+<span class="cmt">// The <ph> element with the default DITA @class attribute value loaded from the given schema.</span>
+<span class="kw">=&gt;</span> &lt;ph <span class="kw">class</span>=<span class="lit">"- topic/ph "</span>&gt; ... &lt;/ph&gt;</pre></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>

@@ -327,15 +327,9 @@ stylesheet that you want to test.
     </span>
       <p class="shortcomment cmt">An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
 possible default attributes that the schema defines for the input node.</p><div class="fullcomment"><div class="comment cmt"><p>An XML loader that takes a <span class="extype" name="Node">Node</span> and an XML Schema and returns the same node after validating it and loading any
-possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(
-
- ... , Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
-<span class="cmt">// The</span>
-
- element <span class="kw">with</span> the default DITA @<span class="kw">class</span> attribute value loaded from the given schema.
-<span class="kw">=&gt;</span>
-
- ...</pre></div></div>
+possible default attributes that the schema defines for the input node.</p><p>Example:</p><pre>SchemaAwareXMLLoader(&lt;ph&gt; ... &lt;/ph&gt;, Input.fromFile(<span class="lit">"/path/to/dita/topic.xsd"</span>))
+<span class="cmt">// The <ph> element with the default DITA @class attribute value loaded from the given schema.</span>
+<span class="kw">=&gt;</span> &lt;ph <span class="kw">class</span>=<span class="lit">"- topic/ph "</span>&gt; ... &lt;/ph&gt;</pre></div></div>
     </li><li name="com.github.eerohele.expek.TransientFileSystem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TransientFileSystem"></a>
       <a id="TransientFileSystem:TransientFileSystem"></a>
