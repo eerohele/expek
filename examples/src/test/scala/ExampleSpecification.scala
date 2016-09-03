@@ -31,7 +31,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * output is a <p> element with the same content.
       */
     "Simple transformation" >> {
-        applying(<paragraph>foo</paragraph>) must produce(<p>foo</p>)
+        applying(<paragraph>foo</paragraph>) must produce { <p>foo</p> }
     }
 
     /* Apply a template with the given mode and parameters and check the result.

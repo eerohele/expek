@@ -121,13 +121,17 @@ trait XsltResultMatchers {
       *
       *     "Convert a into b" in {
       *         // Apply the templates for the <a> element in the XSLT stylesheet and check the result.
-      *         applying(<a>foo</a>) must produce(<b>foo</b>)
+      *         applying { <a>foo</a> } must produce { <b>foo</b> }
       *     }
       * }
       * }}}
       */
+    def produce(result: => Vector[Any])(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
+        new XsltResultMatcher(result.map(convert))(matcher)
+    }
+
     def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
-        new XsltResultMatcher(any.toVector.map(convert))(matcher)
+        produce(any.toVector)
     }
 
     /** Validate the transformation result against the given XML Schema. */
@@ -136,7 +140,9 @@ trait XsltResultMatchers {
     }
 
     /** Validate the transformation result against the XML Schema in the implicit scope. */
-    def beValid(implicit outputSchema: Input.Builder): SchemaValidationMatcher[Transformation] = beValidAgainst(outputSchema)
+    def beValid(implicit outputSchema: Input.Builder): SchemaValidationMatcher[Transformation] = {
+        beValidAgainst(outputSchema)
+    }
 
     // scalastyle:on method.name
 
