@@ -16,8 +16,6 @@ import shapeless.syntax.typeable.typeableOps
 sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
     extends Matcher[T] with MatchResultCombinators {
 
-    private lazy val builder = new Processor(false).newDocumentBuilder
-
     def apply[S <: T](expectable: Expectable[S]): MatchResult[S] = {
         val actual = expectable.value.result
         val validationMatcher = new ValidationMatcher(schema)
