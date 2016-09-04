@@ -68,7 +68,7 @@ private[expek] sealed class FunctionCall(transformer: Xslt30Transformer, name: Q
   * stylesheet that you want to test.
   */
 
-trait XsltSpecification extends XsltResultMatchers {
+trait XsltSpecification extends XsltResultMatchers with SchemaValidationMatchers {
     import NodeConversions._
     import utils.Tap
 

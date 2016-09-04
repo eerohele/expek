@@ -42,3 +42,16 @@ sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
         description
     }
 }
+
+trait SchemaValidationMatchers {
+    /** Validate the transformation result against the given XML Schema. */
+    def beValidAgainst(schema: Input.Builder): SchemaValidationMatcher[Transformation] = {
+        new SchemaValidationMatcher(schema)
+    }
+
+    /** Validate the transformation result against the XML Schema in the implicit scope. */
+    def beValid(implicit outputSchema: Input.Builder): SchemaValidationMatcher[Transformation] = {
+        beValidAgainst(outputSchema)
+    }
+}
+
