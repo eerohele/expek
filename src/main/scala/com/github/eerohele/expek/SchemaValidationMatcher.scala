@@ -2,7 +2,7 @@ package com.github.eerohele.expek
 
 import javax.xml.transform.Source
 
-import net.sf.saxon.s9api.{Processor, XdmNode}
+import net.sf.saxon.s9api.XdmNode
 import org.hamcrest.StringDescription
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
 import org.xmlunit.builder.Input
