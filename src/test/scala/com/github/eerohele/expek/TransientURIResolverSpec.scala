@@ -3,13 +3,13 @@ package com.github.eerohele.expek
 import java.net.URI
 import java.nio.file.Files
 
-import com.google.common.jimfs.Jimfs
+import com.google.common.jimfs.{Configuration, Jimfs}
 import org.specs2.mutable.Specification
 
 class TransientURIResolverSpec extends Specification {
     isolated
 
-    lazy val fs = Jimfs.newFileSystem
+    lazy val fs = Jimfs.newFileSystem(Configuration.unix)
     lazy val resolver = new TransientURIResolver(fs)
 
     "Resolving a URI with the resolver" should {

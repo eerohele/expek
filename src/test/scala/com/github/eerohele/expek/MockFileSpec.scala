@@ -2,13 +2,13 @@ package com.github.eerohele.expek
 
 import java.nio.file.FileSystem
 
-import com.google.common.jimfs.Jimfs
+import com.google.common.jimfs.{Configuration, Jimfs}
 import org.specs2.mutable.Specification
 
 class MockFileSpec extends Specification {
     isolated
 
-    lazy val fs: FileSystem = Jimfs.newFileSystem
+    lazy val fs: FileSystem = Jimfs.newFileSystem(Configuration.unix)
 
     "Instantiating a MockFile" should {
         "not create the mock file" in {
