@@ -1,6 +1,6 @@
 package com.github.eerohele.expek
 
-import org.specs2._
+import org.specs2.mutable
 import org.specs2.matcher.ResultMatchers
 import org.xmlunit.builder.Input
 
@@ -25,14 +25,14 @@ class SchemaValidationMatcherSpec extends mutable.Specification with ResultMatch
     )
 
     "Must succeed is XML is valid according to implicit schema" >> {
-        (applying { <foo/> } must beValid) must beSuccessful
+        applying { <foo/> } must beValid must beSuccessful
     }
 
     "Must fail is XML is invalid according to implicit schema" >> {
-        (applying { <bar/> } must beValid) must beFailing
+        applying { <bar/> } must beValid must beFailing
     }
 
     "Must work with explicitly supplied schema" >> {
-        (applying { <foo/> } must beValidAgainst(outputSchema)) must beSuccessful
+        applying { <foo/> } must beValidAgainst(outputSchema) must beSuccessful
     }
 }
