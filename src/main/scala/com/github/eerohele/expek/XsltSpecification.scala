@@ -10,6 +10,7 @@ import com.google.common.jimfs.{Jimfs, Configuration => JimfsConfiguration}
 import net.sf.saxon.Configuration
 import net.sf.saxon.s9api._
 import org.apache.xml.resolver.tools.ResolvingXMLReader
+import org.specs2.execute.{Failure, FailureException}
 import org.specs2.mutable.BeforeAfter
 import org.w3c.dom.{Attr, Node => DomNode}
 import org.xmlunit.builder.Input
@@ -18,6 +19,7 @@ import org.xmlunit.matchers.CompareMatcher.isSimilarTo
 import org.xmlunit.util.Predicate
 
 import scala.collection.JavaConversions.{asScalaIterator, mapAsJavaMap}
+import scala.util.{Failure => TryFailure, Success => TrySuccess}
 import scala.xml.{Elem, Node, ProcInstr}
 
 private[expek] sealed abstract class Parametrized(transformer: Xslt30Transformer) {
@@ -278,8 +280,10 @@ trait XsltSpecification extends XsltResultMatchers {
 
     private def loadNode(node: Node): XdmNode = {
         // If [[inputSchema] is defined, use that schema to load the default attributes for the given node.
-        val input: Node = inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(node)
-        documentNode(input)
+        inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(TrySuccess(node)) match {
+            case TrySuccess(n) => documentNode(n)
+            case TryFailure(ex) => throw FailureException(Failure(ex.getMessage))
+        }
     }
 
     /** Apply the XSLT template for the given [[Node]] in the stylesheet defined in this specification.
