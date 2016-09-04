@@ -11,7 +11,7 @@ welcomed.
 
 ## Example
 
-See [`ExampleSpecification.scala`][example-spec] and
+See the [example specifications][example-spec] and
 [`example.xsl`][example-stylesheet].
 
 ## Documentation
@@ -77,7 +77,7 @@ Run `gradle test`.
 - Run tests with [specs2][specs2].
 
 [api]: https://eerohele.github.io/expek/latest/api
-[example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala/ExampleSpecification.scala
+[example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala
 [example-stylesheet]: http://github.com/eerohele/expek/tree/master/examples/src/test/resources/stylesheets/example.xsl
 [saxon]: http://www.saxonica.com
 [specs2]: http://www.specs2.org
