@@ -11,7 +11,7 @@ import org.xmlunit.builder.Input
 /** Use any [[https://etorreborre.github.io/specs2/guide/SPECS2-3.8.3/org.specs2.guide.Structure.html#styles
   * specification style that specs2 supports]].
   */
-class ExampleSpecification extends mutable.Specification with XsltSpecification {
+class ExampleSpecification extends mutable.Specification with XsltSpecification with SchemaValidationMatchers {
     /** The stylesheet you're testing. */
     val stylesheet = XSLT.file(System.getProperty("specs2.stylesheet.test"))
 

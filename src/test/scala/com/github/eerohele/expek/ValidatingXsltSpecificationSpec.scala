@@ -4,7 +4,7 @@ import org.specs2.mutable
 import org.specs2.matcher.ResultMatchers
 import org.xmlunit.builder.Input
 
-class SchemaValidationMatcherSpec extends mutable.Specification with ResultMatchers with XsltSpecification with SchemaValidationMatchers {
+class ValidatingXsltSpecificationSpec extends mutable.Specification with ResultMatchers with ValidatingXsltSpecification {
     val identityTemplate =
         <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -25,14 +25,10 @@ class SchemaValidationMatcherSpec extends mutable.Specification with ResultMatch
     )
 
     "Must succeed is XML is valid according to implicit schema" >> {
-        applying { <foo/> } must beValid must beSuccessful
+        applying { <foo/> } must produce { <foo/> } must beSuccessful
     }
 
     "Must fail is XML is invalid according to implicit schema" >> {
-        applying { <bar/> } must beValid must beFailing
-    }
-
-    "Must work with explicitly supplied schema" >> {
-        applying { <foo/> } must beValidAgainst(outputSchema) must beSuccessful
+        applying { <bar/> } must produce { <bar/> } must beFailing
     }
 }

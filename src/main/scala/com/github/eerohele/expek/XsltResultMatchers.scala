@@ -126,11 +126,11 @@ trait XsltResultMatchers {
       * }
       * }}}
       */
-    def produce(result: => Vector[Any])(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
+    def produce(result: => Vector[Any])(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
         new XsltResultMatcher(result.map(convert))(matcher)
     }
 
-    def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
+    def produce(any: Any*)(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
         produce(any.toVector)
     }
 

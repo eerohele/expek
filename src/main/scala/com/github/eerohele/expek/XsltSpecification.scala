@@ -11,6 +11,7 @@ import net.sf.saxon.Configuration
 import net.sf.saxon.s9api._
 import org.apache.xml.resolver.tools.ResolvingXMLReader
 import org.specs2.execute.{Failure, FailureException}
+import org.specs2.matcher.Matcher
 import org.specs2.mutable.BeforeAfter
 import org.w3c.dom.{Attr, Node => DomNode}
 import org.xmlunit.builder.Input
@@ -67,8 +68,7 @@ private[expek] sealed class FunctionCall(transformer: Xslt30Transformer, name: Q
   * Classes that mix in this trait must define [[stylesheet]], which is a [[File]] instance that points to the
   * stylesheet that you want to test.
   */
-
-trait XsltSpecification extends XsltResultMatchers with SchemaValidationMatchers {
+trait XsltSpecification extends XsltResultMatchers {
     import NodeConversions._
     import utils.Tap
 
@@ -395,5 +395,15 @@ trait XsltSpecification extends XsltResultMatchers with SchemaValidationMatchers
         defaultMatcher(_).withAttributeFilter(new Predicate[Attr] {
             def test(x: Attr): Boolean = f(x)
         })
+    }
+}
+
+/* An [[XsltSpecification]] that validates the result against [[outputSchema]] without aving to explicitly add
+ * `beValid` to every test. */
+trait ValidatingXsltSpecification extends XsltSpecification with SchemaValidationMatchers {
+    implicit val outputSchema: Input.Builder
+
+    override def produce(result: => Vector[Any])(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
+        beValid and new XsltResultMatcher(result.map(convert))(matcher)
     }
 }
