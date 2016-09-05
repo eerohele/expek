@@ -135,6 +135,20 @@
     </bar>
   </xsl:template>
 
+  <xsl:template match="foo" mode="baz">
+    <baz>
+      <xsl:apply-templates select="@* | node()"/>
+    </baz>
+  </xsl:template>
+
+  <xsl:template match="quux">
+    <xsl:param name="quux"/>
+
+    <bar quux="{$quux}">
+      <xsl:apply-templates select="@* | node()"/>
+    </bar>
+  </xsl:template>
+
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
