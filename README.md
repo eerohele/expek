@@ -1,4 +1,4 @@
-Expek
+Expek [![Build Status](https://travis-ci.org/eerohele/expek.svg?branch=develop)](https://travis-ci.org/eerohele/expek)
 =====
 
 Write unit tests for XSLT in Scala. Why not?
