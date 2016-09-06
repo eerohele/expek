@@ -14,7 +14,11 @@ lazy val settings = Seq(
       "xml-resolver" % "xml-resolver" % "1.2",
       "com.google.jimfs" % "jimfs" % "1.1",
       "com.chuusai" %% "shapeless" % "2.3.1"
-    )
+    ),
+
+    testOptions in Test += Tests.Setup(() => {
+      System.setProperty("specs2.stylesheet.test", "examples/src/test/resources/stylesheets/example.xsl")
+    })
 )
 
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
@@ -44,9 +48,6 @@ enablePlugins(SiteScaladocPlugin)
 lazy val examples = project
     .dependsOn(root % "compile->test")
     .settings(settings: _*)
-    .settings(testOptions in Test += Tests.Setup(() => {
-        System.setProperty("specs2.stylesheet.test", "examples/src/test/resources/stylesheets/example.xsl")
-      }))
 
 ghpages.settings
 
