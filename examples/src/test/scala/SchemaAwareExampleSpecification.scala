@@ -4,7 +4,7 @@ package examples
 import org.specs2.mutable
 import org.xmlunit.builder.Input
 
-class SchemaAwareExampleSpecification extends mutable.Specification with XsltSpecification {
+class SchemaAwareExampleSpecification extends mutable.Specification with XsltSpecification with SchemaValidationMatchers {
     val stylesheet = XSLT.elem(
         <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
