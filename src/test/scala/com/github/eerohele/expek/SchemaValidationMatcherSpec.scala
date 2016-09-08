@@ -1,7 +1,7 @@
 package com.github.eerohele.expek
 
-import org.specs2.mutable
 import org.specs2.matcher.ResultMatchers
+import org.specs2.mutable
 import org.xmlunit.builder.Input
 
 class SchemaValidationMatcherSpec extends mutable.Specification with ResultMatchers with XsltSpecification with SchemaValidationMatchers {

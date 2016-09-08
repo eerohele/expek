@@ -2,7 +2,6 @@ package com.github.eerohele.expek
 
 import net.sf.saxon.s9api.XdmNode
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
-
 import shapeless.syntax.typeable.typeableOps
 
 /** A specs2 matcher that validates the result of an XSLT transformation against an XPath expression.

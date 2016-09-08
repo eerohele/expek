@@ -6,7 +6,6 @@ import javax.xml.transform.Source
 import net.sf.saxon.s9api.{XdmNode, XdmNodeKind, XdmValue}
 import org.hamcrest.StringDescription
 import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
-import org.xmlunit.builder.Input
 import org.xmlunit.matchers.CompareMatcher
 
 import scala.xml.Node
