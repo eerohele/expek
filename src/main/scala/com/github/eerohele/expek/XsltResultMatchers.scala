@@ -147,7 +147,7 @@ trait XsltResultMatchers {
             /** If the expected value is an instance of [[Node]], convert it to a [[Source]] so that we can compare it
               * with XMLUnit.
               */
-            case x: Node     => NodeConversions.nodeToSource(x)
+            case x: Node     => utils.NodeConversions.nodeToSource(x)
 
             /** If the expected value is an element() or a document-node(), convert it to a [[Source]] so that we can
               * compare it with XMLUnit.

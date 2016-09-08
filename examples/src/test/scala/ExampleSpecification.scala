@@ -162,4 +162,9 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
 
         applying(<foo>x</foo>) must produce(<bar>x</bar>) and beValid
     }
+
+    /** You can also test whether the result of the transformation matches an XPath expression. */
+    "Matching the result of the transformation against an XPath expression" >> {
+        applying { <foo>x</foo> } must beMatching("bar[. eq 'x']")
+    }
 }

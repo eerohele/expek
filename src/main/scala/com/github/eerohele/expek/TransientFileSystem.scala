@@ -12,7 +12,7 @@ import scala.xml.Node
 
 /** Functions for operating on files in a [[Jimfs]] file system. */
 object TransientFileSystem {
-    import NodeConversions.nodeToString
+    import utils.NodeConversions.nodeToString
 
     /** The [[Path]] of the root of this file system. */
     def getRoot(fs: FileSystem): Path = pathFromURI(fs, new URI(Jimfs.URI_SCHEME, "/", None.orNull))

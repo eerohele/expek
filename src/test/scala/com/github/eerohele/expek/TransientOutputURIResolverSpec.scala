@@ -14,7 +14,7 @@ class TransientOutputURIResolverSpec extends Specification {
             val fs = Jimfs.newFileSystem(Configuration.unix)
             val result = new TransientOutputURIResolver(fs).resolve("/foo.xml", "")
             val transformer = TransformerFactory.newInstance().newTransformer()
-            transformer.transform(NodeConversions.nodeToSource(<foo/>), result)
+            transformer.transform(utils.NodeConversions.nodeToSource(<foo/>), result)
             val str = new String(Files.readAllBytes(fs.getPath("/foo.xml")))
             XML.loadString(str) must be_==(<foo/>)
         }

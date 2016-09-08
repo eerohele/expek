@@ -138,4 +138,14 @@ class XsltSpecificationSpec  extends mutable.Specification with ResultMatchers w
             applying(<x/>) must produce(<y/>)(filterAttr(XPath.matches("@id", _))) must beFailing
         }
     }
+
+    "Matching against an XPath expression" should {
+        "succeed when the result node matches the XPath expression" in {
+            applying(<foo x="y">z</foo>) must beMatching("bar[@x eq 'y'][. eq 'z']") must beSuccessful
+        }
+
+        "fail when the result node does not match the XPath expression" in {
+            applying(<foo x="y">z</foo>) must beMatching("baz[x eq 'y'][. eq 'z']") must beFailing
+        }
+    }
 }

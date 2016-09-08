@@ -11,7 +11,7 @@ import scala.xml.Elem
   * @param elem The XML ([[Elem]]) content of the file.
   */
 case class MockFile(uri: URI, elem: Elem)(fs: FileSystem) {
-    import NodeConversions._
+    import utils.NodeConversions._
 
     val path: Path = TransientFileSystem.pathFromURI(fs, TransientFileSystem.resolveAgainstRoot(fs, uri))
 
