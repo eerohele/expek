@@ -38,9 +38,10 @@ In your `build.gradle`, add:
 
 ```groovy
 repositories {
+     jcenter()
+
      maven {
         url "https://oss.sonatype.org/content/repositories/releases"
-        url "http://dl.bintray.com/eerohele/maven"
      }
 }
 
