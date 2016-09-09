@@ -4,7 +4,7 @@ package examples
 import org.specs2.mutable
 import org.xmlunit.builder.Input
 
-class SchemaAwareExampleSpecification extends mutable.Specification with XsltSpecification with SchemaValidationMatchers {
+class SchemaAwareExampleSpecification extends mutable.Specification with ValidatingXsltSpecification with SchemaValidationMatchers {
     val stylesheet = XSLT.elem(
         <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -40,7 +40,7 @@ class SchemaAwareExampleSpecification extends mutable.Specification with XsltSpe
 
     implicit val outputSchema = inputSchema.get
 
-    "Validating and loading default attributes from input XML and validating output XML" >> {
-        applying { <foo/> } must beValid and produce { <bar grault="corge"/> }
+    "Validate and load default attributes from input XML and validate output XML" >> {
+        applying { <foo/> } must produce { <bar grault="corge"/> }
     }
 }

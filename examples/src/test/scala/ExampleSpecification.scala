@@ -152,7 +152,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
             .result must beEmpty and (TransientFileSystem.hasFile(fileSystem, "foo.xml") must beTrue)
     }.pendingUntilFixed("<https://saxonica.plan.io/issues/2771>")
 
-    "Validating the result of the transformation against a schema" >> {
+    "Validate the result of the transformation against a schema" >> {
         implicit val outputSchema = Input.fromString(
             <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="foo" type="xs:string"/>
@@ -164,7 +164,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     }
 
     /** You can also test whether the result of the transformation matches an XPath expression. */
-    "Matching the result of the transformation against an XPath expression" >> {
+    "Match the result of the transformation against an XPath expression" >> {
         applying { <foo>x</foo> } must beMatching("bar[. eq 'x']")
     }
 }
