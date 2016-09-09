@@ -60,16 +60,16 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 
     private def intoResult[S <: T](expectable: Expectable[S])(expected: Any, actual: Any): MatchResult[S] = {
         (expected, actual) match {
-            /** If [[expected]] and [[actual]] are instances of [[Source]], they are either XML element or document
+            /** If [[expected]] is a [[Source]] and [[actual]] is an [[XdmNode]], they are either XML element or document
               * nodes. In that case, compare them with XMLUnit.
               */
-            case (e: Source, a: Source) => {
+            case (e: Source, a: XdmNode) => {
                 val compareMatcher = matcher(e)
 
                 result(
-                    compareMatcher.matches(a),
+                    compareMatcher.matches(a.asSource),
                     "ok",
-                    createKoMessage(compareMatcher, a).toString,
+                    createKoMessage(compareMatcher, a.asSource).toString,
                     expectable
                 )
             }
@@ -120,20 +120,17 @@ trait XsltResultMatchers {
       *
       *     "Convert a into b" in {
       *         // Apply the templates for the <a> element in the XSLT stylesheet and check the result.
-      *         applying(<a>foo</a>) must produce(<b>foo</b>)
+      *         applying { <a>foo</a> } must produce { <b>foo</b> }
       *     }
       * }
       * }}}
       */
-    def produce(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
-        new XsltResultMatcher(any.toVector.map(convert))(matcher)
+    def produce(result: => Vector[Any])(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
+        new XsltResultMatcher(result.map(convert))(matcher)
     }
 
-    // scalastyle:off method.name
-
-    /** Alias of [[produce]]. */
-    def <->(any: Any*)(implicit matcher: Source => CompareMatcher): XsltResultMatcher[Transformation] = {
-        produce(any:_*)(matcher)
+    def produce(any: Any*)(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
+        produce(any.toVector)
     }
 
     // scalastyle:on method.name
@@ -141,7 +138,7 @@ trait XsltResultMatchers {
     protected def convert(value: Any) = {
         value match {
             /** An xs:integer is a [[BigInteger]], so we'll convert any [[Int]] that the user expects into a
-              * [[BigInteger]] so tha they can be successfully compared without the user having to write
+              * [[BigInteger]] so that they can be successfully compared without the user having to write
               * `BigInteger.valueOf(n)` all over the place.
               */
             case x: Int      => BigInteger.valueOf(x)
@@ -149,7 +146,7 @@ trait XsltResultMatchers {
             /** If the expected value is an instance of [[Node]], convert it to a [[Source]] so that we can compare it
               * with XMLUnit.
               */
-            case x: Node     => NodeConversions.nodeToSource(x)
+            case x: Node     => utils.NodeConversions.nodeToSource(x)
 
             /** If the expected value is an element() or a document-node(), convert it to a [[Source]] so that we can
               * compare it with XMLUnit.

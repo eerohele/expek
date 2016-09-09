@@ -1,4 +1,4 @@
-Expek
+Expek [![Build Status](https://travis-ci.org/eerohele/expek.svg?branch=develop)](https://travis-ci.org/eerohele/expek)
 =====
 
 Write unit tests for XSLT in Scala. Why not?
@@ -11,7 +11,7 @@ welcomed.
 
 ## Example
 
-See [`ExampleSpecification.scala`][example-spec] and
+See the [example specifications][example-spec] and
 [`example.xsl`][example-stylesheet].
 
 ## Documentation
@@ -27,14 +27,10 @@ You might also find the documentation for [specs2][specs2] helpful.
 In your `build.sbt`, add:
 
 ```scala
-lazy val root = (project in file(".")).settings(scalaVersion := "2.11.8")
-
-resolvers += Resolver.bintrayRepo("eerohele", "maven")
-
 libraryDependencies ++= Seq("com.github.eerohele" % "expek_2.11" % "0.1.0")
 ```
 
-Stick tests in `src/test/scala`, run `sbt test`.
+Stick tests under `src/test/scala`, run `sbt test`.
 
 ### Gradle
 
@@ -55,7 +51,7 @@ dependencies {
 }
 ```
 
-Stick tests in `src/test/scala`.
+Stick tests under `src/test/scala`.
 
 In your Expek specification Scala file, add the `@RunWith` annotation:
 
@@ -77,7 +73,7 @@ Run `gradle test`.
 - Run tests with [specs2][specs2].
 
 [api]: https://eerohele.github.io/expek/latest/api
-[example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala/ExampleSpecification.scala
+[example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala
 [example-stylesheet]: http://github.com/eerohele/expek/tree/master/examples/src/test/resources/stylesheets/example.xsl
 [saxon]: http://www.saxonica.com
 [specs2]: http://www.specs2.org

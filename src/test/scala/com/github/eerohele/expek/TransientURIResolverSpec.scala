@@ -2,15 +2,14 @@ package com.github.eerohele.expek
 
 import java.net.URI
 import java.nio.file.Files
-import javax.xml.transform.Source
 
-import com.google.common.jimfs.Jimfs
+import com.google.common.jimfs.{Configuration, Jimfs}
 import org.specs2.mutable.Specification
 
 class TransientURIResolverSpec extends Specification {
     isolated
 
-    lazy val fs = Jimfs.newFileSystem
+    lazy val fs = Jimfs.newFileSystem(Configuration.unix)
     lazy val resolver = new TransientURIResolver(fs)
 
     "Resolving a URI with the resolver" should {
@@ -22,7 +21,7 @@ class TransientURIResolverSpec extends Specification {
             uri.getScheme must be_==(Jimfs.URI_SCHEME) and(uri.getPath must be_==("/foo.xml"))
         }
 
-        "Should delegate to the superclass resolver if the URI uses any other scheme" in {
+        "Delegate to the superclass resolver if the URI uses any other scheme" in {
             val uri = new URI(resolver.resolve("/foo.xml", "").getSystemId)
             uri.getScheme must be_==("file") and(uri.getPath must be_==("/foo.xml"))
         }

@@ -8,11 +8,11 @@ import javax.xml.transform.stream.StreamSource
 
 import com.google.common.jimfs.Jimfs
 
-import scala.xml.Elem
+import scala.xml.Node
 
 /** Functions for operating on files in a [[Jimfs]] file system. */
 object TransientFileSystem {
-    import NodeConversions.nodeToString
+    import utils.NodeConversions.nodeToString
 
     /** The [[Path]] of the root of this file system. */
     def getRoot(fs: FileSystem): Path = pathFromURI(fs, new URI(Jimfs.URI_SCHEME, "/", None.orNull))
@@ -23,9 +23,9 @@ object TransientFileSystem {
     /** Given a [[URI]], get the [[Path]] of a file in the virtual file system. */
     def pathFromURI(fs: FileSystem, uri: URI): Path = fs.getPath(uri.getPath)
 
-    /** Turn [[Elem]] into a [[Source]]. Set the base URI to a URI on the transient file system. */
-    def source(fs: FileSystem, elem: Elem): Source = {
-        new StreamSource(new StringReader(elem), makeTransientPath(fs, elem))
+    /** Turn [[Node]] into a [[Source]]. Set the base URI to a URI on the transient file system. */
+    def source(fs: FileSystem, node: Node): Source = {
+        new StreamSource(new StringReader(node), makeTransientPath(fs, node))
     }
 
     /** Turn a [[URI]] that points to a file in this file system into a [[Source]]. */
@@ -34,16 +34,16 @@ object TransientFileSystem {
         new StreamSource(new StringReader(new String(bytes)), uri.toString)
     }
 
-   /** Generate a transient path for an [[Elem]] on the given file system.
+   /** Generate a transient path for an [[Node]] on the given file system.
     *
     * The path consists of these components:
     *
     * - The root of the transient file system
-    * - The hashcode of the [[Elem]]
+    * - The hashcode of the [[Node]]
     * - The .xml extension.
     */
-    def makeTransientPath(fs: FileSystem, elem: Elem): String = {
-        getRoot(fs).toUri.resolve(Math.abs(elem.hashCode).toString).toString + ".xml"
+    def makeTransientPath(fs: FileSystem, node: Node): String = {
+        getRoot(fs).toUri.resolve(Math.abs(node.hashCode).toString).toString + ".xml"
     }
 
     /** Check whether the given file system has the given file. */

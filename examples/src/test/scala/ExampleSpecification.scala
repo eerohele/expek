@@ -2,17 +2,16 @@ package com.github.eerohele.expek
 package examples
 
 import java.net.URI
-import javax.xml.transform.Source
 
 import org.specs2._
-import org.w3c.dom.Attr
+import org.xmlunit.builder.Input
 
 // scalastyle:off multiple.string.literals magic.number
 
 /** Use any [[https://etorreborre.github.io/specs2/guide/SPECS2-3.8.3/org.specs2.guide.Structure.html#styles
   * specification style that specs2 supports]].
   */
-class ExampleSpecification extends mutable.Specification with XsltSpecification {
+class ExampleSpecification extends mutable.Specification with XsltSpecification with SchemaValidationMatchers {
     /** The stylesheet you're testing. */
     val stylesheet = XSLT.file(System.getProperty("specs2.stylesheet.test"))
 
@@ -32,7 +31,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * output is a <p> element with the same content.
       */
     "Simple transformation" >> {
-        applying(<paragraph>foo</paragraph>) must produce(<p>foo</p>)
+        applying(<paragraph>foo</paragraph>) must produce { <p>foo</p> }
     }
 
     /* Apply a template with the given mode and parameters and check the result.
@@ -57,8 +56,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * You must define the `@as` attribute on your `<xsl:template>` element for this to work.
       */
     "Apply a template that returns an atomic value" >> {
-        // <-> is an alias for "produce".
-        applying(<anyElement/>).withMode("returns-atomic-value") must <->(6)
+        applying(<anyElement/>).withMode("returns-atomic-value") must produce(6)
     }
 
     /** If your template accesses a node that is an ancestor or a sibling of the current node, pass in the parent node
@@ -66,12 +64,9 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
       * query that selects the node you want to apply the templates for.
       */
     "Apply a template that accesses an ancestor node" >> {
-        applying(
-            <ancestor copied="value"><descendant/></ancestor>,
-            XPath.select("ancestor/descendant")
-        ) must produce (
-            <descendant copied="value"/>
-        )
+        applying(query = "ancestor/descendant") {
+            <ancestor copied="value"><descendant/></ancestor>
+        } must produce(<descendant copied="value"/>)
     }
 
     /** Call a function and check the result. */
@@ -124,12 +119,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     /** If your XML content has randomly generated content or bits you don't care about, you can configure the test to
       * ignore certain attributes or elements. */
     "Ignore an attribute" >> {
-        // Define a filter that ignores the `@id` attribute.
-        val af = exclude[Attr](a => a.getName == "id")
-        // Create a matcher that uses the filter you created.
-        val m = defaultMatcher(_: Source).withAttributeFilter(af)
-        // Pass the matcher you created as the second argument to produce()`.
-        applying(<x/>) must produce(<y/>)(m)
+        applying(<x/>) must produce(<y/>)(filterAttr(!XPath.matches("@id", _)))
     }
 
     "Ignore a node that matches an XPath expression" >> {
@@ -143,11 +133,11 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
             // If you only want to test the transformation only for the <table> element and don't care about its
             // children in this test, for instance.
             <table class="simpletable" id="foo"/>
-        )(defaultMatcher(_).withNodeFilter(
+        )(
             // You can also define filters that exclude nodes from the comparison based on whether they
             // match an XPath expression.
-            exclude(XPath.matches("table/*", _))
-        ))
+            filterNode(!XPath.matches("table/*", _))
+        )
     }
 
     "Apply a template that produces an empty value" >> {
@@ -161,4 +151,20 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
         applying(<paragraph>foo</paragraph>).withMode("result-document")
             .result must beEmpty and (TransientFileSystem.hasFile(fileSystem, "foo.xml") must beTrue)
     }.pendingUntilFixed("<https://saxonica.plan.io/issues/2771>")
+
+    "Validate the result of the transformation against a schema" >> {
+        implicit val outputSchema = Input.fromString(
+            <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <xs:element name="foo" type="xs:string"/>
+                <xs:element name="bar" type="xs:string"/>
+            </xs:schema>.toString
+        )
+
+        applying(<foo>x</foo>) must produce(<bar>x</bar>) and beValid
+    }
+
+    /** You can also test whether the result of the transformation matches an XPath expression. */
+    "Match the result of the transformation against an XPath expression" >> {
+        applying { <foo>x</foo> } must beMatching("bar[. eq 'x']")
+    }
 }

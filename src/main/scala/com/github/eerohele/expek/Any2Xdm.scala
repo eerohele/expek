@@ -5,13 +5,13 @@ import java.math.BigDecimal
 import java.net.URI
 import javax.xml.transform.stream.StreamSource
 
-import net.sf.saxon.s9api.{Processor, QName, XdmAtomicValue, XdmItem, XdmNode}
+import net.sf.saxon.s9api._
 
 import scala.xml.Elem
 
 /** Methods for converting Java values into XML data model (XDM) values. */
 object Any2Xdm {
-    import NodeConversions.nodeToString
+    import utils.NodeConversions.nodeToString
 
     private lazy val builder = new Processor(false).newDocumentBuilder
 

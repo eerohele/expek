@@ -1,18 +1,18 @@
 package com.github.eerohele.expek
 
-import java.net.URI
 import java.io.File
+import java.net.URI
 
-import org.specs2.mutable.Specification
 import com.github.eerohele.expek.{TransientFileSystem => TFS}
-import com.google.common.jimfs.Jimfs
+import com.google.common.jimfs.{Configuration, Jimfs}
+import org.specs2.mutable.Specification
 
 // scalastyle:off multiple.string.literals
 
 class TransientFileSystemSpec extends Specification {
     isolated
 
-    lazy val fs = Jimfs.newFileSystem
+    lazy val fs = Jimfs.newFileSystem(Configuration.unix)
 
     "Getting the root path of the file system" >> {
         val uri = TFS.getRoot(fs).toUri
@@ -33,7 +33,7 @@ class TransientFileSystemSpec extends Specification {
         val uri = new URI(TFS.makeTransientPath(fs, <foo/>))
 
         "Return a path in the root of the file system" in {
-            new File(uri.getPath).getParent must be_==("/")
+            new File(uri.getPath).getParent must be_==(File.separator)
         }
 
         "Have the Jimfs URI scheme" in {

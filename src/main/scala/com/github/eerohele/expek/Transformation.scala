@@ -1,6 +1,6 @@
 package com.github.eerohele.expek
 
-import net.sf.saxon.s9api.{XdmAtomicValue, XdmNode, XdmNodeKind, XdmValue}
+import net.sf.saxon.s9api.{XdmAtomicValue, XdmNode, XdmValue}
 import shapeless.syntax.typeable.typeableOps
 
 import scala.collection.JavaConversions.asScalaIterator
@@ -18,13 +18,7 @@ trait Transformation {
             if (x.isAtomicValue) {
                 x.cast[XdmAtomicValue].map(_.getValue)
             } else {
-                x.cast[XdmNode].map { node =>
-                    if (node.getNodeKind == XdmNodeKind.ELEMENT || node.getNodeKind == XdmNodeKind.DOCUMENT) {
-                        node.asSource
-                    } else {
-                        node
-                    }
-                }
+                x.cast[XdmNode].map(identity)
             }
         }
     }
