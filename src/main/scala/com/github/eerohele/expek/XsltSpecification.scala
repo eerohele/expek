@@ -337,8 +337,8 @@ trait XsltSpecification extends XsltResultMatchers with XPathSupport with XsltSu
     }
 }
 
-/* An [[XsltSpecification]] that validates the result against [[outputSchema]] without aving to explicitly add
- * `beValid` to every test. */
+/** An [[XsltSpecification]] that validates the result against [[outputSchema]] without having to explicitly add
+  * `beValid` to every test. */
 trait ValidatingXsltSpecification extends XsltSpecification with SchemaValidationMatchers {
     implicit val outputSchema: Input.Builder
 

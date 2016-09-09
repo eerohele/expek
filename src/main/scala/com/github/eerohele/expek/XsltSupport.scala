@@ -8,6 +8,7 @@ import net.sf.saxon.s9api._
 
 import scala.xml.Elem
 
+/** A trait that lets you run XSLT transformations. */
 trait XsltSupport {
     import utils.NodeConversions._
 

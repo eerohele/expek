@@ -43,6 +43,7 @@ sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
     }
 }
 
+/** Specs2 matchers that validate the result of an XSLT transformation against an XML Schema. */
 trait SchemaValidationMatchers {
     /** Validate the transformation result against the given XML Schema. */
     def beValidAgainst(schema: Input.Builder): SchemaValidationMatcher[Transformation] = {

@@ -3,7 +3,7 @@ package com.github.eerohele.expek
 import net.sf.saxon.s9api._
 import org.w3c.dom.{Node => DomNode}
 
-/** An object that contains XPath-related methods. */
+/** A trait that contains XPath-related methods. */
 trait XPathSupport {
     import utils.Tap
 
