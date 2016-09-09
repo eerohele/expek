@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>XsltResultMatcher - com.github.eerohele.expek.XsltResultMatcher</title>
-          <meta name="description" content="XsltResultMatcher - com.github.eerohele.expek.XsltResultMatcher" />
-          <meta name="keywords" content="XsltResultMatcher com.github.eerohele.expek.XsltResultMatcher" />
+          <title>XPathResultMatcher - com.github.eerohele.expek.XPathResultMatcher</title>
+          <meta name="description" content="XPathResultMatcher - com.github.eerohele.expek.XPathResultMatcher" />
+          <meta name="keywords" content="XPathResultMatcher com.github.eerohele.expek.XPathResultMatcher" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.github.eerohele.expek.XsltResultMatcher';
+            var hash = 'com.github.eerohele.expek.XPathResultMatcher';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -30,10 +30,10 @@
       <div id="definition">
         <img alt="Class" src="../../../../lib/class_big.png" />
         <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.github">github</a>.<a href="../package.html" class="extype" name="com.github.eerohele">eerohele</a>.<a href="package.html" class="extype" name="com.github.eerohele.expek">expek</a></p>
-        <h1>XsltResultMatcher</h1><h3><span class="morelinks"><div>Related Doc:
+        <h1>XPathResultMatcher</h1><h3><span class="morelinks"><div>Related Doc:
             <a href="package.html" class="extype" name="com.github.eerohele.expek">package expek</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -41,19 +41,18 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">sealed </span>
+        <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">XsltResultMatcher</span><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
+        <span class="name">XPathResultMatcher</span><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A specs2 matcher that matches against the result of an XSLT transformation.</p><p>The result of an XSLT transformation can either be a node, which can be one of:</p><ul><li>Element</li><li>Document</li><li>Processing instruction</li><li>Text</li><li>Attribute</li><li>Comment</li></ul><p>Or it can be an atomic value, which, when converted into a native Java type, can be one of:</p><ul><li><span class="extype" name="String">String</span></li><li><span class="extype" name="BigInteger">BigInteger</span></li><li><span class="extype" name="BigDecimal">BigDecimal</span></li><li><span class="extype" name="Double">Double</span></li><li><span class="extype" name="Float">Float</span></li><li><span class="extype" name="Boolean">Boolean</span></li><li><span class="extype" name="QName">QName</span></li><li><span class="extype" name="URI">URI</span></li></ul><p>Element and document nodes are converted into <span class="extype" name="Source">Source</span> so that we can compare them with XMLUnit.</p><p><span class="extype" name="Node">Node</span> instances in the <code>expected</code> <span class="extype" name="Vector">Vector</span> are also converted into a <span class="extype" name="Source">Source</span> so that we can compare
-those to XSLT transformation results.</p><p>Other node types are kept as is and we compare their string representations.</p><p>Atomic values that are the result of an XSLT transformation are converted to native Java types with Saxon's
-<code>XdmAtomicValue.getValue()</code> method and compared to the expected values.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A specs2 matcher that validates the result of an XSLT transformation against an XPath expression.</p><p>TODO: There's duplicate code between this and <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span>, <span class="extype" name="org.specs2.execute.ResultLogicalCombinators">ResultLogicalCombinators</span>, <span class="extype" name="org.specs2.execute.Results">Results</span>, <span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators">MatchResultLogicalCombinators</span>, <span class="extype" name="org.specs2.matcher.Expectations">Expectations</span>, <span class="extype" name="org.specs2.matcher.ExpectationsDescription">ExpectationsDescription</span>, <span class="extype" name="org.specs2.matcher.TypedEqual">TypedEqual</span>, <span class="extype" name="org.specs2.matcher.ExpectationsCreation">ExpectationsCreation</span>, <span class="extype" name="org.specs2.matcher.MatchResultStackTrace">MatchResultStackTrace</span>, <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>], <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span>, <span class="extype" name="org.specs2.execute.ResultLogicalCombinators">ResultLogicalCombinators</span>, <span class="extype" name="org.specs2.execute.Results">Results</span>, <span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators">MatchResultLogicalCombinators</span>, <span class="extype" name="org.specs2.matcher.Expectations">Expectations</span>, <span class="extype" name="org.specs2.matcher.ExpectationsDescription">ExpectationsDescription</span>, <span class="extype" name="org.specs2.matcher.TypedEqual">TypedEqual</span>, <span class="extype" name="org.specs2.matcher.ExpectationsCreation">ExpectationsCreation</span>, <span class="extype" name="org.specs2.matcher.MatchResultStackTrace">MatchResultStackTrace</span>, <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>], <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
         
 
@@ -71,7 +70,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.github.eerohele.expek.XsltResultMatcher"><span>XsltResultMatcher</span></li><li class="in" name="org.specs2.matcher.MatchResultCombinators"><span>MatchResultCombinators</span></li><li class="in" name="org.specs2.execute.ResultLogicalCombinators"><span>ResultLogicalCombinators</span></li><li class="in" name="org.specs2.execute.Results"><span>Results</span></li><li class="in" name="org.specs2.matcher.MatchResultLogicalCombinators"><span>MatchResultLogicalCombinators</span></li><li class="in" name="org.specs2.matcher.Expectations"><span>Expectations</span></li><li class="in" name="org.specs2.matcher.ExpectationsDescription"><span>ExpectationsDescription</span></li><li class="in" name="org.specs2.matcher.TypedEqual"><span>TypedEqual</span></li><li class="in" name="org.specs2.matcher.ExpectationsCreation"><span>ExpectationsCreation</span></li><li class="in" name="org.specs2.matcher.MatchResultStackTrace"><span>MatchResultStackTrace</span></li><li class="in" name="org.specs2.matcher.Matcher"><span>Matcher</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.github.eerohele.expek.XPathResultMatcher"><span>XPathResultMatcher</span></li><li class="in" name="org.specs2.matcher.MatchResultCombinators"><span>MatchResultCombinators</span></li><li class="in" name="org.specs2.execute.ResultLogicalCombinators"><span>ResultLogicalCombinators</span></li><li class="in" name="org.specs2.execute.Results"><span>Results</span></li><li class="in" name="org.specs2.matcher.MatchResultLogicalCombinators"><span>MatchResultLogicalCombinators</span></li><li class="in" name="org.specs2.matcher.Expectations"><span>Expectations</span></li><li class="in" name="org.specs2.matcher.ExpectationsDescription"><span>ExpectationsDescription</span></li><li class="in" name="org.specs2.matcher.TypedEqual"><span>TypedEqual</span></li><li class="in" name="org.specs2.matcher.ExpectationsCreation"><span>ExpectationsCreation</span></li><li class="in" name="org.specs2.matcher.MatchResultStackTrace"><span>MatchResultStackTrace</span></li><li class="in" name="org.specs2.matcher.Matcher"><span>Matcher</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -90,19 +89,19 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.github.eerohele.expek.XsltResultMatcher#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(expected:Vector[Any])(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[T]"></a>
-      <a id="&lt;init&gt;:XsltResultMatcher[T]"></a>
+              <ol><li name="com.github.eerohele.expek.XPathResultMatcher#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(matcher:(String,net.sf.saxon.s9api.XdmNode)=&gt;Boolean)(query:String):com.github.eerohele.expek.XPathResultMatcher[T]"></a>
+      <a id="&lt;init&gt;:XPathResultMatcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">XsltResultMatcher</span><span class="params">(<span name="expected">expected: <span class="extype" name="scala.Vector">Vector</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="matcher">matcher: (<span class="extype" name="javax.xml.transform.Source">Source</span>) ⇒ <span class="extype" name="org.xmlunit.matchers.CompareMatcher">CompareMatcher</span></span>)</span>
+        <span class="name">XPathResultMatcher</span><span class="params">(<span name="matcher">matcher: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="net.sf.saxon.s9api.XdmNode">XdmNode</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@&lt;init&gt;(expected:Vector[Any])(implicitmatcher:javax.xml.transform.Source=&gt;org.xmlunit.matchers.CompareMatcher):com.github.eerohele.expek.XsltResultMatcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@&lt;init&gt;(matcher:(String,net.sf.saxon.s9api.XdmNode)=&gt;Boolean)(query:String):com.github.eerohele.expek.XPathResultMatcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -113,7 +112,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="org.specs2.matcher.ExpectationsDescription.Descriptible" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Descriptible[T&lt;:&lt;?&gt;]extendsAnyRef"></a>
+      <a id="Descriptible[T]extendsAnyRef"></a>
       <a id="Descriptible[T]:Descriptible[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -124,7 +123,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">Descriptible</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@Descriptible[T]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@Descriptible[T]extendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -141,13 +140,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">ExpectationDescription</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@ExpectationDescriptionextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@ExpectationDescriptionextendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExpectationsDescription</dd></dl></div>
     </li><li name="org.specs2.matcher.MatchResultLogicalCombinators.MatchResultCombinator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="MatchResultCombinator[T&lt;:&lt;?&gt;]extendsAnyRef"></a>
+      <a id="MatchResultCombinator[T]extendsAnyRef"></a>
       <a id="MatchResultCombinator[T]:MatchResultCombinator[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -158,7 +157,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">MatchResultCombinator</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@MatchResultCombinator[T]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@MatchResultCombinator[T]extendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -175,13 +174,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">ResultLogicalCombinator</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@ResultLogicalCombinatorextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@ResultLogicalCombinatorextendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ResultLogicalCombinators</dd></dl></div>
     </li><li name="org.specs2.matcher.TypedEqual.TypedEqualExpectation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="TypedEqualExpectation[T&lt;:&lt;?&gt;]extendsAnyRef"></a>
+      <a id="TypedEqualExpectation[T]extendsAnyRef"></a>
       <a id="TypedEqualExpectation[T]:(TypedEqual.this)#TypedEqualExpectation[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -192,7 +191,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">TypedEqualExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@TypedEqualExpectation[T]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@TypedEqualExpectation[T]extendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -216,7 +215,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -233,7 +232,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -250,13 +249,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#^^" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="^^[S&lt;:&lt;?&gt;](f:&lt;?&gt;,dummy:&lt;?&gt;):org.specs2.matcher.Matcher[S]"></a>
+      <a id="^^[S](f:S=&gt;org.specs2.matcher.Expectable[T],dummy:Int):org.specs2.matcher.Matcher[S]"></a>
       <a id="^^[S]((S)⇒Expectable[T],Int):Matcher[S]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -264,16 +263,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>, <span name="dummy">dummy: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
+        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>, <span name="dummy">dummy: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@^^[S](f:S=&gt;org.specs2.matcher.Expectable[T],dummy:Int):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@^^[S](f:S=&gt;org.specs2.matcher.Expectable[T],dummy:Int):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#^^" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="^^[S&lt;:&lt;?&gt;](f:&lt;?&gt;):org.specs2.matcher.Matcher[S]"></a>
+      <a id="^^[S](f:S=&gt;T):org.specs2.matcher.Matcher[S]"></a>
       <a id="^^[S]((S)⇒T):Matcher[S]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -281,10 +280,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
+        <span title="gt4s: $up$up" class="name">^^</span><span class="tparams">[<span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>) ⇒ <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.^^.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@^^[S](f:S=&gt;T):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@^^[S](f:S=&gt;T):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -298,15 +297,15 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">and</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>
+        <span class="name">and</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.and.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@and[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@and[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
-    </li><li name="com.github.eerohele.expek.XsltResultMatcher#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.github.eerohele.expek.XPathResultMatcher#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply[S&lt;:T](expectable:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
       <a id="apply[S&lt;:T](Expectable[S]):MatchResult[S]"></a>
       <h4 class="signature">
@@ -315,14 +314,14 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="expectable">expectable: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.apply.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.apply.S">S</span>]</span>
+        <span class="name">apply</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="expectable">expectable: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.apply.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.apply.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@apply[S&lt;:T](expectable:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@apply[S&lt;:T](expectable:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.github.eerohele.expek.XsltResultMatcher">XsltResultMatcher</a> → Matcher</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.github.eerohele.expek.XPathResultMatcher">XPathResultMatcher</a> → Matcher</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -335,13 +334,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="org.specs2.execute.Results#booleanToSimpleResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="booleanToSimpleResult(b:&lt;?&gt;):org.specs2.execute.Result"></a>
+      <a id="booleanToSimpleResult(b:Boolean):org.specs2.execute.Result"></a>
       <a id="booleanToSimpleResult(Boolean):Result"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -352,7 +351,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">booleanToSimpleResult</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@booleanToSimpleResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@booleanToSimpleResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -369,7 +368,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">checkFailure</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkFailure.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkFailure.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@checkFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@checkFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -386,7 +385,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">checkMatchResultFailure</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkMatchResultFailure.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.checkMatchResultFailure.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@checkMatchResultFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@checkMatchResultFailure[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -403,7 +402,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">checkResultFailure</span><span class="params">(<span name="r">r: ⇒ <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@checkResultFailure(r:=&gt;org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@checkResultFailure(r:=&gt;org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -420,7 +419,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@clone():Object" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@clone():Object" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -440,10 +439,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combineBoolean</span><span class="params">(<span name="b">b: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
+        <span class="name">combineBoolean</span><span class="params">(<span name="b">b: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@combineBoolean(b:=&gt;Boolean):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@combineBoolean(b:=&gt;Boolean):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -457,10 +456,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combineMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>)</span><span class="result">: <a href="#MatchResultCombinator[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.MatchResultCombinator">MatchResultCombinator</a>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>
+        <span class="name">combineMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>)</span><span class="result">: <a href="#MatchResultCombinator[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.MatchResultCombinator">MatchResultCombinator</a>[<span class="extype" name="org.specs2.matcher.MatchResultLogicalCombinators.combineMatchResult.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@combineMatchResult[T](m:=&gt;org.specs2.matcher.MatchResult[T]):MatchResultLogicalCombinators.this.MatchResultCombinator[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@combineMatchResult[T](m:=&gt;org.specs2.matcher.MatchResult[T]):MatchResultLogicalCombinators.this.MatchResultCombinator[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -474,10 +473,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combineResult</span><span class="params">(<span name="r">r: ⇒ <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
+        <span class="name">combineResult</span><span class="params">(<span name="r">r: ⇒ <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <a href="#ResultLogicalCombinatorextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.ResultLogicalCombinator">ResultLogicalCombinator</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@combineResult(r:=&gt;org.specs2.execute.Result):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@combineResult(r:=&gt;org.specs2.execute.Result):ResultLogicalCombinators.this.ResultLogicalCombinator" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -494,7 +493,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[(<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@createExpectable[T](t:=&gt;T,alias:Option[String=&gt;String]):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@createExpectable[T](t:=&gt;T,alias:Option[String=&gt;String]):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -511,7 +510,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@createExpectable[T](t:=&gt;T,alias:String=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@createExpectable[T](t:=&gt;T,alias:String=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -528,7 +527,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>, <span name="alias">alias: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@createExpectable[T](t:=&gt;T,alias:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@createExpectable[T](t:=&gt;T,alias:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -545,7 +544,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">createExpectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectable.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@createExpectable[T](t:=&gt;T):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@createExpectable[T](t:=&gt;T):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -562,7 +561,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">createExpectableWithShowAs</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectableWithShowAs.T">T</span></span>, <span name="showAs">showAs: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.createExpectableWithShowAs.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@createExpectableWithShowAs[T](t:=&gt;T,showAs:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@createExpectableWithShowAs[T](t:=&gt;T,showAs:=&gt;String):org.specs2.matcher.Expectable[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -576,10 +575,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">describe</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span></span>)</span><span class="result">: <a href="#Descriptible[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.Descriptible">Descriptible</a>[<span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span>]</span>
+        <span class="name">describe</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span></span>)</span><span class="result">: <a href="#Descriptible[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.Descriptible">Descriptible</a>[<span class="extype" name="org.specs2.matcher.ExpectationsDescription.describe.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@describe[T](t:=&gt;T):ExpectationsDescription.this.Descriptible[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@describe[T](t:=&gt;T):ExpectationsDescription.this.Descriptible[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -593,10 +592,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">describeExpectation</span><span class="params">(<span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#ExpectationDescriptionextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.ExpectationDescription">ExpectationDescription</a></span>
+        <span class="name">describeExpectation</span><span class="params">(<span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#ExpectationDescriptionextendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.ExpectationDescription">ExpectationDescription</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@describeExpectation(description:String):ExpectationsDescription.this.ExpectationDescription" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@describeExpectation(description:String):ExpectationsDescription.this.ExpectationDescription" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -613,7 +612,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -630,13 +629,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#eventually" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="eventually(retries:&lt;?&gt;,sleep:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="eventually(retries:Int,sleep:scala.concurrent.duration.Duration):org.specs2.matcher.Matcher[T]"></a>
       <a id="eventually(Int,Duration):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -644,10 +643,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eventually</span><span class="params">(<span name="retries">retries: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="sleep">sleep: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.duration.Duration" class="extype" target="_top">Duration</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">eventually</span><span class="params">(<span name="retries">retries: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="sleep">sleep: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.duration.Duration" class="extype" target="_top">Duration</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@eventually(retries:Int,sleep:scala.concurrent.duration.Duration):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@eventually(retries:Int,sleep:scala.concurrent.duration.Duration):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -661,16 +660,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eventually</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">eventually</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@eventually:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@eventually:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#failure" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="failure[S&lt;:&lt;?&gt;](message:&lt;?&gt;,value:&lt;?&gt;):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="failure[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
       <a id="failure[S&lt;:T](⇒String,Expectable[S]):MatchResult[S]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -678,10 +677,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">failure</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>
+        <span class="name">failure</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.failure.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@failure[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@failure[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -698,7 +697,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -721,7 +720,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -738,13 +737,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#iff" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="iff(b:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="iff(b:Boolean):org.specs2.matcher.Matcher[T]"></a>
       <a id="iff(Boolean):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -752,10 +751,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">iff</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">iff</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@iff(b:Boolean):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@iff(b:Boolean):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -772,7 +771,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -786,10 +785,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">lazily</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[() ⇒ <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">lazily</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[() ⇒ <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@lazily:org.specs2.matcher.Matcher[()=&gt;T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@lazily:org.specs2.matcher.Matcher[()=&gt;T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -806,7 +805,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">mapMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.mapMatchResult.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.mapMatchResult.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@mapMatchResult[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@mapMatchResult[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -820,10 +819,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mute</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">mute</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@mute:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@mute:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -840,13 +839,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.specs2.execute.Results#negate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="negate(r:&lt;?&gt;):org.specs2.execute.Result"></a>
+      <a id="negate(r:org.specs2.execute.Result):org.specs2.execute.Result"></a>
       <a id="negate(Result):Result"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -857,13 +856,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">negate</span><span class="params">(<span name="r">r: <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@negate(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@negate(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="org.specs2.execute.Results#negateWhen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="negateWhen(condition:&lt;?&gt;)(r:&lt;?&gt;):org.specs2.execute.Result"></a>
+      <a id="negateWhen(condition:Boolean)(r:org.specs2.execute.Result):org.specs2.execute.Result"></a>
       <a id="negateWhen(Boolean)(Result):Result"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -874,7 +873,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">negateWhen</span><span class="params">(<span name="condition">condition: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="params">(<span name="r">r: <span class="extype" name="org.specs2.execute.Result">Result</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@negateWhen(condition:Boolean)(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@negateWhen(condition:Boolean)(r:org.specs2.execute.Result):org.specs2.execute.Result" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -888,10 +887,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">not</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">not</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@not:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@not:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -908,7 +907,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@notify():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -925,13 +924,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#or" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="or[S&lt;:&lt;?&gt;](m:&lt;?&gt;):org.specs2.matcher.Matcher[S]"></a>
+      <a id="or[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]"></a>
       <a id="or[S&lt;:T](⇒Matcher[S]):Matcher[S]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -939,16 +938,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">or</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>
+        <span class="name">or</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="m">m: ⇒ <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="org.specs2.matcher.Matcher.or.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@or[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@or[S&lt;:T](m:=&gt;org.specs2.matcher.Matcher[S]):org.specs2.matcher.Matcher[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#orPending" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="orPending(message:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orPending(message:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
       <a id="orPending((String)⇒String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -956,16 +955,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orPending</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orPending</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orPending(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orPending(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#orPending" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="orPending(m:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orPending(m:String):org.specs2.matcher.Matcher[T]"></a>
       <a id="orPending(String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -973,10 +972,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orPending</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orPending</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orPending(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orPending(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -990,16 +989,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orPending</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orPending</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orPending:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orPending:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#orSkip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="orSkip(message:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orSkip(message:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
       <a id="orSkip((String)⇒String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1007,16 +1006,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orSkip</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orSkip</span><span class="params">(<span name="message">message: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orSkip(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orSkip(message:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#orSkip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="orSkip(m:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="orSkip(m:String):org.specs2.matcher.Matcher[T]"></a>
       <a id="orSkip(String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1024,10 +1023,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orSkip</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orSkip</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orSkip(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orSkip(m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1041,10 +1040,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orSkip</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">orSkip</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@orSkip:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@orSkip:org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1058,10 +1057,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResultMessages.MatchResultMessage">org.specs2.matcher.MatchResultMessages.MatchResultMessage</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResultMessages.MatchResultMessage">org.specs2.matcher.MatchResultMessages.MatchResultMessage</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResultMessages.MatchResultMessage,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResultMessages.MatchResultMessage,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1075,10 +1074,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.execute.Result">Result</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.execute.Result">Result</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](other:org.specs2.execute.Result,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](other:org.specs2.execute.Result,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1092,10 +1091,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[_]</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[_]</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResult[_],value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](other:org.specs2.matcher.MatchResult[_],value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1109,10 +1108,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="details">details: <span class="extype" name="org.specs2.execute.Details">Details</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="details">details: <span class="extype" name="org.specs2.execute.Details">Details</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],details:org.specs2.execute.Details):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],details:org.specs2.execute.Details):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1126,10 +1125,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="expected">expected: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="actual">actual: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>, <span name="expected">expected: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="actual">actual: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],expected:String,actual:String):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S],expected:String,actual:String):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1143,10 +1142,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="triplet">triplet: ⇒ (<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>, <span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>)</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="triplet">triplet: ⇒ (<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>, <span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>)</span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](triplet:=&gt;(Boolean,String,String),value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](triplet:=&gt;(Boolean,String,String),value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1160,10 +1159,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
+        <span class="name">result</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="test">test: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="okMessage">okMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="koMessage">koMessage: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.result.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@result[S&lt;:T](test:=&gt;Boolean,okMessage:=&gt;String,koMessage:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1180,13 +1179,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">sandboxMatchResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="mr">mr: ⇒ <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.sandboxMatchResult.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.ExpectationsCreation.sandboxMatchResult.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@sandboxMatchResult[T](mr:=&gt;org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@sandboxMatchResult[T](mr:=&gt;org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ExpectationsCreation</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#setMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setMessage(message:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="setMessage(message:String):org.specs2.matcher.Matcher[T]"></a>
       <a id="setMessage(String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1194,10 +1193,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">setMessage</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">setMessage</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@setMessage(message:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@setMessage(message:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1214,13 +1213,13 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">setStacktrace</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultStackTrace.setStacktrace.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.MatchResultStackTrace.setStacktrace.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@setStacktrace[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@setStacktrace[T](m:org.specs2.matcher.MatchResult[T]):org.specs2.matcher.MatchResult[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>MatchResultStackTrace</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#success" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="success[S&lt;:&lt;?&gt;](message:&lt;?&gt;,value:&lt;?&gt;):org.specs2.matcher.MatchResult[S]"></a>
+      <a id="success[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]"></a>
       <a id="success[S&lt;:T](⇒String,Expectable[S]):MatchResult[S]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1228,10 +1227,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">success</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>
+        <span class="name">success</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span></span>]</span><span class="params">(<span name="message">message: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="org.specs2.matcher.Expectable">Expectable</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.MatchResult">MatchResult</span>[<span class="extype" name="org.specs2.matcher.Matcher.success.S">S</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@success[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@success[S&lt;:T](message:=&gt;String,value:org.specs2.matcher.Expectable[S]):org.specs2.matcher.MatchResult[S]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1248,7 +1247,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1262,10 +1261,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">test</span><span class="result">: (<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">test</span><span class="result">: (<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@test:T=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@test:T=&gt;Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1282,7 +1281,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">toResult</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <span class="extype" name="org.specs2.execute.Result">Result</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@toResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@toResult(b:Boolean):org.specs2.execute.Result" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1299,7 +1298,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1313,16 +1312,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">typedEqualExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span></span>)</span><span class="result">: <a href="#TypedEqualExpectation[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XsltResultMatcher.TypedEqualExpectation">TypedEqualExpectation</a>[<span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span>]</span>
+        <span class="name">typedEqualExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="t">t: ⇒ <span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span></span>)</span><span class="result">: <a href="#TypedEqualExpectation[T]extendsAnyRef" class="extmbr" name="com.github.eerohele.expek.XPathResultMatcher.TypedEqualExpectation">TypedEqualExpectation</a>[<span class="extype" name="org.specs2.matcher.TypedEqual.typedEqualExpectation.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@typedEqualExpectation[T](t:=&gt;T):TypedEqual.this.TypedEqualExpectation[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@typedEqualExpectation[T](t:=&gt;T):TypedEqual.this.TypedEqualExpectation[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TypedEqual</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#unless" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unless(b:&lt;?&gt;,m:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="unless(b:Boolean,m:String):org.specs2.matcher.Matcher[T]"></a>
       <a id="unless(Boolean,String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1330,16 +1329,16 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">unless</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">unless</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@unless(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@unless(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Matcher</dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#updateMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="updateMessage(f:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="updateMessage(f:String=&gt;String):org.specs2.matcher.Matcher[T]"></a>
       <a id="updateMessage((String)⇒String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1347,10 +1346,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">updateMessage</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">updateMessage</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@updateMessage(f:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@updateMessage(f:String=&gt;String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1367,7 +1366,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@wait():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1390,7 +1389,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1413,7 +1412,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1425,7 +1424,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
               
         </dd></dl></div>
     </li><li name="org.specs2.matcher.Matcher#when" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="when(b:&lt;?&gt;,m:&lt;?&gt;):org.specs2.matcher.Matcher[T]"></a>
+      <a id="when(b:Boolean,m:String):org.specs2.matcher.Matcher[T]"></a>
       <a id="when(Boolean,String):Matcher[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1433,10 +1432,10 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">when</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</span>
+        <span class="name">when</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="m">m: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.XsltResultMatcher@when(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.XPathResultMatcher@when(b:Boolean,m:String):org.specs2.matcher.Matcher[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1469,7 +1468,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
             </div><div class="parent" name="org.specs2.matcher.MatchResultStackTrace">
               <h3>Inherited from <span class="extype" name="org.specs2.matcher.MatchResultStackTrace">MatchResultStackTrace</span></h3>
             </div><div class="parent" name="org.specs2.matcher.Matcher">
-              <h3>Inherited from <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XsltResultMatcher.T">T</span>]</h3>
+              <h3>Inherited from <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">

@@ -119,6 +119,23 @@
     </span>
       <p class="shortcomment cmt">A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.</p><div class="fullcomment"><div class="comment cmt"><p>A specs2 matcher that validates the result of an XSLT transformation against an XML Schema.</p><p>To validate an element against an XML Schema, that element must have a top-level definition in the schema.
 </p></div></div>
+    </li><li name="com.github.eerohele.expek.SchemaValidationMatchers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SchemaValidationMatchersextendsAnyRef"></a>
+      <a id="SchemaValidationMatchers:SchemaValidationMatchers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SchemaValidationMatchers.html"><span class="name">SchemaValidationMatchers</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@SchemaValidationMatchersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="com.github.eerohele.expek.Transformation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="TransformationextendsAnyRef"></a>
       <a id="Transformation:Transformation"></a>
@@ -177,6 +194,58 @@ the given transient file system.
 <span class="extype" name="Jimfs">Jimfs</span> filesystem.</p><div class="fullcomment"><div class="comment cmt"><p>A <span class="extype" name="CatalogResolver">CatalogResolver</span> that resolves any <span class="extype" name="URI">URI</span> that uses the <span class="extype" name="Jimfs.URI_SCHEME">Jimfs.URI_SCHEME</span> scheme against a
 <span class="extype" name="Jimfs">Jimfs</span> filesystem.</p><p>For any other type of <span class="extype" name="URI">URI</span>, it delegates to <span class="extype" name="CatalogResolver">CatalogResolver</span>.
 </p></div></div>
+    </li><li name="com.github.eerohele.expek.ValidatingXsltSpecification" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ValidatingXsltSpecificationextendsXsltSpecificationwithSchemaValidationMatchers"></a>
+      <a id="ValidatingXsltSpecification:ValidatingXsltSpecification"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ValidatingXsltSpecification.html"><span class="name">ValidatingXsltSpecification</span></a><span class="result"> extends <a href="XsltSpecification.html" class="extype" name="com.github.eerohele.expek.XsltSpecification">XsltSpecification</a> with <a href="SchemaValidationMatchers.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatchers">SchemaValidationMatchers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@ValidatingXsltSpecificationextendsXsltSpecificationwithSchemaValidationMatchers" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.github.eerohele.expek.XPathResultMatcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="XPathResultMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators"></a>
+      <a id="XPathResultMatcher[T&lt;:Transformation]:XPathResultMatcher[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="XPathResultMatcher.html"><span class="name">XPathResultMatcher</span></a><span class="tparams">[<span name="T">T &lt;: <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a></span>]</span><span class="result"> extends <span class="extype" name="org.specs2.matcher.Matcher">Matcher</span>[<span class="extype" name="com.github.eerohele.expek.XPathResultMatcher.T">T</span>] with <span class="extype" name="org.specs2.matcher.MatchResultCombinators">MatchResultCombinators</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XPathResultMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A specs2 matcher that validates the result of an XSLT transformation against an XPath expression.</p><div class="fullcomment"><div class="comment cmt"><p>A specs2 matcher that validates the result of an XSLT transformation against an XPath expression.</p><p>TODO: There's duplicate code between this and <a href="SchemaValidationMatcher.html" class="extype" name="com.github.eerohele.expek.SchemaValidationMatcher">SchemaValidationMatcher</a>.
+</p></div></div>
+    </li><li name="com.github.eerohele.expek.XPathSupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="XPathSupportextendsAnyRef"></a>
+      <a id="XPathSupport:XPathSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="XPathSupport.html"><span class="name">XPathSupport</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XPathSupportextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object that contains XPath-related methods.</p>
     </li><li name="com.github.eerohele.expek.XsltResultMatcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="XsltResultMatcher[T&lt;:com.github.eerohele.expek.Transformation]extendsMatcher[T]withMatchResultCombinators"></a>
       <a id="XsltResultMatcher[T&lt;:Transformation]:XsltResultMatcher[T]"></a>
@@ -215,7 +284,7 @@ those to XSLT transformation results.</p><p>Other node types are kept as is and 
       <p class="shortcomment cmt">A trait you can mix in to your specs2 specification to compare the results of <a href="Transformation.html" class="extype" name="com.github.eerohele.expek.Transformation">Transformation</a> instances to
 a sequence of expected values.</p>
     </li><li name="com.github.eerohele.expek.XsltSpecification" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="XsltSpecificationextendsXsltResultMatchers"></a>
+      <a id="XsltSpecificationextendsXsltResultMatcherswithXPathSupportwithXsltSupport"></a>
       <a id="XsltSpecification:XsltSpecification"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -223,16 +292,33 @@ a sequence of expected values.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="XsltSpecification.html"><span class="name">XsltSpecification</span></a><span class="result"> extends <a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a></span>
+        <a href="XsltSpecification.html"><span class="name">XsltSpecification</span></a><span class="result"> extends <a href="XsltResultMatchers.html" class="extype" name="com.github.eerohele.expek.XsltResultMatchers">XsltResultMatchers</a> with <a href="XPathSupport.html" class="extype" name="com.github.eerohele.expek.XPathSupport">XPathSupport</a> with <a href="XsltSupport.html" class="extype" name="com.github.eerohele.expek.XsltSupport">XsltSupport</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltSpecificationextendsXsltResultMatchers" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltSpecificationextendsXsltResultMatcherswithXPathSupportwithXsltSupport" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">A specification for testing an <a href="https://www.w3.org/TR/xslt-30/" target="_blank">XSLT</a> stylesheet.</p><div class="fullcomment"><div class="comment cmt"><p>A specification for testing an <a href="https://www.w3.org/TR/xslt-30/" target="_blank">XSLT</a> stylesheet.</p><p>Classes that mix in this trait must define <a href="XsltSpecification.html#stylesheet:javax.xml.transform.Source" class="extmbr" name="com.github.eerohele.expek.XsltSpecification#stylesheet">stylesheet</a>, which is a <span class="extype" name="File">File</span> instance that points to the
 stylesheet that you want to test.
 </p></div></div>
+    </li><li name="com.github.eerohele.expek.XsltSupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="XsltSupportextendsAnyRef"></a>
+      <a id="XsltSupport:XsltSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="XsltSupport.html"><span class="name">XsltSupport</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.github.eerohele.expek.package@XsltSupportextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 
@@ -274,23 +360,6 @@ stylesheet that you want to test.
       </a>
     </span>
       
-    </li><li name="com.github.eerohele.expek.NodeConversions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="NodeConversions"></a>
-      <a id="NodeConversions:NodeConversions"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="NodeConversions$.html"><span class="name">NodeConversions</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.github.eerohele.expek.package@NodeConversions" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Implicit conversions for <span class="extype" name="Node">Node</span>.</p>
     </li><li name="com.github.eerohele.expek.ResolvingXMLLoader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ResolvingXMLLoader"></a>
       <a id="ResolvingXMLLoader:ResolvingXMLLoader"></a>
