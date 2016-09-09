@@ -27,14 +27,10 @@ You might also find the documentation for [specs2][specs2] helpful.
 In your `build.sbt`, add:
 
 ```scala
-lazy val root = (project in file(".")).settings(scalaVersion := "2.11.8")
-
-resolvers += Resolver.bintrayRepo("eerohele", "maven")
-
 libraryDependencies ++= Seq("com.github.eerohele" % "expek_2.11" % "0.1.0")
 ```
 
-Stick tests in `src/test/scala`, run `sbt test`.
+Stick tests under `src/test/scala`, run `sbt test`.
 
 ### Gradle
 
@@ -55,7 +51,7 @@ dependencies {
 }
 ```
 
-Stick tests in `src/test/scala`.
+Stick tests under `src/test/scala`.
 
 In your Expek specification Scala file, add the `@RunWith` annotation:
 
