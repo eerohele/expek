@@ -13,7 +13,7 @@ package object utils {
         def tap[B](f: A => Unit): A = { f(a); a }
     }
 
-    private[expek] object NodeConversions {
+    object NodeConversions {
         /** Convert [[Node]] to [[String]]. */
         implicit def nodeToString(node: Node): String = node.buildString(true)
 
