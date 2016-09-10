@@ -21,7 +21,7 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
     val stylesheet = XSLT.file("/path/to/stylesheet.xsl")
 
     "<foo> becomes <bar>" >> {
-        applying { <foo a="b">x</foo> } must produce { <bar c="d">y</foo> }
+        applying { <foo a="b">x</foo> } must produce { <bar c="d">y</bar> }
     }
 }
 ```
