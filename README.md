@@ -66,9 +66,8 @@ repositories {
 }
 
 dependencies {
-      testCompile 'org.specs2:specs2-junit_2.11:3.8.3'
-      testCompile 'com.github.eerohele:expek_2.11:0.1.0'
-  }
+    testCompile 'org.specs2:specs2-junit_2.11:3.8.3'
+    testCompile 'com.github.eerohele:expek_2.11:0.1.0'
 }
 ```
 
