@@ -27,6 +27,8 @@ You might also find the documentation for [specs2][specs2] helpful.
 In your `build.sbt`, add:
 
 ```scala
+resolvers += Resolver.jcenterRepo
+
 libraryDependencies ++= Seq("com.github.eerohele" % "expek_2.11" % "0.1.0")
 ```
 
