@@ -11,8 +11,26 @@ welcomed.
 
 ## Example
 
-See the [example specifications][example-spec] and
-[`example.xsl`][example-stylesheet].
+Here's a simple Expek specification:
+
+```scala
+import org.specs2.mutable
+import com.github.eerohele.expek.XsltSpecification
+
+class ExampleSpecification extends mutable.Specification with XsltSpecification {
+    val stylesheet = XSLT.file("/path/to/stylesheet.xsl")
+
+    "<foo> becomes <bar>" >> {
+        applying { <foo a="b">x</foo> } must produce { <bar c="d">y</foo> }
+    }
+}
+```
+
+For more examples on how you can use Expek see the [example specifications][example-spec]
+and [`example.xsl`][example-stylesheet].
+
+There's also [an experimental set of tests][dita-ot-tests] I wrote to
+test [DITA-OT](http://www.dita-ot.org) HTML5 XSLT stylesheets.
 
 ## Documentation
 
@@ -76,6 +94,7 @@ Run `gradle test`.
 - Run tests with [specs2][specs2].
 
 [api]: https://eerohele.github.io/expek/latest/api
+[dita-ot-tests]: https://github.com/eerohele/dita-ot/tree/expek/src/test/scala/org/dita/dost/html5
 [example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala
 [example-stylesheet]: http://github.com/eerohele/expek/tree/master/examples/src/test/resources/stylesheets/example.xsl
 [saxon]: http://www.saxonica.com
