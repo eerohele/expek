@@ -20,6 +20,7 @@ import com.github.eerohele.expek.XsltSpecification
 class ExampleSpecification extends mutable.Specification with XsltSpecification {
     val stylesheet = XSLT.file("/path/to/stylesheet.xsl")
 
+    // Test whether your XSLT stylesheet actually turns <foo> into <bar>
     "<foo> becomes <bar>" >> {
         applying { <foo a="b">x</foo> } must produce { <bar c="d">y</bar> }
     }
