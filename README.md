@@ -29,6 +29,9 @@ class ExampleSpecification extends mutable.Specification with XsltSpecification 
 For more examples on how you can use Expek see the [example specifications][example-spec]
 and [`example.xsl`][example-stylesheet].
 
+To run the example specifications, clone this repo and run `sbt examples/run`
+(you must have [SBT][sbt] installed).
+
 There's also [an experimental set of tests][dita-ot-tests] I wrote to
 test [DITA-OT](http://www.dita-ot.org) HTML5 XSLT stylesheets.
 
@@ -97,6 +100,7 @@ Run `gradle test`.
 [example-spec]: http://github.com/eerohele/expek/tree/master/examples/src/test/scala
 [example-stylesheet]: http://github.com/eerohele/expek/tree/master/examples/src/test/resources/stylesheets/example.xsl
 [saxon]: http://www.saxonica.com
+[sbt]: http://scala-sbt.org
 [specs2]: http://www.specs2.org
 [x30t]: http://www.saxonica.com/html/documentation/javadoc/net/sf/saxon/s9api/Xslt30Transformer.html
 [xmlunit]: https://github.com/xmlunit/xmlunit
