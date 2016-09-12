@@ -61,6 +61,8 @@ Stick tests under `src/test/scala`, run `sbt test`.
 In your `build.gradle`, add:
 
 ```groovy
+apply plugin: 'scala'
+
 repositories {
      jcenter()
 
