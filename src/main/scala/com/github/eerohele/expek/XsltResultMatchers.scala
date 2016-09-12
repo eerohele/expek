@@ -112,6 +112,10 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 trait XsltResultMatchers {
     import utils.NodeConversions.nodeToSource
 
+    /** A function that transforms your expected XML before it's compared with the actual XML.
+      *
+      * NOOP by default. See [[NodeRefinery]] for examples on the kinds of functions you might want to use this with.
+      */
     def refineOutput: Node => Node = identity
 
     /** Create a matcher that compares the supplied arguments against the result of an XML transformation.

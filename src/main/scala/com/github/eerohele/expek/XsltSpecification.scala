@@ -161,6 +161,10 @@ trait XsltSpecification extends XsltResultMatchers with XPathSupport with XsltSu
 
     lazy val xpathCompiler = processor.newXPathCompiler
 
+    /** A function that transforms your input XML before it's handed over to the XSLT.
+      *
+      * NOOP by default. See [[NodeRefinery]] for examples on the kinds of functions you might want to use this with.
+      */
     def refineInput: Node => Node = identity
 
     /** Convert a sequence of tuples into a [[Map]] of parameters that Saxon understands. */
