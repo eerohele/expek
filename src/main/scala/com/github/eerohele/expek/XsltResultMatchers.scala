@@ -110,6 +110,10 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
   * a sequence of expected values.
   */
 trait XsltResultMatchers {
+    import utils.NodeConversions.nodeToSource
+
+    def refineOutput: Node => Node = identity
+
     /** Create a matcher that compares the supplied arguments against the result of an XML transformation.
       *
       * Example use:
@@ -146,7 +150,7 @@ trait XsltResultMatchers {
             /** If the expected value is an instance of [[Node]], convert it to a [[Source]] so that we can compare it
               * with XMLUnit.
               */
-            case x: Node     => utils.NodeConversions.nodeToSource(x)
+            case x: Node     => (refineOutput andThen nodeToSource)(x)
 
             /** If the expected value is an element() or a document-node(), convert it to a [[Source]] so that we can
               * compare it with XMLUnit.

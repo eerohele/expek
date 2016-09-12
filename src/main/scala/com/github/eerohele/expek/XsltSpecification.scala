@@ -161,6 +161,8 @@ trait XsltSpecification extends XsltResultMatchers with XPathSupport with XsltSu
 
     lazy val xpathCompiler = processor.newXPathCompiler
 
+    def refineInput: Node => Node = identity
+
     /** Convert a sequence of tuples into a [[Map]] of parameters that Saxon understands. */
     def asMap(tuple: (String, Any)*): Map[QName, XdmValue] = Any2Xdm.asMap(tuple:_*)
 
@@ -208,7 +210,7 @@ trait XsltSpecification extends XsltResultMatchers with XPathSupport with XsltSu
     private def loadNode(node: Node): XdmNode = {
         // If [[inputSchema] is defined, use that schema to load the default attributes for the given node.
         inputSchema.map(SchemaAwareXMLLoader(node, _)).getOrElse(TrySuccess(node)) match {
-            case TrySuccess(n) => documentNode(n)
+            case TrySuccess(n) => (refineInput andThen documentNode)(n)
             case TryFailure(ex) => throw FailureException(Failure(ex.getMessage))
         }
     }
