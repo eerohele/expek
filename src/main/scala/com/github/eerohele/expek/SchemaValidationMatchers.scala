@@ -28,7 +28,7 @@ sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
             result(
                 validationMatcher.matches(node.toString),
                 "ok",
-                createKoMessage(validationMatcher, node.asSource).toString,
+                createKoMessage(validationMatcher, node).toString,
                 expectable
             )
         }.getOrElse(MatchFailure("ok", "The transformation doesn't produce a node that can be validated.", expectable)))
@@ -36,9 +36,11 @@ sealed class SchemaValidationMatcher[T <: Transformation](schema: Input.Builder)
         matchResult.reduceLeft(_ and _)
     }
 
-    private def createKoMessage(matcher: ValidationMatcher, actual: Source): StringDescription = {
+    private def createKoMessage(matcher: ValidationMatcher, actual: XdmNode): StringDescription = {
         val description = new StringDescription
-        matcher.describeMismatch(actual, description)
+        matcher.describeMismatch(actual.asSource, description)
+        description.appendText("with input node:\n")
+        description.appendText(actual.toString)
         description
     }
 }
