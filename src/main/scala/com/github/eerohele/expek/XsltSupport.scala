@@ -25,11 +25,14 @@ trait XsltSupport {
         /** Read a stylesheet from an [[Elem]]. */
         def elem(elem: Elem): Source = new StreamSource(new StringReader(elem))
 
-        /** Transform an [[Elem]] with the given stylesheet. */
-        def transform[T <: XdmValue](stylesheet: Source, elem: Elem): T = {
+        /** Transform a [[Source]] with the given stylesheet. */
+        def transform[T <: XdmValue](stylesheet: Source, input: Source): T = {
             val t: Xslt30Transformer = xsltCompiler.compile(stylesheet).load30
-            t.applyTemplates(elem).asInstanceOf[T]
+            t.applyTemplates(input).asInstanceOf[T]
         }
+
+        /** Transform an [[Elem]] with the given stylesheet. */
+        def transform[T <: XdmValue](stylesheet: Source, elem: Elem): T = transform(stylesheet, elem)
     }
 }
 
