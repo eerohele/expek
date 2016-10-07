@@ -45,7 +45,9 @@ private[expek] sealed abstract class Parametrized(transformer: Xslt30Transformer
 private[expek] sealed class TemplateApplication(transformer: Xslt30Transformer, input: XdmNode)
     extends Parametrized(transformer) with Transformation {
 
-    def withMode(mode: String): this.type = { transformer.setInitialMode(new QName(mode)); this }
+    def withMode(mode: QName): this.type = { transformer.setInitialMode(mode); this }
+
+    def withMode(mode: String): this.type = withMode(new QName(mode))
 
     def transformation: () => XdmValue = () => transformer.applyTemplates(input)
 }
