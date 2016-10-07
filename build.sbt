@@ -1,7 +1,7 @@
 lazy val settings = Seq(
     organization := "com.github.eerohele",
     name := "expek",
-    version := "0.1.0",
+    version := "0.2.0",
     scalaVersion := "2.11.8",
     bintrayPackageLabels := Seq("XSLT", "XML", "XPath", "Unit testing"),
 
