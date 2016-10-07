@@ -5,7 +5,7 @@ import javax.xml.transform.Source
 
 import net.sf.saxon.s9api.{XdmNode, XdmNodeKind, XdmValue}
 import org.hamcrest.StringDescription
-import org.specs2.matcher.{Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
+import org.specs2.matcher.{AnyMatchers, Expectable, MatchFailure, MatchResult, MatchResultCombinators, Matcher}
 import org.xmlunit.matchers.CompareMatcher
 
 import scala.xml.Node
@@ -109,7 +109,7 @@ sealed class XsltResultMatcher[T <: Transformation](expected: Vector[Any])(impli
 /** A trait you can mix in to your specs2 specification to compare the results of [[Transformation]] instances to
   * a sequence of expected values.
   */
-trait XsltResultMatchers {
+trait XsltResultMatchers extends AnyMatchers {
     import utils.NodeConversions.nodeToSource
 
     /** A function that transforms your expected XML before it's compared with the actual XML.
@@ -138,7 +138,15 @@ trait XsltResultMatchers {
     }
 
     def produce(any: Any*)(implicit matcher: Source => CompareMatcher): Matcher[Transformation] = {
-        produce(any.toVector)
+        produce(any.toVector)(matcher)
+    }
+
+    def produceNothing[T <: Transformation]: Matcher[T] = new Matcher[T] {
+        def apply[S <: T](iterable: Expectable[S]): MatchResult[S] = {
+            result(iterable.value.result.isEmpty,
+                   iterable.description + " produces nothing",
+                   iterable.description + " produces something", iterable)
+        }
     }
 
     // scalastyle:on method.name
