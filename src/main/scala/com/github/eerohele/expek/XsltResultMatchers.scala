@@ -141,6 +141,18 @@ trait XsltResultMatchers extends AnyMatchers {
         produce(any.toVector)(matcher)
     }
 
+    /** Create a matcher that checks whether your transformation produces nothing.
+      *
+      * Example:
+      *
+      * {{{
+      * <!-- stylesheet.xsl -->
+      * <xsl:template match="a"/>
+      *
+      * // MySpecification.scala
+      * applying { <a/> } producesNothing
+      * }}}
+      */
     def produceNothing[T <: Transformation]: Matcher[T] = new Matcher[T] {
         def apply[S <: T](iterable: Expectable[S]): MatchResult[S] = {
             result(iterable.value.result.isEmpty,
