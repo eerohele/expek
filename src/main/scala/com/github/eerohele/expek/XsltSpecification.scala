@@ -270,14 +270,14 @@ trait XsltSpecification extends XsltResultMatchers with XPathSupport with XsltSu
         builder.wrap(document.createAttribute(a._1) tap (_.setValue(a._2)))
     }
 
-    /** Convert an [[Elem]] into an [[XdmNode]] `document-node()` node. */
+    /** Convert a [[Node]] into an [[XdmNode]] `document-node()` node. */
     def documentNode(node: Node): XdmNode = {
         builder.build(TransientFileSystem.source(fileSystem, node))
     }
 
-    /** Convert an [[Elem]] into an [[XdmNode]] `element()` node.
+    /** Convert a [[Node]] into an [[XdmNode]] `element()` node.
       *
-      * By default, any [[Elem]] instance you create and give as a parameter is a document node. If your template or
+      * By default, any [[Node]] instance you create and give as a parameter is a document node. If your template or
       * function expects an element, use this function.
       */
     def element(node: Node): XdmNode = {
